@@ -1,2 +1,5 @@
 # velocypack.net
-C# implementation of the velocypack format
+
+Velocypack.net is C# implementation of the [velocypack](https://github.com/arangodb/velocypack) compact serialization format.
+
+**Status:** Early stage WIP.
