@@ -2,13 +2,20 @@
 {
     internal enum ParserType
     {
-        None,
+        Miscellaneous,
         Array,
         Object,
         Boolean,
-        Number,
+        SignedByteInteger,
+        UnsignedByteInteger,
+        PositiveInteger,
+        NegativeInteger,
+        Float,
+        Double,
         String,
         Blob,
-        External
+        External,
+        DateTime,
+        Custom
     }
 }
