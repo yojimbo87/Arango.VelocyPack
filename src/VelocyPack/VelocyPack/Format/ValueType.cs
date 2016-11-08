@@ -1,6 +1,6 @@
 ﻿namespace VelocyPack.Format
 {
-    internal enum ValueType
+    public enum ValueType
     {
         /// <summary>
         /// 0x00 : none - this indicates absence of any type and value, this is not allowed in VPack values
