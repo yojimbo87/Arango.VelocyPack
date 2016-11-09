@@ -82,9 +82,8 @@ namespace VelocyPack.Format.Parsers
         internal static IParser GetParser(ValueType valueType)
         {
             var parserType = _valueTypeToParserTypeMap[valueType];
-            var parser = _parserInstanceMap[parserType];
 
-            return parser;
+            return _parserInstanceMap[parserType];
         }
     }
 }
