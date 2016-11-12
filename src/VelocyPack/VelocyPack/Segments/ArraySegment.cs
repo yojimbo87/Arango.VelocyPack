@@ -1,29 +1,26 @@
 ﻿using System.Collections.Generic;
 
-namespace VelocyPack.Format.Parsers
+namespace VelocyPack.Segments
 {
-    internal class ArrayParser : IParser
+    public class ArraySegment : Segment
     {
-        internal const byte OneByteLength = 1;
+        private const byte OneByteLength = 1;
 
-        public Segment ToSegment(ValueType valueType, byte[] data, int startIndex)
+        public override void Load(byte[] data, int startIndex)
         {
-            var segment = new Segment
-            {
-                StartIndex = startIndex,
-                CursorIndex = startIndex,
-                ValueType = valueType,
-                SubSegments = new List<Segment>(),
-                ObjectType = ObjectType.Array
-            };
+            StartIndex = startIndex;
+            CursorIndex = startIndex;
+            ValueType = ByteMapper.ToValueType(data[startIndex]);
+            SubSegments = new List<Segment>();
+            ObjectType = ObjectType.Array;
 
-            switch (valueType)
+            switch (ValueType)
             {
                 case ValueType.EmptyArray:
-                    ParseEmptyArray(data, segment);
+                    ParseEmptyArray(data);
                     break;
                 case ValueType.OneByteNonIndexedArray:
-                    ParseOneByteNonIndexedArray(data, segment);
+                    ParseOneByteNonIndexedArray(data);
                     break;
                 case ValueType.TwoByteNonIndexedArray:
 
@@ -50,42 +47,40 @@ namespace VelocyPack.Format.Parsers
 
                     break;
             }
-
-            return segment;
         }
 
         // 0x01 : empty array
-        private void ParseEmptyArray(byte[] data, Segment segment)
+        private void ParseEmptyArray(byte[] data)
         {
             // shift cursor index past value type byte
-            segment.CursorIndex++;
+            CursorIndex++;
         }
 
         // 0x02 : array without index table (all subitems have the same byte length), 1-byte byte length
-        private void ParseOneByteNonIndexedArray(byte[] data, Segment segment)
+        private void ParseOneByteNonIndexedArray(byte[] data)
         {
             // shift cursor index past value type byte
-            segment.CursorIndex++;
+            CursorIndex++;
 
             // parse 1-byte byte length
-            var byteLength = data[segment.CursorIndex];
+            var byteLength = data[CursorIndex];
             // shift cursor index past byte lenght byte
-            segment.CursorIndex++;
+            CursorIndex++;
 
             // to get byte length of array items we need to subtract two bytes (one for value type byte and one for byte length byte)
             var arrayItemsByteLength = byteLength - 2;
             // compute items count in the array
             var itemsCount = arrayItemsByteLength / OneByteLength;
-            
+
             // cycle through array items
             for (int i = 0; i < itemsCount; i++)
             {
                 // parse array item into segment
-                var subSegment = VelocyPack.ToSegment(data, segment.CursorIndex);
-                
+                var subSegment = VelocyPack.ToSegment(data, CursorIndex);
+
                 // array segment cursor index needs to be shifted to recently parse sub segment cursor index
-                segment.CursorIndex = subSegment.CursorIndex;
-                segment.SubSegments.Add(subSegment);
+                CursorIndex = subSegment.CursorIndex;
+                SubSegments.Add(subSegment);
             }
         }
     }

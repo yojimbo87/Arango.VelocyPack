@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using VelocyPack.Format.Parsers;
 
-namespace VelocyPack.Format
+namespace VelocyPack.Segments
 {
     internal static class ByteMapper
     {
@@ -265,9 +264,89 @@ namespace VelocyPack.Format
             { 0xff, ValueType.Custom }
         };
 
+        private static Dictionary<ValueType, SegmentType> _valueTypeToSegmentTypeMap = new Dictionary<ValueType, SegmentType>
+        {
+            { ValueType.None, SegmentType.Miscellaneous },
+            { ValueType.EmptyArray, SegmentType.Array },
+            { ValueType.OneByteNonIndexedArray, SegmentType.Array },
+            { ValueType.TwoByteNonIndexedArray, SegmentType.Array },
+            { ValueType.FourByteNonIndexedArray, SegmentType.Array },
+            { ValueType.EightByteNonIndexedArray, SegmentType.Array },
+            { ValueType.OneByteIndexedArray, SegmentType.Array },
+            { ValueType.TwoByteIndexedArray, SegmentType.Array },
+            { ValueType.FourByteIndexedArray, SegmentType.Array },
+            { ValueType.EightByteIndexedArray, SegmentType.Array },
+            { ValueType.EmptyObject, SegmentType.Object },
+            { ValueType.OneByteIndexedSortedObject, SegmentType.Object },
+            { ValueType.TwoByteIndexedSortedObject, SegmentType.Object },
+            { ValueType.FourByteIndexedSortedObject, SegmentType.Object },
+            { ValueType.EightByteIndexedSortedObject, SegmentType.Object },
+            { ValueType.Unused, SegmentType.Miscellaneous },
+            { ValueType.CompactNonIndexedArray, SegmentType.Array },
+            { ValueType.CompactNonIndexedObject, SegmentType.Object },
+            { ValueType.Reserved, SegmentType.Miscellaneous },
+            { ValueType.Illegal, SegmentType.Miscellaneous },
+            { ValueType.Null, SegmentType.Miscellaneous },
+            { ValueType.False, SegmentType.Boolean },
+            { ValueType.True, SegmentType.Boolean },
+            { ValueType.Double, SegmentType.Double },
+            { ValueType.UnixTimestamp, SegmentType.DateTime },
+            { ValueType.External, SegmentType.External },
+            { ValueType.MinKey, SegmentType.Miscellaneous },
+            { ValueType.MaxKey, SegmentType.Miscellaneous },
+            { ValueType.OneByteInt, SegmentType.SignedByteInteger },
+            { ValueType.TwoByteInt, SegmentType.SignedByteInteger },
+            { ValueType.ThreeByteInt, SegmentType.SignedByteInteger },
+            { ValueType.FourByteInt, SegmentType.SignedByteInteger },
+            { ValueType.FiveByteInt, SegmentType.SignedByteInteger },
+            { ValueType.SixByteInt, SegmentType.SignedByteInteger },
+            { ValueType.SevenByteInt, SegmentType.SignedByteInteger },
+            { ValueType.EightByteInt, SegmentType.SignedByteInteger },
+            { ValueType.OneByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.TwoByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.ThreeByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.FourByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.FiveByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.SixByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.SevenByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.EightByteUInt, SegmentType.UnsignedByteInteger },
+            { ValueType.ZeroInt, SegmentType.SmallInteger },
+            { ValueType.PosOneInt, SegmentType.SmallInteger },
+            { ValueType.PosTwoInt, SegmentType.SmallInteger },
+            { ValueType.PosThreeInt, SegmentType.SmallInteger },
+            { ValueType.PosFourInt, SegmentType.SmallInteger },
+            { ValueType.PosFiveInt, SegmentType.SmallInteger },
+            { ValueType.PosSixInt, SegmentType.SmallInteger },
+            { ValueType.PosSevenInt, SegmentType.SmallInteger },
+            { ValueType.PosEightInt, SegmentType.SmallInteger },
+            { ValueType.PosNineInt, SegmentType.SmallInteger },
+            { ValueType.NegSixInt, SegmentType.SmallInteger },
+            { ValueType.NegFiveInt, SegmentType.SmallInteger },
+            { ValueType.NegFourInt, SegmentType.SmallInteger },
+            { ValueType.NegThreeInt, SegmentType.SmallInteger },
+            { ValueType.NegTwoInt, SegmentType.SmallInteger },
+            { ValueType.NegOneInt, SegmentType.SmallInteger },
+            { ValueType.ShortString, SegmentType.String },
+            { ValueType.LongString, SegmentType.String },
+            { ValueType.Blob, SegmentType.Blob },
+            { ValueType.PosFloat, SegmentType.Float },
+            { ValueType.NegFloat, SegmentType.Float },
+            { ValueType.Custom, SegmentType.Custom }
+        };
+
         internal static ValueType ToValueType(byte value)
         {
             return _byteToValueTypeMap[value];
+        }
+
+        internal static SegmentType ToSegmentType(ValueType valueType)
+        {
+            return _valueTypeToSegmentTypeMap[valueType];
+        }
+
+        internal static SegmentType ToSegmentType(byte value)
+        {
+            return ToSegmentType(ToValueType(value));
         }
     }
 }

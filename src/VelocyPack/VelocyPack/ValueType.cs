@@ -1,4 +1,4 @@
-﻿namespace VelocyPack.Format
+﻿namespace VelocyPack
 {
     public enum ValueType
     {

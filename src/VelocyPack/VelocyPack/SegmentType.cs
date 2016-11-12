@@ -1,6 +1,6 @@
-﻿namespace VelocyPack.Format.Parsers
+﻿namespace VelocyPack
 {
-    internal enum ParserType
+    public enum SegmentType
     {
         Miscellaneous,
         Array,

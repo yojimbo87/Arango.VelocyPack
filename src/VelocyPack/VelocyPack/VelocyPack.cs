@@ -1,5 +1,4 @@
-﻿using VelocyPack.Format;
-using VelocyPack.Format.Parsers;
+﻿using VelocyPack.Segments;
 
 namespace VelocyPack
 {
@@ -12,10 +11,22 @@ namespace VelocyPack
 
         public static Segment ToSegment(byte[] data, int startIndex)
         {
-            var valueType = ByteMapper.ToValueType(data[startIndex]);
-            var parser = ParserMapper.GetParser(valueType);
+            var segmentType = ByteMapper.ToSegmentType(data[startIndex]);
+            Segment segment = null;
 
-            return parser.ToSegment(valueType, data, startIndex);
+            switch (segmentType)
+            {
+                case SegmentType.Array:
+                    segment = new ArraySegment();
+                    break;
+                case SegmentType.SmallInteger:
+                    segment = new SmallIntegerSegment();
+                    break;
+            }
+
+            segment.Load(data, startIndex);
+
+            return segment;
         }
     }
 }

@@ -1,30 +1,21 @@
 ﻿using System.Collections.Generic;
-using VelocyPack.Format;
 
 namespace VelocyPack
 {
-    public class Segment
+    public abstract class Segment
     {
-        public int StartIndex { get; set; }
-        public int CursorIndex { get; set; }
-        public ValueType ValueType { get; set; }
-        public IList<Segment> SubSegments { get; set; }
-        public ObjectType ObjectType { get; set; }
+        public int StartIndex { get; internal set; }
+        public int CursorIndex { get; internal set; }
+        public SegmentType Type { get; internal set; }
+        public ValueType ValueType { get; internal set; }
+        public ObjectType ObjectType { get; internal set; }
+        public List<Segment> SubSegments { get; internal set; }
 
-        public void Parse(byte[] data)
+        public void Load(byte[] data)
         {
-            Parse(data, 0);
+            Load(data, 0);
         }
 
-        public void Parse(byte[] data, int startIndex)
-        {
-            var segment = VelocyPack.ToSegment(data, startIndex);
-
-            StartIndex = segment.StartIndex;
-            CursorIndex = segment.CursorIndex;
-            ValueType = segment.ValueType;
-            SubSegments = segment.SubSegments;
-            ObjectType = segment.ObjectType;
-        }
+        abstract public void Load(byte[] data, int startIndex);
     }
 }
