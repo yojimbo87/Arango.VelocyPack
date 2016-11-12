@@ -76,7 +76,8 @@ namespace VelocyPack.Format.Parsers
 
         private static Dictionary<ParserType, IParser> _parserInstanceMap = new Dictionary<ParserType, IParser>
         {
-            { ParserType.Array, new ArrayParser() }
+            { ParserType.Array, new ArrayParser() },
+            { ParserType.SmallInteger, new SmallIntegerParser() },
         };
 
         internal static IParser GetParser(ValueType valueType)

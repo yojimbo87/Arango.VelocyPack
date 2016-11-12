@@ -75,7 +75,7 @@ namespace VelocyPack.Format.Parsers
             // to get byte length of array items we need to subtract two bytes (one for value type byte and one for byte length byte)
             var arrayItemsByteLength = byteLength - 2;
             // compute items count in the array
-            var itemsCount = byteLength / OneByteLength;
+            var itemsCount = arrayItemsByteLength / OneByteLength;
             
             // cycle through array items
             for (int i = 0; i < itemsCount; i++)
