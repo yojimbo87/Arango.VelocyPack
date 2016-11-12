@@ -7,10 +7,15 @@ namespace VelocyPack
     {
         public static Segment ToSegment(byte[] data)
         {
-            var valueType = ByteMapper.ToValueType(data[0]);
+            return ToSegment(data, 0);
+        }
+
+        public static Segment ToSegment(byte[] data, int startIndex)
+        {
+            var valueType = ByteMapper.ToValueType(data[startIndex]);
             var parser = ParserMapper.GetParser(valueType);
 
-            return parser.ToSegment(valueType, data);
+            return parser.ToSegment(valueType, data, startIndex);
         }
     }
 }

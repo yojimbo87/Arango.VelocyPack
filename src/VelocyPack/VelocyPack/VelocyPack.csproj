@@ -46,6 +46,7 @@
     <Compile Include="Format\Parsers\IParser.cs" />
     <Compile Include="Format\Parsers\ParserMapper.cs" />
     <Compile Include="Format\Parsers\ParserType.cs" />
+    <Compile Include="Format\Parsers\SmallIntegerParser.cs" />
     <Compile Include="Segment.cs" />
     <Compile Include="Format\ValueType.cs" />
     <Compile Include="VelocyPack.cs" />

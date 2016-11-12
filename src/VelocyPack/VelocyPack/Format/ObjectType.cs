@@ -4,7 +4,6 @@
     {
         Null,
         Boolean,
-        UInt,
         Int,
         Float,
         Double,

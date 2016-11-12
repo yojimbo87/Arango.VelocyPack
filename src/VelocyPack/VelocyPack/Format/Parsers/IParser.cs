@@ -2,6 +2,6 @@
 {
     internal interface IParser
     {
-        Segment ToSegment(ValueType valueType, byte[] data);
+        Segment ToSegment(ValueType valueType, byte[] data, int startIndex);
     }
 }

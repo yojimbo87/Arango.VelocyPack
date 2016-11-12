@@ -5,24 +5,26 @@ namespace VelocyPack
 {
     public class Segment
     {
-        public byte[] Data { get; set; }
+        public int StartIndex { get; set; }
+        public int CursorIndex { get; set; }
         public ValueType ValueType { get; set; }
         public IList<Segment> SubSegments { get; set; }
         public ObjectType ObjectType { get; set; }
-        public object Object { get; set; }
 
-        public T Deserialize<T>(byte[] data)
+        public void Parse(byte[] data)
         {
-            var segment = VelocyPack.ToSegment(data);
-            var deserializedObject = default(T);
+            Parse(data, 0);
+        }
 
-            Data = segment.Data;
+        public void Parse(byte[] data, int startIndex)
+        {
+            var segment = VelocyPack.ToSegment(data, startIndex);
+
+            StartIndex = segment.StartIndex;
+            CursorIndex = segment.CursorIndex;
             ValueType = segment.ValueType;
             SubSegments = segment.SubSegments;
             ObjectType = segment.ObjectType;
-            Object = segment.Object;
-
-            return deserializedObject;
         }
     }
 }
