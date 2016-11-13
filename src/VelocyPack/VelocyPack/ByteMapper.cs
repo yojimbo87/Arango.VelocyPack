@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VelocyPack.Segments
+namespace VelocyPack
 {
     internal static class ByteMapper
     {

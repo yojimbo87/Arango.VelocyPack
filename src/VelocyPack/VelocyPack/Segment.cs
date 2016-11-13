@@ -8,7 +8,6 @@ namespace VelocyPack
         public int CursorIndex { get; internal set; }
         public SegmentType Type { get; internal set; }
         public ValueType ValueType { get; internal set; }
-        public ObjectType ObjectType { get; internal set; }
         public List<Segment> SubSegments { get; internal set; }
 
         public void Load(byte[] data)

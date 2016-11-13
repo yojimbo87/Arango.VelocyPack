@@ -26,7 +26,7 @@
                 System.Console.Write("    ");
             }
 
-            System.Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.ObjectType);
+            System.Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.Type);
 
             if (segment.SubSegments != null)
             {

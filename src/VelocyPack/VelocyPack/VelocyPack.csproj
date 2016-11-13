@@ -40,8 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectType.cs" />
-    <Compile Include="Segments\ByteMapper.cs" />
+    <Compile Include="ByteMapper.cs" />
     <Compile Include="Segments\ArraySegment.cs" />
     <Compile Include="Segments\SmallIntegerSegment.cs" />
     <Compile Include="ValueType.cs" />

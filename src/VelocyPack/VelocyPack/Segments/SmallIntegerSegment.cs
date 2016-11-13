@@ -6,8 +6,8 @@
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
+            Type = SegmentType.SmallInteger;
             ValueType = ByteMapper.ToValueType(data[startIndex]);
-            ObjectType = ObjectType.Int;
 
             ParseSmallInt(data);
         }
