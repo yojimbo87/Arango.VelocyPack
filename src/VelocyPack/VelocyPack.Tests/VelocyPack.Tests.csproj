@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="SegmentParsing\Arrays\OneByteNonIndexedArrayTests.cs" />
+    <Compile Include="SegmentParsing\Arrays\EmptyArrayTests.cs" />
     <Compile Include="SegmentParsing\Numbers\SmallIntegerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
