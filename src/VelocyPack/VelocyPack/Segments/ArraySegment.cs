@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace VelocyPack.Segments
 {
     public class ArraySegment : Segment
     {
         private const byte OneByteLength = 1;
+        private const byte TwoByteLength = 2;
+        private const byte FourByteLength = 4;
+        private const byte EightByteLength = 8;
 
         public override void Load(byte[] data, int startIndex)
         {
@@ -20,16 +24,10 @@ namespace VelocyPack.Segments
                     ParseEmptyArray(data);
                     break;
                 case ValueType.OneByteNonIndexedArray:
-                    ParseOneByteNonIndexedArray(data);
-                    break;
                 case ValueType.TwoByteNonIndexedArray:
-
-                    break;
                 case ValueType.FourByteNonIndexedArray:
-
-                    break;
                 case ValueType.EightByteNonIndexedArray:
-
+                    ParseNonIndexedArray(data);
                     break;
                 case ValueType.OneByteIndexedArray:
 
@@ -57,23 +55,46 @@ namespace VelocyPack.Segments
         }
 
         // 0x02 : array without index table (all subitems have the same byte length), 1-byte byte length
-        private void ParseOneByteNonIndexedArray(byte[] data)
+        // 0x03 : array without index table (all subitems have the same byte length), 2-byte byte length
+        // 0x04 : array without index table (all subitems have the same byte length), 4-byte byte length
+        // 0x05 : array without index table (all subitems have the same byte length), 8-byte byte length
+        private void ParseNonIndexedArray(byte[] data)
         {
             // shift cursor index past value type byte
             CursorIndex++;
 
-            // parse 1-byte byte length
-            var byteLength = data[CursorIndex];
-            // shift cursor index past byte lenght byte
-            CursorIndex++;
+            long byteLength;
 
-            // to get byte length of array items we need to subtract two bytes (one for value type byte and one for byte length byte)
-            var arrayItemsByteLength = byteLength - 2;
-            // compute items count in the array
-            var itemsCount = arrayItemsByteLength / OneByteLength;
+            // each case performs the following:
+            // parse byte length
+            // shift cursor index past byte lenght byte(s)
 
-            // cycle through array items
-            for (int i = 0; i < itemsCount; i++)
+            switch (ValueType)
+            {
+                case ValueType.OneByteNonIndexedArray:
+                    byteLength = data[CursorIndex];
+                    CursorIndex++;
+                    break;
+                case ValueType.TwoByteNonIndexedArray:
+                    byteLength = BitConverter.ToInt16(data, CursorIndex);
+                    CursorIndex += 2;
+                    break;
+                case ValueType.FourByteNonIndexedArray:
+                    byteLength = BitConverter.ToInt32(data, CursorIndex);
+                    CursorIndex += 4;
+                    break;
+                case ValueType.EightByteNonIndexedArray:
+                    byteLength = BitConverter.ToInt64(data, CursorIndex);
+                    CursorIndex += 8;
+                    break;
+                default:
+                    // TODO: throw custom exception
+                    throw new Exception("Can't parse array byte length.");
+            }
+
+            // cycle through array items until all of them are parsed
+            // number of items in non indexed arrays is not known therefore array needs to be parsed until it's content length is reached
+            while (byteLength != (CursorIndex - StartIndex))
             {
                 // parse array item into segment
                 var subSegment = VelocyPack.ToSegment(data, CursorIndex);

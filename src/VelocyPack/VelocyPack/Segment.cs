@@ -10,6 +10,14 @@ namespace VelocyPack
         public ValueType ValueType { get; internal set; }
         public List<Segment> SubSegments { get; internal set; }
 
+        public int ByteLength
+        {
+            get
+            {
+                return CursorIndex - StartIndex;
+            }
+        }
+
         public void Load(byte[] data)
         {
             Load(data, 0);
