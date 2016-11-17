@@ -27,6 +27,9 @@ namespace VelocyPack
                 case SegmentType.CompactArray:
                     segment = new CompactArraySegment();
                     break;
+                case SegmentType.Boolean:
+                    segment = new BooleanSegment();
+                    break;
                 case SegmentType.SmallInteger:
                     segment = new SmallIntegerSegment();
                     break;
