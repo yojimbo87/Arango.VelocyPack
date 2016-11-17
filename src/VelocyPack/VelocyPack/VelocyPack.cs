@@ -11,7 +11,7 @@ namespace VelocyPack
 
         public static Segment ToSegment(byte[] data, int startIndex)
         {
-            var segmentType = TypeMapper.ToSegmentType(data[startIndex]);
+            var segmentType = TypeConverter.ToSegmentType(data[startIndex]);
             Segment segment = null;
 
             switch (segmentType)

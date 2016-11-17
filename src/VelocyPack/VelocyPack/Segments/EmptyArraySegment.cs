@@ -10,7 +10,7 @@ namespace VelocyPack.Segments
             StartIndex = startIndex;
             CursorIndex = startIndex;
             Type = SegmentType.EmptyArray;
-            ValueType = TypeMapper.ToValueType(data[startIndex]);
+            ValueType = TypeConverter.ToValueType(data[startIndex]);
             SubSegments = new List<Segment>();
 
             switch (ValueType)

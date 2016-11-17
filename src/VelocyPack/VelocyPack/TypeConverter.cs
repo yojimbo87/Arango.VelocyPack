@@ -2,7 +2,7 @@
 
 namespace VelocyPack
 {
-    internal static class TypeMapper
+    internal static class TypeConverter
     {
         private static Dictionary<byte, ValueType> _byteToValueTypeMap = new Dictionary<byte, ValueType>
         {
