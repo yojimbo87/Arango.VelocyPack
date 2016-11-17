@@ -17,15 +17,7 @@ namespace VelocyPack.Segments
             ValueType = TypeConverter.ToValueType(data[startIndex]);
             SubSegments = new List<Segment>();
 
-            switch (ValueType)
-            {
-                case ValueType.CompactNonIndexedArray:
-                    ParseCompactArray(data);
-                    break;
-                default:
-                    // TODO: throw custom exception
-                    throw new Exception("Data does not contain compact array segment.");
-            }
+            ParseCompactArray(data);
         }
 
         // 0x13 : compact array, no index table

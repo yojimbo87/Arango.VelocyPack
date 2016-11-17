@@ -14,15 +14,7 @@ namespace VelocyPack.Segments
             ValueType = TypeConverter.ToValueType(data[startIndex]);
             SubSegments = new List<Segment>();
 
-            switch (ValueType)
-            {
-                case ValueType.EmptyArray:
-                    ParseEmptyArray(data);
-                    break;
-                default:
-                    // TODO: throw custom exception
-                    throw new Exception("Data does not contain non indexed array segment.");
-            }
+            ParseEmptyArray(data);
         }
 
         // 0x01 : empty array

@@ -13,16 +13,7 @@ namespace VelocyPack.Segments
             Type = SegmentType.Boolean;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
 
-            switch (ValueType)
-            {
-                case ValueType.False:
-                case ValueType.True:
-                    ParseBooleanValue(data);
-                    break;
-                default:
-                    // TODO: throw custom exception
-                    throw new Exception("Data does not contain boolean segment.");
-            }
+            ParseBooleanValue(data);
         }
 
         private void ParseBooleanValue(byte[] data)

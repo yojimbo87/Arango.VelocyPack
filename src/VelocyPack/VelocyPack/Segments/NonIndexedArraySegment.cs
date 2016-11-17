@@ -15,18 +15,7 @@ namespace VelocyPack.Segments
             ValueType = TypeConverter.ToValueType(data[startIndex]);
             SubSegments = new List<Segment>();
 
-            switch (ValueType)
-            {
-                case ValueType.OneByteNonIndexedArray:
-                case ValueType.TwoByteNonIndexedArray:
-                case ValueType.FourByteNonIndexedArray:
-                case ValueType.EightByteNonIndexedArray:
-                    ParseFixedByteNonIndexedArray(data);
-                    break;
-                default:
-                    // TODO: throw custom exception
-                    throw new Exception("Data does not contain non indexed array segment.");
-            }
+            ParseFixedByteNonIndexedArray(data);
         }
 
         // 0x02 : array without index table (all subitems have the same byte length), 1-byte byte length
