@@ -282,7 +282,7 @@ namespace VelocyPack
             { ValueType.FourByteIndexedSortedObject, SegmentType.Object },
             { ValueType.EightByteIndexedSortedObject, SegmentType.Object },
             { ValueType.Unused, SegmentType.Miscellaneous },
-            { ValueType.CompactNonIndexedArray, SegmentType.NonIndexedArray },
+            { ValueType.CompactNonIndexedArray, SegmentType.CompactArray },
             { ValueType.CompactNonIndexedObject, SegmentType.Object },
             { ValueType.Reserved, SegmentType.Miscellaneous },
             { ValueType.Illegal, SegmentType.Miscellaneous },

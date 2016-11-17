@@ -1,4 +1,5 @@
-﻿using VelocyPack.Segments;
+﻿using System;
+using VelocyPack.Segments;
 
 namespace VelocyPack
 {
@@ -22,9 +23,15 @@ namespace VelocyPack
                 case SegmentType.NonIndexedArray:
                     segment = new NonIndexedArraySegment();
                     break;
+                case SegmentType.CompactArray:
+                    segment = new CompactArraySegment();
+                    break;
                 case SegmentType.SmallInteger:
                     segment = new SmallIntegerSegment();
                     break;
+                default:
+                    // TODO: throw custom exception
+                    throw new Exception("Unknown segment.");
             }
 
             segment.Load(data, startIndex);

@@ -56,7 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SegmentParsing\Arrays\CompactNonIndexedArrayTests.cs" />
+    <Compile Include="SegmentParsing\Arrays\CompactArrayTests.cs" />
     <Compile Include="SegmentParsing\Arrays\OneByteNonIndexedArrayTests.cs" />
     <Compile Include="SegmentParsing\Arrays\EmptyArrayTests.cs" />
     <Compile Include="SegmentParsing\Arrays\TwoByteNonIndexedArrayTests.cs" />

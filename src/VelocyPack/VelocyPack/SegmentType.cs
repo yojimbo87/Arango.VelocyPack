@@ -5,6 +5,7 @@
         Miscellaneous,
         EmptyArray,
         NonIndexedArray,
+        CompactArray,
         IndexedArray,
         Object,
         Boolean,
