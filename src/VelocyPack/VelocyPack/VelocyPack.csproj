@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ByteMapper.cs" />
-    <Compile Include="Segments\ArraySegment.cs" />
+    <Compile Include="TypeMapper.cs" />
+    <Compile Include="Segments\EmptyArraySegment.cs" />
+    <Compile Include="Segments\NonIndexedArraySegment.cs" />
     <Compile Include="Segments\SmallIntegerSegment.cs" />
     <Compile Include="ValueType.cs" />
     <Compile Include="Segment.cs" />

@@ -3,7 +3,9 @@
     public enum SegmentType
     {
         Miscellaneous,
-        Array,
+        EmptyArray,
+        NonIndexedArray,
+        IndexedArray,
         Object,
         Boolean,
         SignedByteInteger,

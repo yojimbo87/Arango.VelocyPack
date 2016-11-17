@@ -19,7 +19,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             // array
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(6, segment.CursorIndex);
-            Assert.AreEqual(SegmentType.Array, segment.Type);
+            Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
             Assert.AreEqual(ValueType.TwoByteNonIndexedArray, segment.ValueType);
             Assert.AreEqual(3, segment.SubSegments.Count);
 

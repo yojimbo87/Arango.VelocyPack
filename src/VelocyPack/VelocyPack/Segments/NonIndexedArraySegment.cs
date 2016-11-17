@@ -3,55 +3,29 @@ using System.Collections.Generic;
 
 namespace VelocyPack.Segments
 {
-    public class ArraySegment : Segment
+    public class NonIndexedArraySegment : Segment
     {
-        private const byte OneByteLength = 1;
-        private const byte TwoByteLength = 2;
-        private const byte FourByteLength = 4;
-        private const byte EightByteLength = 8;
-
         public override void Load(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
-            Type = SegmentType.Array;
-            ValueType = ByteMapper.ToValueType(data[startIndex]);
+            Type = SegmentType.NonIndexedArray;
+            ValueType = TypeMapper.ToValueType(data[startIndex]);
             SubSegments = new List<Segment>();
 
             switch (ValueType)
             {
-                case ValueType.EmptyArray:
-                    ParseEmptyArray(data);
-                    break;
                 case ValueType.OneByteNonIndexedArray:
                 case ValueType.TwoByteNonIndexedArray:
                 case ValueType.FourByteNonIndexedArray:
                 case ValueType.EightByteNonIndexedArray:
+                case ValueType.CompactNonIndexedArray:
                     ParseNonIndexedArray(data);
                     break;
-                case ValueType.OneByteIndexedArray:
-
-                    break;
-                case ValueType.TwoByteIndexedArray:
-
-                    break;
-                case ValueType.FourByteIndexedArray:
-
-                    break;
-                case ValueType.EightByteIndexedArray:
-
-                    break;
-                case ValueType.CompactNonIndexedArray:
-
-                    break;
+                default:
+                    // TODO: throw custom exception
+                    throw new Exception("Data does not contain non indexed array segment.");
             }
-        }
-
-        // 0x01 : empty array
-        private void ParseEmptyArray(byte[] data)
-        {
-            // shift cursor index past value type byte
-            CursorIndex++;
         }
 
         // 0x02 : array without index table (all subitems have the same byte length), 1-byte byte length
@@ -66,9 +40,8 @@ namespace VelocyPack.Segments
             long byteLength;
 
             // each case performs the following:
-            // parse byte length
-            // shift cursor index past byte lenght byte(s)
-
+            // - parse byte length
+            // - shift cursor index past byte lenght byte(s)
             switch (ValueType)
             {
                 case ValueType.OneByteNonIndexedArray:

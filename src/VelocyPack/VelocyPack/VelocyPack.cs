@@ -11,13 +11,16 @@ namespace VelocyPack
 
         public static Segment ToSegment(byte[] data, int startIndex)
         {
-            var segmentType = ByteMapper.ToSegmentType(data[startIndex]);
+            var segmentType = TypeMapper.ToSegmentType(data[startIndex]);
             Segment segment = null;
 
             switch (segmentType)
             {
-                case SegmentType.Array:
-                    segment = new ArraySegment();
+                case SegmentType.EmptyArray:
+                    segment = new EmptyArraySegment();
+                    break;
+                case SegmentType.NonIndexedArray:
+                    segment = new NonIndexedArraySegment();
                     break;
                 case SegmentType.SmallInteger:
                     segment = new SmallIntegerSegment();

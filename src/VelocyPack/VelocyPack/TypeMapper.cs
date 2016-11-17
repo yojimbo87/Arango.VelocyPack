@@ -2,7 +2,7 @@
 
 namespace VelocyPack
 {
-    internal static class ByteMapper
+    internal static class TypeMapper
     {
         private static Dictionary<byte, ValueType> _byteToValueTypeMap = new Dictionary<byte, ValueType>
         {
@@ -267,22 +267,22 @@ namespace VelocyPack
         private static Dictionary<ValueType, SegmentType> _valueTypeToSegmentTypeMap = new Dictionary<ValueType, SegmentType>
         {
             { ValueType.None, SegmentType.Miscellaneous },
-            { ValueType.EmptyArray, SegmentType.Array },
-            { ValueType.OneByteNonIndexedArray, SegmentType.Array },
-            { ValueType.TwoByteNonIndexedArray, SegmentType.Array },
-            { ValueType.FourByteNonIndexedArray, SegmentType.Array },
-            { ValueType.EightByteNonIndexedArray, SegmentType.Array },
-            { ValueType.OneByteIndexedArray, SegmentType.Array },
-            { ValueType.TwoByteIndexedArray, SegmentType.Array },
-            { ValueType.FourByteIndexedArray, SegmentType.Array },
-            { ValueType.EightByteIndexedArray, SegmentType.Array },
+            { ValueType.EmptyArray, SegmentType.EmptyArray },
+            { ValueType.OneByteNonIndexedArray, SegmentType.NonIndexedArray },
+            { ValueType.TwoByteNonIndexedArray, SegmentType.NonIndexedArray },
+            { ValueType.FourByteNonIndexedArray, SegmentType.NonIndexedArray },
+            { ValueType.EightByteNonIndexedArray, SegmentType.NonIndexedArray },
+            { ValueType.OneByteIndexedArray, SegmentType.IndexedArray },
+            { ValueType.TwoByteIndexedArray, SegmentType.IndexedArray },
+            { ValueType.FourByteIndexedArray, SegmentType.IndexedArray },
+            { ValueType.EightByteIndexedArray, SegmentType.IndexedArray },
             { ValueType.EmptyObject, SegmentType.Object },
             { ValueType.OneByteIndexedSortedObject, SegmentType.Object },
             { ValueType.TwoByteIndexedSortedObject, SegmentType.Object },
             { ValueType.FourByteIndexedSortedObject, SegmentType.Object },
             { ValueType.EightByteIndexedSortedObject, SegmentType.Object },
             { ValueType.Unused, SegmentType.Miscellaneous },
-            { ValueType.CompactNonIndexedArray, SegmentType.Array },
+            { ValueType.CompactNonIndexedArray, SegmentType.NonIndexedArray },
             { ValueType.CompactNonIndexedObject, SegmentType.Object },
             { ValueType.Reserved, SegmentType.Miscellaneous },
             { ValueType.Illegal, SegmentType.Miscellaneous },
