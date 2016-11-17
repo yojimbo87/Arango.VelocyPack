@@ -21,7 +21,7 @@ Below is a table which consists of implementation progress for three main parts 
 | TwoByteIndexedArray            |         |                 |               |
 | FourByteIndexedArray           |         |                 |               |
 | EightByteIndexedArray          |         |                 |               |
-| EmptyObject                    | DONE    |                 |               |
+| EmptyObject                    |         |                 |               |
 | OneByteIndexedSortedObject     |         |                 |               |
 | TwoByteIndexedSortedObject     |         |                 |               |
 | FourByteIndexedSortedObject    |         |                 |               |
@@ -31,7 +31,7 @@ Below is a table which consists of implementation progress for three main parts 
 | CompactNonIndexedObject        |         |                 |               |
 | Reserved                       |         |                 |               |
 | Illegal                        |         |                 |               |
-| Null                           |         |                 |               |
+| Null                           | DONE    |                 |               |
 | False                          | DONE    |                 |               |
 | True                           | DONE    |                 |               |
 | Double                         |         |                 |               |

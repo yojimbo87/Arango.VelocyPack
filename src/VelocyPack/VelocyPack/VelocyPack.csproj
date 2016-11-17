@@ -46,6 +46,7 @@
     <Compile Include="Converters\TypeConverter.cs" />
     <Compile Include="Segments\EmptyArraySegment.cs" />
     <Compile Include="Segments\NonIndexedArraySegment.cs" />
+    <Compile Include="Segments\NullSegment.cs" />
     <Compile Include="Segments\SmallIntegerSegment.cs" />
     <Compile Include="ValueType.cs" />
     <Compile Include="Segment.cs" />

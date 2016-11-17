@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using VelocyPack.Converters;
+﻿using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
@@ -13,11 +11,6 @@ namespace VelocyPack.Segments
             Type = SegmentType.Boolean;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
 
-            ParseBooleanValue(data);
-        }
-
-        private void ParseBooleanValue(byte[] data)
-        {
             // shift cursor index past value type byte
             CursorIndex++;
         }

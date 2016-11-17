@@ -8,6 +8,7 @@
         CompactArray,
         IndexedArray,
         Object,
+        Null,
         Boolean,
         SignedByteInteger,
         UnsignedByteInteger,

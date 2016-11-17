@@ -11,14 +11,7 @@ namespace VelocyPack.Segments
             Type = SegmentType.SmallInteger;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
 
-            ParseSmallInt(data);
-        }
-
-        private void ParseSmallInt(byte[] data)
-        {
-            var smallIntByte = data[CursorIndex];
-
-            // shift cursor index past value byte
+            // shift cursor index past value type byte
             CursorIndex++;
         }
     }

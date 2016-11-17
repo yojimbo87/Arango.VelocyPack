@@ -27,6 +27,9 @@ namespace VelocyPack
                 case SegmentType.CompactArray:
                     segment = new CompactArraySegment();
                     break;
+                case SegmentType.Null:
+                    segment = new NullSegment();
+                    break;
                 case SegmentType.Boolean:
                     segment = new BooleanSegment();
                     break;
@@ -35,7 +38,7 @@ namespace VelocyPack
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("Unknown segment.");
+                    throw new Exception("Data contains unknown segment.");
             }
 
             segment.Load(data, startIndex);

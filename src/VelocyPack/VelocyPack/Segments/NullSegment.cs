@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using VelocyPack.Converters;
+﻿using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
-    public class EmptyArraySegment : Segment
+    public class NullSegment : Segment
     {
         public override void Load(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
-            Type = SegmentType.EmptyArray;
+            Type = SegmentType.Null;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
-            SubSegments = new List<Segment>();
 
             // shift cursor index past value type byte
             CursorIndex++;
