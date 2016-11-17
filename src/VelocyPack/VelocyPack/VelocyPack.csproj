@@ -40,9 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryConverter.cs" />
+    <Compile Include="Converters\BinaryConverter.cs" />
     <Compile Include="Segments\CompactArraySegment.cs" />
-    <Compile Include="TypeConverter.cs" />
+    <Compile Include="Converters\TypeConverter.cs" />
     <Compile Include="Segments\EmptyArraySegment.cs" />
     <Compile Include="Segments\NonIndexedArraySegment.cs" />
     <Compile Include="Segments\SmallIntegerSegment.cs" />

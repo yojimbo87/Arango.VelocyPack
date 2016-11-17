@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VelocyPack
+namespace VelocyPack.Converters
 {
     internal static class TypeConverter
     {

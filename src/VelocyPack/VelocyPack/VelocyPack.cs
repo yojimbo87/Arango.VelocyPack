@@ -1,4 +1,5 @@
 ﻿using System;
+using VelocyPack.Converters;
 using VelocyPack.Segments;
 
 namespace VelocyPack

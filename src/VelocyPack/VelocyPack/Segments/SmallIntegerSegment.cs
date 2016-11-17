@@ -1,4 +1,6 @@
-﻿namespace VelocyPack.Segments
+﻿using VelocyPack.Converters;
+
+namespace VelocyPack.Segments
 {
     public class SmallIntegerSegment : Segment
     {

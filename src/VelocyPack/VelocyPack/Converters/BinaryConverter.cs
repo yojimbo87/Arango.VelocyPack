@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace VelocyPack
+namespace VelocyPack.Converters
 {
     internal static class BinaryConverter
     {
