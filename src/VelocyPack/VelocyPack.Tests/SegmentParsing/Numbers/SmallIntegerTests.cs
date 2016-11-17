@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Segments;
 
 namespace VelocyPack.Tests.SegmentParsing.Numbers
 {
@@ -16,6 +17,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -35,6 +37,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -54,6 +57,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -73,6 +77,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -92,6 +97,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -111,6 +117,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -130,6 +137,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -149,6 +157,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -168,6 +177,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -187,6 +197,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -206,6 +217,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -225,6 +237,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -244,6 +257,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -263,6 +277,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -282,6 +297,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -301,6 +317,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<SmallIntegerSegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);

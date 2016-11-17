@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Segments;
 
 namespace VelocyPack.Tests.SegmentParsing.Arrays
 {
@@ -16,6 +17,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             var segment = VelocyPack.ToSegment(data);
 
             // then
+            Assert.IsInstanceOf<EmptyArraySegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);

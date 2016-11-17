@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Segments;
 
 namespace VelocyPack.Tests.SegmentParsing.Arrays
 {
@@ -17,6 +18,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
 
             // then
             // array
+            Assert.IsInstanceOf<NonIndexedArraySegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(8, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
@@ -27,6 +29,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             // first small integer sub segment
             var subSegment1 = segment.SubSegments[0];
 
+            Assert.IsInstanceOf<SmallIntegerSegment>(subSegment1);
             Assert.AreEqual(5, subSegment1.StartIndex);
             Assert.AreEqual(6, subSegment1.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, subSegment1.Type);
@@ -36,6 +39,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             // second small integer sub segment
             var subSegment2 = segment.SubSegments[1];
 
+            Assert.IsInstanceOf<SmallIntegerSegment>(subSegment2);
             Assert.AreEqual(6, subSegment2.StartIndex);
             Assert.AreEqual(7, subSegment2.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, subSegment2.Type);
@@ -45,6 +49,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             // third small integer sub segment
             var subSegment3 = segment.SubSegments[2];
 
+            Assert.IsInstanceOf<SmallIntegerSegment>(subSegment3);
             Assert.AreEqual(7, subSegment3.StartIndex);
             Assert.AreEqual(8, subSegment3.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, subSegment3.Type);
