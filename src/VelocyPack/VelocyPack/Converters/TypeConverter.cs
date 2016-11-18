@@ -285,7 +285,7 @@ namespace VelocyPack.Converters
             { ValueType.CompactNonIndexedArray, SegmentType.CompactArray },
             { ValueType.CompactNonIndexedObject, SegmentType.Object },
             { ValueType.Reserved, SegmentType.Miscellaneous },
-            { ValueType.Illegal, SegmentType.Miscellaneous },
+            { ValueType.Illegal, SegmentType.Illegal },
             { ValueType.Null, SegmentType.Null },
             { ValueType.False, SegmentType.Boolean },
             { ValueType.True, SegmentType.Boolean },

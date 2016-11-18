@@ -30,6 +30,9 @@ namespace VelocyPack
                 case SegmentType.CompactArray:
                     segment = new CompactArraySegment();
                     break;
+                case SegmentType.Illegal:
+                    segment = new IllegalSegment();
+                    break;
                 case SegmentType.Null:
                     segment = new NullSegment();
                     break;

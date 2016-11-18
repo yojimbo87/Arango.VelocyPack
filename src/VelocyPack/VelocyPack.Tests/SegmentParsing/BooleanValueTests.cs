@@ -4,7 +4,7 @@ using VelocyPack.Segments;
 namespace VelocyPack.Tests.SegmentParsing
 {
     [TestFixture]
-    public class BooleanTests
+    public class BooleanValueTests
     {
         [Test]
         public void ParseFalseBooleanValue()

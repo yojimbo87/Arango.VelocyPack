@@ -26,11 +26,11 @@ Below is a table which consists of implementation progress for three main parts 
 | TwoByteIndexedSortedObject     |         |                 |               |
 | FourByteIndexedSortedObject    |         |                 |               |
 | EightByteIndexedSortedObject   |         |                 |               |
-| Unused                         |         |                 |               |
+| Unused                         | N/A     |                 |               |
 | CompactNonIndexedArray         | DONE    |                 |               |
 | CompactNonIndexedObject        |         |                 |               |
-| Reserved                       |         |                 |               |
-| Illegal                        |         |                 |               |
+| Reserved                       | N/A     |                 |               |
+| Illegal                        | DONE    |                 |               |
 | Null                           | DONE    |                 |               |
 | False                          | DONE    |                 |               |
 | True                           | DONE    |                 |               |

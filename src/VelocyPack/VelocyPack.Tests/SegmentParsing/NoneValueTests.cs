@@ -4,7 +4,7 @@ using VelocyPack.Segments;
 namespace VelocyPack.Tests.SegmentParsing
 {
     [TestFixture]
-    public class NoneTests
+    public class NoneValueTests
     {
         [Test]
         public void ParseNoneValue()
