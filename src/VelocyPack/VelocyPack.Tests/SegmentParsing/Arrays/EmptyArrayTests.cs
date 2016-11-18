@@ -14,16 +14,17 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             var data = new byte[] { 0x01 };
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VelocyPack.ToSegment<EmptyArraySegment>(data);
 
             // then
             Assert.IsInstanceOf<EmptyArraySegment>(segment);
+            Assert.IsInstanceOf<IArraySegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(1, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.EmptyArray, segment.Type);
             Assert.AreEqual(ValueType.EmptyArray, segment.ValueType);
-            Assert.AreEqual(0, segment.SubSegments.Count);
+            Assert.AreEqual(0, segment.Items.Count);
         }
     }
 }

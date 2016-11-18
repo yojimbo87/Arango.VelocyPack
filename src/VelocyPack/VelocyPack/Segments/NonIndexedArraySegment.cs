@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
-    public class NonIndexedArraySegment : Segment
+    public class NonIndexedArraySegment : Segment, IArraySegment
     {
+        public List<Segment> Items { get; set; }
+
         public override void Load(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
             Type = SegmentType.NonIndexedArray;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
-            SubSegments = new List<Segment>();
+            Items = new List<Segment>();
 
             ParseFixedByteNonIndexedArray(data);
         }
@@ -66,7 +67,7 @@ namespace VelocyPack.Segments
 
                 // array segment cursor index needs to be shifted to recently parse sub segment cursor index
                 CursorIndex = subSegment.CursorIndex;
-                SubSegments.Add(subSegment);
+                Items.Add(subSegment);
             }
         }
     }

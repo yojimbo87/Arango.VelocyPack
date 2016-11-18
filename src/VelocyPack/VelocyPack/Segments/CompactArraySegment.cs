@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
-    public class CompactArraySegment : Segment
+    public class CompactArraySegment : Segment, IArraySegment
     {
-        public ulong SubSegmentCount { get; private set; }
+        public List<Segment> Items { get; set; }
+        public ulong ItemCount { get; private set; }
 
         public override void Load(byte[] data, int startIndex)
         {
@@ -15,7 +15,7 @@ namespace VelocyPack.Segments
             CursorIndex = startIndex;
             Type = SegmentType.CompactArray;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
-            SubSegments = new List<Segment>();
+            Items = new List<Segment>();
 
             ParseCompactArray(data);
         }
@@ -35,7 +35,7 @@ namespace VelocyPack.Segments
             // to find out length of the array payload
             var subValuesCountBytes = ParseSubValuesCountBytes(data, byteLength);
             // parse NRITEMS value
-            SubSegmentCount = BinaryConverter.ToUInt64(subValuesCountBytes);
+            ItemCount = BinaryConverter.ToUInt64(subValuesCountBytes);
             // parse array payload
             ParseSubValues(data, byteLength - (ulong)subValuesCountBytes.Length);
 
@@ -102,7 +102,7 @@ namespace VelocyPack.Segments
 
                 // array segment cursor index needs to be shifted to recently parse sub segment cursor index
                 CursorIndex = subSegment.CursorIndex;
-                SubSegments.Add(subSegment);
+                Items.Add(subSegment);
             }
         }
     }

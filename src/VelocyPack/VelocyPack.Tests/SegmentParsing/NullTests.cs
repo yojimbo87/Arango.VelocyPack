@@ -23,7 +23,6 @@ namespace VelocyPack.Tests.SegmentParsing
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.Null, segment.Type);
             Assert.AreEqual(ValueType.Null, segment.ValueType);
-            Assert.IsNull(segment.SubSegments);
         }
     }
 }

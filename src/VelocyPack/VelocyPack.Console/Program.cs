@@ -1,4 +1,6 @@
-﻿namespace VelocyPack.Console
+﻿using VelocyPack.Segments;
+
+namespace VelocyPack.Console
 {
     class Program
     {
@@ -28,13 +30,13 @@
 
             System.Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.Type);
 
-            if (segment.SubSegments != null)
+            if ((segment is IArraySegment) && (((IArraySegment)segment).Items != null))
             {
                 indentLevel++;
 
-                foreach (var subSegment in segment.SubSegments)
+                foreach (var item in ((IArraySegment)segment).Items)
                 {
-                    PrintSegment(subSegment, indentLevel);
+                    PrintSegment(item, indentLevel);
                 }
             }
         }

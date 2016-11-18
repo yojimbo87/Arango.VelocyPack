@@ -48,5 +48,10 @@ namespace VelocyPack
 
             return segment;
         }
+
+        public static T ToSegment<T>(byte[] data) where T : Segment
+        {
+            return (T)ToSegment(data);
+        }
     }
 }

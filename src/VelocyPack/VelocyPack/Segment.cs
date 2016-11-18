@@ -1,22 +1,12 @@
-﻿using System.Collections.Generic;
-
-namespace VelocyPack
+﻿namespace VelocyPack
 {
     public abstract class Segment
     {
         public int StartIndex { get; internal set; }
         public int CursorIndex { get; internal set; }
+        public int ByteLength { get { return CursorIndex - StartIndex; } }
         public SegmentType Type { get; internal set; }
         public ValueType ValueType { get; internal set; }
-        public List<Segment> SubSegments { get; internal set; }
-
-        public int ByteLength
-        {
-            get
-            {
-                return CursorIndex - StartIndex;
-            }
-        }
 
         public void Load(byte[] data)
         {
