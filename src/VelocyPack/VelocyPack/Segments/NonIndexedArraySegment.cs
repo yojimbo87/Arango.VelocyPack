@@ -4,10 +4,8 @@ using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
-    public class NonIndexedArraySegment : Segment, IArraySegment
+    public class NonIndexedArraySegment : ArraySegment
     {
-        public List<Segment> Items { get; set; }
-
         public override void Load(byte[] data, int startIndex)
         {
             StartIndex = startIndex;

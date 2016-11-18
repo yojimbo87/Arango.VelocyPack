@@ -4,9 +4,8 @@ using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
-    public class CompactArraySegment : Segment, IArraySegment
+    public class CompactArraySegment : ArraySegment
     {
-        public List<Segment> Items { get; set; }
         public ulong ItemCount { get; private set; }
 
         public override void Load(byte[] data, int startIndex)

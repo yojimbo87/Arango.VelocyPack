@@ -19,7 +19,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             // then
             // array
             Assert.IsInstanceOf<NonIndexedArraySegment>(segment);
-            Assert.IsInstanceOf<IArraySegment>(segment);
+            Assert.IsInstanceOf<ArraySegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
             Assert.AreEqual(5, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);

@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\BinaryConverter.cs" />
-    <Compile Include="Segments\IArraySegment.cs" />
+    <Compile Include="Segments\Base\ArraySegment.cs" />
     <Compile Include="Segments\BooleanSegment.cs" />
     <Compile Include="Segments\CompactArraySegment.cs" />
     <Compile Include="Converters\TypeConverter.cs" />
@@ -51,8 +51,8 @@
     <Compile Include="Segments\NullSegment.cs" />
     <Compile Include="Segments\SmallIntegerSegment.cs" />
     <Compile Include="ValueType.cs" />
-    <Compile Include="Segment.cs" />
-    <Compile Include="SegmentType.cs" />
+    <Compile Include="Segments\Base\Segment.cs" />
+    <Compile Include="Segments\Base\SegmentType.cs" />
     <Compile Include="VelocyPack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

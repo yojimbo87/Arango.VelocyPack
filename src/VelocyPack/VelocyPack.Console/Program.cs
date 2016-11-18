@@ -1,6 +1,4 @@
-﻿using VelocyPack.Segments;
-
-namespace VelocyPack.Console
+﻿namespace VelocyPack.Console
 {
     class Program
     {
@@ -30,11 +28,11 @@ namespace VelocyPack.Console
 
             System.Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.Type);
 
-            if ((segment is IArraySegment) && (((IArraySegment)segment).Items != null))
+            if ((segment is ArraySegment) && (((ArraySegment)segment).Items != null))
             {
                 indentLevel++;
 
-                foreach (var item in ((IArraySegment)segment).Items)
+                foreach (var item in ((ArraySegment)segment).Items)
                 {
                     PrintSegment(item, indentLevel);
                 }
