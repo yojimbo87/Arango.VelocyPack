@@ -11,7 +11,7 @@ Below is a table which consists of implementation progress for three main parts 
 
 | Value type                     | Parsing | Deserialization | Serialization |
 |--------------------------------|:-------:|:---------------:|:-------------:|
-| None                           |         |                 |               |
+| None                           | DONE    |                 |               |
 | EmptyArray                     | DONE    |                 |               |
 | OneByteNonIndexedArray         | DONE    |                 |               |
 | TwoByteNonIndexedArray         | DONE    |                 |               |

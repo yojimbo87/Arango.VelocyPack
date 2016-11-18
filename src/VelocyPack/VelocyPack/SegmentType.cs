@@ -2,7 +2,7 @@
 {
     public enum SegmentType
     {
-        Miscellaneous,
+        None,
         EmptyArray,
         NonIndexedArray,
         CompactArray,
@@ -19,6 +19,7 @@
         Blob,
         External,
         DateTime,
-        Custom
+        Custom,
+        Miscellaneous
     }
 }

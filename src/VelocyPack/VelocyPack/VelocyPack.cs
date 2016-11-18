@@ -18,6 +18,9 @@ namespace VelocyPack
 
             switch (segmentType)
             {
+                case SegmentType.None:
+                    segment = new NoneSegment();
+                    break;
                 case SegmentType.EmptyArray:
                     segment = new EmptyArraySegment();
                     break;

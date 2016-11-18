@@ -63,6 +63,7 @@
     <Compile Include="SegmentParsing\Arrays\FourByteNonIndexedArrayTests.cs" />
     <Compile Include="SegmentParsing\Arrays\EightByteNonIndexedArrayTests.cs" />
     <Compile Include="SegmentParsing\BooleanTests.cs" />
+    <Compile Include="SegmentParsing\NoneTests.cs" />
     <Compile Include="SegmentParsing\NullTests.cs" />
     <Compile Include="SegmentParsing\Numbers\SmallIntegerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

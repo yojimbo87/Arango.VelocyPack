@@ -266,7 +266,7 @@ namespace VelocyPack.Converters
 
         private static Dictionary<ValueType, SegmentType> _valueTypeToSegmentTypeMap = new Dictionary<ValueType, SegmentType>
         {
-            { ValueType.None, SegmentType.Miscellaneous },
+            { ValueType.None, SegmentType.None },
             { ValueType.EmptyArray, SegmentType.EmptyArray },
             { ValueType.OneByteNonIndexedArray, SegmentType.NonIndexedArray },
             { ValueType.TwoByteNonIndexedArray, SegmentType.NonIndexedArray },
