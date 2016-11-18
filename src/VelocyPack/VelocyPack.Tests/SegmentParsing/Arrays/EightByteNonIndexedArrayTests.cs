@@ -7,7 +7,7 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
     public class EightByteNonIndexedArrayTests
     {
         [Test]
-        public void ParseArrayWithSmallIntegerSubSegments()
+        public void ParseArray_With_SmallIntegerItems()
         {
             // given
             // hex dump of [1, 2, 3]
