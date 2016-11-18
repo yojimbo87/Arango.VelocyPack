@@ -32,11 +32,11 @@ namespace VelocyPack.Segments
             // parse NRITEMS bytes 
             // - these bytes are at the end of segment, but need to be parsed before array sub values in order
             // to find out length of the array payload
-            var subValuesCountBytes = ParseSubValuesCountBytes(data, byteLength);
+            var subValuesCountBytes = ParseItemCountBytes(data, byteLength);
             // parse NRITEMS value
             ItemCount = BinaryConverter.ToUInt64(subValuesCountBytes);
             // parse array payload
-            ParseSubValues(data, byteLength - (ulong)subValuesCountBytes.Length);
+            ParseItems(data, byteLength - (ulong)subValuesCountBytes.Length);
 
             // shift cursor index past NRITEMS bytes to reach the end of segment
             CursorIndex += subValuesCountBytes.Length;
@@ -67,7 +67,7 @@ namespace VelocyPack.Segments
             return BinaryConverter.ToBytes(byteLengthBits);
         }
 
-        private byte[] ParseSubValuesCountBytes(byte[] data, ulong byteLength)
+        private byte[] ParseItemCountBytes(byte[] data, ulong byteLength)
         {
             var subValuesCountBits = new List<bool>();
 
@@ -88,21 +88,6 @@ namespace VelocyPack.Segments
             }
 
             return BinaryConverter.ToBytes(subValuesCountBits);
-        }
-
-        private void ParseSubValues(byte[] data, ulong byteLength)
-        {
-            // cycle through array items until all of them are parsed
-            // array needs to be parsed until it's BYTELENGTH value is reached
-            while (byteLength != (ulong)(CursorIndex - StartIndex))
-            {
-                // parse array item into segment
-                var subSegment = VelocyPack.ToSegment(data, CursorIndex);
-
-                // array segment cursor index needs to be shifted to recently parse sub segment cursor index
-                CursorIndex = subSegment.CursorIndex;
-                Items.Add(subSegment);
-            }
         }
     }
 }
