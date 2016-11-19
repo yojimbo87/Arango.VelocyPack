@@ -45,6 +45,7 @@
     <Compile Include="Segments\BooleanSegment.cs" />
     <Compile Include="Segments\CompactArraySegment.cs" />
     <Compile Include="Converters\TypeConverter.cs" />
+    <Compile Include="Segments\DoubleSegment.cs" />
     <Compile Include="Segments\EmptyArraySegment.cs" />
     <Compile Include="Segments\IllegalSegment.cs" />
     <Compile Include="Segments\NoneSegment.cs" />

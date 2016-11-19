@@ -34,7 +34,7 @@ Below is a table which consists of implementation progress for three main parts 
 | Null                           | DONE    |                 |               |
 | False                          | DONE    |                 |               |
 | True                           | DONE    |                 |               |
-| Double                         |         |                 |               |
+| Double                         | DONE    |                 |               |
 | UnixTimestamp                  |         |                 |               |
 | External                       |         |                 |               |
 | MinKey                         | DONE    |                 |               |

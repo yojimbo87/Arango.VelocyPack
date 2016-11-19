@@ -4,10 +4,10 @@ using VelocyPack.Segments;
 namespace VelocyPack.Tests.SegmentParsing.Numbers
 {
     [TestFixture]
-    public class SmallIntegerTests
+    public class SmallIntegerValueTests
     {
         [Test]
-        public void ParseZeroInt()
+        public void ParseZeroIntValue()
         {
             // given
             // hex dump of 0
@@ -26,7 +26,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosOneInt()
+        public void ParsePosOneIntValue()
         {
             // given
             // hex dump of 1
@@ -45,7 +45,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosTwoInt()
+        public void ParsePosTwoIntValue()
         {
             // given
             // hex dump of 2
@@ -64,7 +64,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosThreeInt()
+        public void ParsePosThreeIntValue()
         {
             // given
             // hex dump of 3
@@ -83,7 +83,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosFourInt()
+        public void ParsePosFourIntValue()
         {
             // given
             // hex dump of 4
@@ -102,7 +102,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosFiveInt()
+        public void ParsePosFiveIntValue()
         {
             // given
             // hex dump of 5
@@ -121,7 +121,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosSixInt()
+        public void ParsePosSixIntValue()
         {
             // given
             // hex dump of 6
@@ -140,7 +140,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosSevenInt()
+        public void ParsePosSevenIntValue()
         {
             // given
             // hex dump of 7
@@ -159,7 +159,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosEightInt()
+        public void ParsePosEightIntValue()
         {
             // given
             // hex dump of 8
@@ -178,7 +178,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParsePosNineInt()
+        public void ParsePosNineIntValue()
         {
             // given
             // hex dump of 9
@@ -197,7 +197,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegSixInt()
+        public void ParseNegSixIntValue()
         {
             // given
             // hex dump of -6
@@ -216,7 +216,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegFiveInt()
+        public void ParseNegFiveIntValue()
         {
             // given
             // hex dump of -5
@@ -235,7 +235,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegFourInt()
+        public void ParseNegFourIntValue()
         {
             // given
             // hex dump of -4
@@ -254,7 +254,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegThreeInt()
+        public void ParseNegThreeIntValue()
         {
             // given
             // hex dump of -3
@@ -273,7 +273,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegTwoInt()
+        public void ParseNegTwoIntValue()
         {
             // given
             // hex dump of -2
@@ -292,7 +292,7 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
         }
 
         [Test]
-        public void ParseNegOneInt()
+        public void ParseNegOneIntValue()
         {
             // given
             // hex dump of -1

@@ -67,7 +67,8 @@
     <Compile Include="SegmentParsing\NoneValueTests.cs" />
     <Compile Include="SegmentParsing\NonSensicalValueTests.cs" />
     <Compile Include="SegmentParsing\NullValueTests.cs" />
-    <Compile Include="SegmentParsing\Numbers\SmallIntegerTests.cs" />
+    <Compile Include="SegmentParsing\Numbers\DoubleValueTests.cs" />
+    <Compile Include="SegmentParsing\Numbers\SmallIntegerValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
