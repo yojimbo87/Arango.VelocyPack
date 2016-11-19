@@ -11,6 +11,7 @@
         Illegal,
         Null,
         Boolean,
+        NonSensical,
         SignedByteInteger,
         UnsignedByteInteger,
         SmallInteger,

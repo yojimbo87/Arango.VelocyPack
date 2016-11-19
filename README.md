@@ -37,8 +37,8 @@ Below is a table which consists of implementation progress for three main parts 
 | Double                         |         |                 |               |
 | UnixTimestamp                  |         |                 |               |
 | External                       |         |                 |               |
-| MinKey                         |         |                 |               |
-| MaxKey                         |         |                 |               |
+| MinKey                         | DONE    |                 |               |
+| MaxKey                         | DONE    |                 |               |
 | OneByteInt                     |         |                 |               |
 | TwoByteInt                     |         |                 |               |
 | ThreeByteInt                   |         |                 |               |

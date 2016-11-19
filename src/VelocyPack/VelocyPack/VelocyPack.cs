@@ -39,6 +39,9 @@ namespace VelocyPack
                 case SegmentType.Boolean:
                     segment = new BooleanSegment();
                     break;
+                case SegmentType.NonSensical:
+                    segment = new NonSensicalSegment();
+                    break;
                 case SegmentType.SmallInteger:
                     segment = new SmallIntegerSegment();
                     break;
