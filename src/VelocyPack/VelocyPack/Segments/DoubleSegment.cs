@@ -4,22 +4,24 @@ namespace VelocyPack.Segments
 {
     public class DoubleSegment : Segment
     {
-        public override void Load(byte[] data, int startIndex)
+        public override void Parse(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
             Type = SegmentType.Double;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
 
-            ParseDouble(data);
+            ParseContent(data);
         }
 
-        private void ParseDouble(byte[] data)
+        private void ParseContent(byte[] data)
         {
             // shift cursor index past value type byte
             CursorIndex++;
+            ValueStartIndex = CursorIndex;
             // shift cursor index past double value 8B size
             CursorIndex += 8;
+            ValueByteLength = CursorIndex - ValueStartIndex;
         }
 
         // TODO: double parsing from 8B array

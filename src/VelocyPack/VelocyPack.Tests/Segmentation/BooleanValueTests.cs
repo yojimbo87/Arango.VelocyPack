@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
 
-namespace VelocyPack.Tests.SegmentParsing
+namespace VelocyPack.Tests.Segmentation
 {
     [TestFixture]
     public class BooleanValueTests
@@ -23,6 +23,8 @@ namespace VelocyPack.Tests.SegmentParsing
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.Boolean, segment.Type);
             Assert.AreEqual(ValueType.False, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -42,6 +44,8 @@ namespace VelocyPack.Tests.SegmentParsing
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.Boolean, segment.Type);
             Assert.AreEqual(ValueType.True, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
     }
 }

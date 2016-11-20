@@ -1,4 +1,6 @@
-﻿namespace VelocyPack.Console
+﻿using VelocyPack.Segments;
+
+namespace VelocyPack.Console
 {
     class Program
     {

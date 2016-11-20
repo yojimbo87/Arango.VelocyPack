@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
 
-namespace VelocyPack.Tests.SegmentParsing.Arrays
+namespace VelocyPack.Tests.Segmentation.Arrays
 {
     [TestFixture]
     public class EmptyArrayTests
@@ -24,6 +24,8 @@ namespace VelocyPack.Tests.SegmentParsing.Arrays
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.EmptyArray, segment.Type);
             Assert.AreEqual(ValueType.EmptyArray, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
             Assert.AreEqual(0, segment.Items.Count);
         }
     }

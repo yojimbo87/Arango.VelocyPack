@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
 
-namespace VelocyPack.Tests.SegmentParsing.Numbers
+namespace VelocyPack.Tests.Segmentation.Numbers
 {
     [TestFixture]
     public class SmallIntegerValueTests
@@ -23,6 +23,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.ZeroInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -42,6 +44,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosOneInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -61,6 +65,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosTwoInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -80,6 +86,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosThreeInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -99,6 +107,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosFourInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -118,6 +128,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosFiveInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -137,6 +149,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosSixInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -156,6 +170,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosSevenInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -175,6 +191,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosEightInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -194,6 +212,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.PosNineInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -213,6 +233,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegSixInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -232,6 +254,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegFiveInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -251,6 +275,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegFourInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -270,6 +296,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegThreeInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -289,6 +317,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegTwoInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -308,6 +338,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.SmallInteger, segment.Type);
             Assert.AreEqual(ValueType.NegOneInt, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
     }
 }

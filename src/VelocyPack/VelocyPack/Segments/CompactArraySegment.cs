@@ -8,7 +8,7 @@ namespace VelocyPack.Segments
     {
         public ulong ItemCount { get; private set; }
 
-        public override void Load(byte[] data, int startIndex)
+        public override void Parse(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -16,11 +16,11 @@ namespace VelocyPack.Segments
             ValueType = TypeConverter.ToValueType(data[startIndex]);
             Items = new List<Segment>();
 
-            ParseCompactArray(data);
+            ParseContent(data);
         }
 
         // 0x13 : compact array, no index table
-        private void ParseCompactArray(byte[] data)
+        private void ParseContent(byte[] data)
         {
             // shift cursor index past value type byte
             CursorIndex++;

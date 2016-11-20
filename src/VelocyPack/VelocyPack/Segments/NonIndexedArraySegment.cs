@@ -6,7 +6,7 @@ namespace VelocyPack.Segments
 {
     public class NonIndexedArraySegment : ArraySegment
     {
-        public override void Load(byte[] data, int startIndex)
+        public override void Parse(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -14,14 +14,14 @@ namespace VelocyPack.Segments
             ValueType = TypeConverter.ToValueType(data[startIndex]);
             Items = new List<Segment>();
 
-            ParseFixedByteNonIndexedArray(data);
+            ParseContent(data);
         }
 
         // 0x02 : array without index table (all subitems have the same byte length), 1-byte byte length
         // 0x03 : array without index table (all subitems have the same byte length), 2-byte byte length
         // 0x04 : array without index table (all subitems have the same byte length), 4-byte byte length
         // 0x05 : array without index table (all subitems have the same byte length), 8-byte byte length
-        private void ParseFixedByteNonIndexedArray(byte[] data)
+        private void ParseContent(byte[] data)
         {
             // shift cursor index past value type byte
             CursorIndex++;
@@ -35,15 +35,15 @@ namespace VelocyPack.Segments
             {
                 case ValueType.OneByteNonIndexedArray:
                     byteLength = data[CursorIndex];
-                    CursorIndex += CountOneByteLengthSize(data);
+                    CursorIndex += ParseOneByteLengthSize(data);
                     break;
                 case ValueType.TwoByteNonIndexedArray:
                     byteLength = BitConverter.ToUInt16(data, CursorIndex);
-                    CursorIndex += CountTwoByteLengthSize(data);
+                    CursorIndex += ParseTwoByteLengthSize(data);
                     break;
                 case ValueType.FourByteNonIndexedArray:
                     byteLength = BitConverter.ToUInt32(data, CursorIndex);
-                    CursorIndex += CountFourByteLengthSize(data);
+                    CursorIndex += ParseFourByteLengthSize(data);
                     break;
                 case ValueType.EightByteNonIndexedArray:
                     byteLength = BitConverter.ToUInt64(data, CursorIndex);
@@ -56,7 +56,7 @@ namespace VelocyPack.Segments
             ParseItems(data, byteLength);
         }
 
-        private byte CountOneByteLengthSize(byte[] data)
+        private byte ParseOneByteLengthSize(byte[] data)
         {
             // cursor is at BYTELENGTH value 1st byte
             // size of the 1B BYTELENGTH which needs to include also zero bytes count
@@ -86,7 +86,7 @@ namespace VelocyPack.Segments
             return byteLengthSize;
         }
 
-        private byte CountTwoByteLengthSize(byte[] data)
+        private byte ParseTwoByteLengthSize(byte[] data)
         {
             // cursor is at BYTELENGTH value 1st byte
             // size of the 2B BYTELENGTH which needs to include also zero bytes count
@@ -111,7 +111,7 @@ namespace VelocyPack.Segments
             return byteLengthSize;
         }
 
-        private byte CountFourByteLengthSize(byte[] data)
+        private byte ParseFourByteLengthSize(byte[] data)
         {
             // cursor is at BYTELENGTH value 1st byte
             // size of the 4B BYTELENGTH which needs to include also zero bytes count

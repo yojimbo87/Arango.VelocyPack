@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
 
-namespace VelocyPack.Tests.SegmentParsing
+namespace VelocyPack.Tests.Segmentation
 {
     [TestFixture]
     public class NonSensicalValueTests
@@ -23,6 +23,8 @@ namespace VelocyPack.Tests.SegmentParsing
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonSensical, segment.Type);
             Assert.AreEqual(ValueType.MinKey, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
 
         [Test]
@@ -42,6 +44,8 @@ namespace VelocyPack.Tests.SegmentParsing
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonSensical, segment.Type);
             Assert.AreEqual(ValueType.MaxKey, segment.ValueType);
+            Assert.AreEqual(0, segment.ValueStartIndex);
+            Assert.AreEqual(1, segment.ValueByteLength);
         }
     }
 }

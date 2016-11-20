@@ -56,19 +56,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SegmentParsing\Arrays\CompactArrayTests.cs" />
-    <Compile Include="SegmentParsing\Arrays\OneByteNonIndexedArrayTests.cs" />
-    <Compile Include="SegmentParsing\Arrays\EmptyArrayTests.cs" />
-    <Compile Include="SegmentParsing\Arrays\TwoByteNonIndexedArrayTests.cs" />
-    <Compile Include="SegmentParsing\Arrays\FourByteNonIndexedArrayTests.cs" />
-    <Compile Include="SegmentParsing\Arrays\EightByteNonIndexedArrayTests.cs" />
-    <Compile Include="SegmentParsing\BooleanValueTests.cs" />
-    <Compile Include="SegmentParsing\IllegalValueTests.cs" />
-    <Compile Include="SegmentParsing\NoneValueTests.cs" />
-    <Compile Include="SegmentParsing\NonSensicalValueTests.cs" />
-    <Compile Include="SegmentParsing\NullValueTests.cs" />
-    <Compile Include="SegmentParsing\Numbers\DoubleValueTests.cs" />
-    <Compile Include="SegmentParsing\Numbers\SmallIntegerValueTests.cs" />
+    <Compile Include="Segmentation\Arrays\CompactArrayTests.cs" />
+    <Compile Include="Segmentation\Arrays\OneByteNonIndexedArrayTests.cs" />
+    <Compile Include="Segmentation\Arrays\EmptyArrayTests.cs" />
+    <Compile Include="Segmentation\Arrays\TwoByteNonIndexedArrayTests.cs" />
+    <Compile Include="Segmentation\Arrays\FourByteNonIndexedArrayTests.cs" />
+    <Compile Include="Segmentation\Arrays\EightByteNonIndexedArrayTests.cs" />
+    <Compile Include="Segmentation\BooleanValueTests.cs" />
+    <Compile Include="Segmentation\IllegalValueTests.cs" />
+    <Compile Include="Segmentation\NoneValueTests.cs" />
+    <Compile Include="Segmentation\NonSensicalValueTests.cs" />
+    <Compile Include="Segmentation\NullValueTests.cs" />
+    <Compile Include="Segmentation\Numbers\DoubleValueTests.cs" />
+    <Compile Include="Segmentation\Numbers\SmallIntegerValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

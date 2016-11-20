@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VelocyPack.Segments;
 
 namespace VelocyPack.Converters
 {

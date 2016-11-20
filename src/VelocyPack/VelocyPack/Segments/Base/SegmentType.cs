@@ -1,4 +1,4 @@
-﻿namespace VelocyPack
+﻿namespace VelocyPack.Segments
 {
     public enum SegmentType
     {

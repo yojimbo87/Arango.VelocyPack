@@ -53,7 +53,7 @@ namespace VelocyPack
                     throw new Exception("Data contains unknown segment.");
             }
 
-            segment.Load(data, startIndex);
+            segment.Parse(data, startIndex);
 
             return segment;
         }

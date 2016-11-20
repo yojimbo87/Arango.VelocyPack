@@ -1,4 +1,4 @@
-﻿namespace VelocyPack
+﻿namespace VelocyPack.Segments
 {
     public abstract class Segment
     {
@@ -7,12 +7,14 @@
         public int ByteLength { get { return CursorIndex - StartIndex; } }
         public SegmentType Type { get; internal set; }
         public ValueType ValueType { get; internal set; }
+        public int ValueStartIndex { get; internal set; }
+        public int ValueByteLength { get; internal set; }
 
-        public void Load(byte[] data)
+        public void Parse(byte[] data)
         {
-            Load(data, 0);
+            Parse(data, 0);
         }
 
-        abstract public void Load(byte[] data, int startIndex);
+        abstract public void Parse(byte[] data, int startIndex);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VelocyPack
+namespace VelocyPack.Segments
 {
     public abstract class ArraySegment : Segment
     {
@@ -8,6 +8,8 @@ namespace VelocyPack
 
         internal void ParseItems(byte[] data, ulong byteLength)
         {
+            ValueStartIndex = CursorIndex;
+
             // cycle through array items until all of them are parsed
             // array needs to be parsed until it's BYTELENGTH value is reached
             while (byteLength != (ulong)(CursorIndex - StartIndex))
@@ -19,6 +21,8 @@ namespace VelocyPack
                 CursorIndex = subSegment.CursorIndex;
                 Items.Add(subSegment);
             }
+
+            ValueByteLength = CursorIndex - ValueStartIndex;
         }
     }
 }

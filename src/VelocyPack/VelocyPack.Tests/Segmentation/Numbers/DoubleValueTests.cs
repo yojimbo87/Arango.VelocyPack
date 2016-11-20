@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
 
-namespace VelocyPack.Tests.SegmentParsing.Numbers
+namespace VelocyPack.Tests.Segmentation.Numbers
 {
     [TestFixture]
     public class DoubleValueTests
@@ -23,6 +23,8 @@ namespace VelocyPack.Tests.SegmentParsing.Numbers
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.Double, segment.Type);
             Assert.AreEqual(ValueType.Double, segment.ValueType);
+            Assert.AreEqual(1, segment.ValueStartIndex);
+            Assert.AreEqual(8, segment.ValueByteLength);
         }
     }
 }
