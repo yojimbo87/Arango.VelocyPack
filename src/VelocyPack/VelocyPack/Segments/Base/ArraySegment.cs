@@ -24,5 +24,17 @@ namespace VelocyPack.Segments
 
             ValueByteLength = CursorIndex - ValueStartIndex;
         }
+
+        public override object LoadValue(byte[] data)
+        {
+            var value = new List<object>();
+
+            foreach (var item in Items)
+            {
+                value.Add(item.LoadValue(data));
+            }
+
+            return value;
+        }
     }
 }

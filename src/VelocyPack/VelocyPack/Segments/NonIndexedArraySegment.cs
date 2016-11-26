@@ -6,7 +6,7 @@ namespace VelocyPack.Segments
 {
     public class NonIndexedArraySegment : ArraySegment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;

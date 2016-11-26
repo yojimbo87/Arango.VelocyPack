@@ -10,11 +10,13 @@
         public int ValueStartIndex { get; internal set; }
         public int ValueByteLength { get; internal set; }
 
-        public void Parse(byte[] data)
+        public void ParseValue(byte[] data)
         {
-            Parse(data, 0);
+            ParseValue(data, 0);
         }
 
-        abstract public void Parse(byte[] data, int startIndex);
+        public abstract void ParseValue(byte[] data, int startIndex);
+
+        public abstract object LoadValue(byte[] data);
     }
 }

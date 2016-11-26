@@ -4,7 +4,7 @@ namespace VelocyPack.Segments
 {
     public class NonSensicalSegment : Segment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -15,6 +15,12 @@ namespace VelocyPack.Segments
 
             // shift cursor index past value type byte
             CursorIndex++;
+        }
+
+        public override object LoadValue(byte[] data)
+        {
+            // TODO: return object which represents non sensical segment?
+            return null;
         }
     }
 }

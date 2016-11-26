@@ -1,10 +1,11 @@
-﻿using VelocyPack.Converters;
+﻿using System;
+using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
     public class BooleanSegment : Segment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -15,6 +16,26 @@ namespace VelocyPack.Segments
 
             // shift cursor index past value type byte
             CursorIndex++;
+        }
+
+        public override object LoadValue(byte[] data)
+        {
+            bool value;
+
+            switch (ValueType)
+            {
+                case ValueType.False:
+                    value = false;
+                    break;
+                case ValueType.True:
+                    value = true;
+                    break;
+                default:
+                    // TODO: throw custom exception
+                    throw new Exception("Cannot load boolean segment value.");
+            }
+
+            return value;
         }
     }
 }

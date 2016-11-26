@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using VelocyPack.Converters;
 
@@ -8,7 +9,7 @@ namespace VelocyPack.Segments
     {
         public ulong ItemCount { get; private set; }
 
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;

@@ -1,10 +1,11 @@
-﻿using VelocyPack.Converters;
+﻿using System;
+using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
     public class IllegalSegment : Segment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -15,6 +16,12 @@ namespace VelocyPack.Segments
 
             // shift cursor index past value type byte
             CursorIndex++;
+        }
+
+        public override object LoadValue(byte[] data)
+        {
+            // TODO: return object which represents invalid segment?
+            return null;
         }
     }
 }

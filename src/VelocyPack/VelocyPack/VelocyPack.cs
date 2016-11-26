@@ -50,10 +50,10 @@ namespace VelocyPack
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("Data contains unknown segment.");
+                    throw new Exception("Data contains unknown segment type.");
             }
 
-            segment.Parse(data, startIndex);
+            segment.ParseValue(data, startIndex);
 
             return segment;
         }

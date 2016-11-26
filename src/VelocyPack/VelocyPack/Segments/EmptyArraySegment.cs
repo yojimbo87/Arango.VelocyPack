@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
     public class EmptyArraySegment : ArraySegment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -17,6 +18,11 @@ namespace VelocyPack.Segments
 
             // shift cursor index past value type byte
             CursorIndex++;
+        }
+
+        public override object LoadValue(byte[] data)
+        {
+            return new List<object>();
         }
     }
 }

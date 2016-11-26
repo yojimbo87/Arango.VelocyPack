@@ -1,10 +1,11 @@
-﻿using VelocyPack.Converters;
+﻿using System;
+using VelocyPack.Converters;
 
 namespace VelocyPack.Segments
 {
     public class DoubleSegment : Segment
     {
-        public override void Parse(byte[] data, int startIndex)
+        public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
@@ -24,8 +25,10 @@ namespace VelocyPack.Segments
             ValueByteLength = CursorIndex - ValueStartIndex;
         }
 
-        // TODO: double parsing from 8B array
-        // double value is stored as little endian uint64 equivalent
-        //var doubleValue = BitConverter.ToDouble(data, CursorIndex);
+        public override object LoadValue(byte[] data)
+        {
+            // double value is stored as little endian uint64 equivalent
+            return BitConverter.ToDouble(data, CursorIndex);
+        }
     }
 }
