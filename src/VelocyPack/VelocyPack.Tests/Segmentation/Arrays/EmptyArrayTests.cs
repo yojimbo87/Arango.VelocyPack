@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation.Arrays
     public class EmptyArrayTests
     {
         [Test]
-        public void ParseEmptyArray()
+        public void SegmentizeEmptyArrayHexDump()
         {
             // given
-            // hex dump of []
-            var data = new byte[] { 0x01 };
+            var data = ArrayHexDumps.Empty;
 
             // when
             var segment = VelocyPack.ToSegment<EmptyArraySegment>(data);

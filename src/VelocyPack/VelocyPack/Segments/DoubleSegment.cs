@@ -28,7 +28,7 @@ namespace VelocyPack.Segments
         public override object LoadValue(byte[] data)
         {
             // double value is stored as little endian uint64 equivalent
-            return BitConverter.ToDouble(data, CursorIndex);
+            return BitConverter.ToDouble(data, ValueStartIndex);
         }
     }
 }

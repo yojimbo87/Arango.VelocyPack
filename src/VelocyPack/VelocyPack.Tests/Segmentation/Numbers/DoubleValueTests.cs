@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation.Numbers
     public class DoubleValueTests
     {
         [Test]
-        public void ParseDoubleValue()
+        public void SegmentizeDoubleValueHexDump()
         {
             // given
-            // hex dump of 0 double value
-            var data = new byte[] { 0x1b, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            var data = ValueHexDumps.Double;
 
             // when
             var segment = VelocyPack.ToSegment(data);

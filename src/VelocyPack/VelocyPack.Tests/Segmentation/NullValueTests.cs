@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation
     public class NullValueTests
     {
         [Test]
-        public void ParseNullValue()
+        public void SegmentizeNullValueHexDump()
         {
             // given
-            // hex dump of null value
-            var data = new byte[] { 0x18 };
+            var data = ValueHexDumps.Null;
 
             // when
             var segment = VelocyPack.ToSegment(data);

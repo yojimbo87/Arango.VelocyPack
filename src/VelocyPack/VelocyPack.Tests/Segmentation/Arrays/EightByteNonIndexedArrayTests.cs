@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation.Arrays
     public class EightByteNonIndexedArrayTests
     {
         [Test]
-        public void ParseArray_With_SmallIntegerItems()
+        public void SegmentizeNonIndexedArrayHexDump()
         {
             // given
-            // hex dump of [1, 2, 3]
-            var data = new byte[] { 0x05, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
+            var data = ArrayHexDumps.EightByteNonIndexed;
 
             // when
             var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
@@ -29,7 +28,7 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
 
-            // first small integer segment item
+            // first item
             var item1 = segment.Items[0];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item1);
@@ -40,7 +39,7 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(9, item1.ValueStartIndex);
             Assert.AreEqual(1, item1.ValueByteLength);
 
-            // second small integer segment item
+            // second item
             var item2 = segment.Items[1];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item2);
@@ -51,7 +50,7 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(10, item2.ValueStartIndex);
             Assert.AreEqual(1, item2.ValueByteLength);
 
-            // third small integer segment item
+            // third item
             var item3 = segment.Items[2];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item3);

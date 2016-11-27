@@ -56,6 +56,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArrayHexDumps.cs" />
+    <Compile Include="Deserialization\Arrays\CompactArrayTests.cs" />
+    <Compile Include="Deserialization\Arrays\EightByteNonIndexedArrayTests.cs" />
+    <Compile Include="Deserialization\Arrays\EmptyArrayTests.cs" />
+    <Compile Include="Deserialization\Arrays\FourByteNonIndexedArrayTests.cs" />
+    <Compile Include="Deserialization\Arrays\OneByteNonIndexedArrayTests.cs" />
+    <Compile Include="Deserialization\Arrays\TwoByteNonIndexedArrayTests.cs" />
+    <Compile Include="Deserialization\BooleanValueTests.cs" />
+    <Compile Include="Deserialization\IllegalValueTests.cs" />
+    <Compile Include="Deserialization\NoneValueTests.cs" />
+    <Compile Include="Deserialization\NonSensicalValueTests.cs" />
+    <Compile Include="Deserialization\NullValueTests.cs" />
+    <Compile Include="Deserialization\Numbers\DoubleValueTests.cs" />
+    <Compile Include="Deserialization\Numbers\SmallIntegerValueTests.cs" />
+    <Compile Include="ValueHexDumps.cs" />
     <Compile Include="Segmentation\Arrays\CompactArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\OneByteNonIndexedArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\EmptyArrayTests.cs" />

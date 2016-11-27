@@ -62,5 +62,11 @@ namespace VelocyPack
         {
             return (T)ToSegment(data);
         }
+
+        public static T ToObject<T>(byte[] data)
+        {
+            // TODO: correct List<T> deserialization
+            return (T)ToSegment(data).LoadValue(data);
+        }
     }
 }

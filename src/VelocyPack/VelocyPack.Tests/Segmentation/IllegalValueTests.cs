@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation
     public class IllegalValueTests
     {
         [Test]
-        public void ParseIllegalValue()
+        public void SegmentizeIllegalValueHexDump()
         {
             // given
-            // hex dump of illegal value
-            var data = new byte[] { 0x17 };
+            var data = ValueHexDumps.Illegal;
 
             // when
             var segment = VelocyPack.ToSegment(data);

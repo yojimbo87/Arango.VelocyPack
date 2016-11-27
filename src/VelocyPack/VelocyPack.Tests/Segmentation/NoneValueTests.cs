@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation
     public class NoneValueTests
     {
         [Test]
-        public void ParseNoneValue()
+        public void SegmentizeNoneValueHexDump()
         {
             // given
-            // hex dump of none value
-            var data = new byte[] { 0x00 };
+            var data = ValueHexDumps.None;
 
             // when
             var segment = VelocyPack.ToSegment(data);

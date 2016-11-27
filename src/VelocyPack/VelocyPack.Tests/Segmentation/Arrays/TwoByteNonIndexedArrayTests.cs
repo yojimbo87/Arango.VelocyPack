@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation.Arrays
     public class TwoByteNonIndexedArrayTests
     {
         [Test]
-        public void ParseArray_With_SmallIntegerItems_And_ZeroZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArrayHexDump_With__ZeroZeroByteByteLengthSize()
         {
             // given
-            // hex dump of [1, 2, 3] with 2B LENGTHBYTE followed by 0 zero bytes
-            var data = new byte[] { 0x03, 0x06, 0x00, 0x31, 0x32, 0x33 };
+            var data = ArrayHexDumps.TwoByteNonIndexedWithZeroZeroBytes;
 
             // when
             var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
@@ -29,15 +28,14 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
 
-            TestSmallIntegerItems(data, segment);
+            TestSmallIntegerItems(segment);
         }
 
         [Test]
-        public void ParseArray_With_SmallIntegerItems_And_TwoZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArrayHexDump_With_TwoZeroByteByteLengthSize()
         {
             // given
-            // hex dump of [1, 2, 3] with 2B LENGTHBYTE followed by 2 zero bytes
-            var data = new byte[] { 0x03, 0x08, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
+            var data = ArrayHexDumps.TwoByteNonIndexedWithTwoZeroBytes;
 
             // when
             var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
@@ -55,15 +53,14 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
 
-            TestSmallIntegerItems(data, segment);
+            TestSmallIntegerItems(segment);
         }
 
         [Test]
-        public void ParseArray_With_SmallIntegerItems_And_SixZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArrayHexDump_With_SixZeroByteByteLengthSize()
         {
             // given
-            // hex dump of [1, 2, 3] with 2B LENGTHBYTE followed by 6 zero bytes
-            var data = new byte[] { 0x03, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
+            var data = ArrayHexDumps.TwoByteNonIndexedWithSixZeroBytes;
 
             // when
             var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
@@ -81,26 +78,26 @@ namespace VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
 
-            TestSmallIntegerItems(data, segment);
+            TestSmallIntegerItems(segment);
         }
 
-        private void TestSmallIntegerItems(byte[] data, NonIndexedArraySegment segment)
+        private void TestSmallIntegerItems(NonIndexedArraySegment segment)
         {
-            // first small integer segment item
+            // first item
             var item1 = segment.Items[0];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item1);
             Assert.AreEqual(SegmentType.SmallInteger, item1.Type);
             Assert.AreEqual(ValueType.PosOneInt, item1.ValueType);
 
-            // second small integer segment item
+            // second item
             var item2 = segment.Items[1];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item2);
             Assert.AreEqual(SegmentType.SmallInteger, item2.Type);
             Assert.AreEqual(ValueType.PosTwoInt, item2.ValueType);
 
-            // third small integer segment item
+            // third item
             var item3 = segment.Items[2];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item3);

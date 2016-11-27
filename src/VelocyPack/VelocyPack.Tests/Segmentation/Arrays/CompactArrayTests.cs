@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation.Arrays
     public class CompactArrayTests
     {
         [Test]
-        public void ParseArrayWithSmallIntegerSubSegments()
+        public void SegmentizeCompactArrayHexDump()
         {
             // given
-            // hex dump of [1, 2, 3]
-            var data = new byte[] { 0x13, 0x06, 0x31, 0x32, 0x33, 0x03 };
+            var data = ArrayHexDumps.Compact;
 
             // when
             var segment = VelocyPack.ToSegment<CompactArraySegment>(data);

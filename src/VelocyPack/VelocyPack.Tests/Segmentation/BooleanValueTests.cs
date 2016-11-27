@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation
     public class BooleanValueTests
     {
         [Test]
-        public void ParseFalseBooleanValue()
+        public void SegmentizeFalseBooleanValueHexDump()
         {
             // given
-            // hex dump of false boolean value
-            var data = new byte[] { 0x19 };
+            var data = ValueHexDumps.False;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -28,11 +27,10 @@ namespace VelocyPack.Tests.Segmentation
         }
 
         [Test]
-        public void ParseTrueBooleanValue()
+        public void SegmentizeTrueBooleanValueHexDump()
         {
             // given
-            // hex dump of true boolean value
-            var data = new byte[] { 0x1a };
+            var data = ValueHexDumps.True;
 
             // when
             var segment = VelocyPack.ToSegment(data);

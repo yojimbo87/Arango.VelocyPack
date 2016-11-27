@@ -7,11 +7,10 @@ namespace VelocyPack.Tests.Segmentation
     public class NonSensicalValueTests
     {
         [Test]
-        public void ParseMinKeyValue()
+        public void SegmentizeMinKeyValueHexDump()
         {
             // given
-            // hex dump of minKey value
-            var data = new byte[] { 0x1e };
+            var data = ValueHexDumps.MinKey;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -28,11 +27,10 @@ namespace VelocyPack.Tests.Segmentation
         }
 
         [Test]
-        public void ParseMaxKeyValue()
+        public void SegmentizeMaxKeyValueHexDump()
         {
             // given
-            // hex dump of maxKey value
-            var data = new byte[] { 0x1f };
+            var data = ValueHexDumps.MaxKey;
 
             // when
             var segment = VelocyPack.ToSegment(data);
