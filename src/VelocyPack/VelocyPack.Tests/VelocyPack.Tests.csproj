@@ -56,7 +56,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ArrayHexDumps.cs" />
+    <Compile Include="HexDumps\ArrayHexDumps.cs" />
+    <Compile Include="Conversion\BinaryConverterTests.cs" />
     <Compile Include="Deserialization\Arrays\CompactArrayTests.cs" />
     <Compile Include="Deserialization\Arrays\EightByteNonIndexedArrayTests.cs" />
     <Compile Include="Deserialization\Arrays\EmptyArrayTests.cs" />
@@ -70,7 +71,8 @@
     <Compile Include="Deserialization\NullValueTests.cs" />
     <Compile Include="Deserialization\Numbers\DoubleValueTests.cs" />
     <Compile Include="Deserialization\Numbers\SmallIntegerValueTests.cs" />
-    <Compile Include="ValueHexDumps.cs" />
+    <Compile Include="HexDumps\NumberHexDumps.cs" />
+    <Compile Include="HexDumps\ValueHexDumps.cs" />
     <Compile Include="Segmentation\Arrays\CompactArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\OneByteNonIndexedArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\EmptyArrayTests.cs" />

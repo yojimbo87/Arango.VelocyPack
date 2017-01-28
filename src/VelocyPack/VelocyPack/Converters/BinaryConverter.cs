@@ -4,23 +4,14 @@ using System.Collections.Generic;
 
 namespace VelocyPack.Converters
 {
-    internal static class BinaryConverter
+    public static class BinaryConverter
     {
-        internal static byte[] Slice(byte[] data, int index, int length)
-        {
-            var slicedArray = new byte[length];
-
-            Array.Copy(data, index, slicedArray, 0, length);
-
-            return slicedArray;
-        }
-
-        internal static bool IsBitSet(byte value, int position)
+        public static bool IsBitSet(byte value, int position)
         {
             return (value & (1 << position)) != 0;
         }
 
-        internal static List<bool> ToBits(byte value)
+        public static List<bool> ToBits(byte value)
         {
             var bits = new List<bool>();
 
@@ -32,7 +23,7 @@ namespace VelocyPack.Converters
             return bits;
         }
 
-        internal static byte[] ToBytes(List<bool> bits)
+        public static byte[] ToBytes(List<bool> bits)
         {
             var bitArray = new BitArray(bits.ToArray());
             var byteArray = new byte[(bitArray.Length - 1) / 8 + 1];
@@ -42,30 +33,139 @@ namespace VelocyPack.Converters
             return byteArray;
         }
 
-        internal static ulong ToUInt64(byte[] data)
+        public static object ToSignedInteger(byte[] data)
         {
-            ulong byteLength = 0;
+            object integer;
 
             switch (data.Length)
             {
                 case 1:
-                    byteLength = data[0];
+                    integer = (sbyte)data[0];
                     break;
                 case 2:
-                    byteLength = BitConverter.ToUInt16(data, 0);
+                    integer = BitConverter.ToInt16(ArrayConverter.ReverseCopy(data), 0);
+                    break;
+                case 3:
+                    integer = ToInt32(data[2], data[1], data[0]);
                     break;
                 case 4:
-                    byteLength = BitConverter.ToUInt32(data, 0);
+                    integer = BitConverter.ToInt32(ArrayConverter.ReverseCopy(data), 0);
+                    break;
+                case 5:
+                    integer = ToInt64(data[4], data[3], data[2], data[1], data[0], 0xff, 0xff, 0xff);
+                    break;
+                case 6:
+                    integer = ToInt64(data[5], data[4], data[3], data[2], data[1], data[0], 0xff, 0xff);
+                    break;
+                case 7:
+                    integer = ToInt64(data[6], data[5], data[4], data[3], data[2], data[1], data[0], 0xff);
                     break;
                 case 8:
-                    byteLength = BitConverter.ToUInt64(data, 0);
+                    integer = BitConverter.ToInt64(ArrayConverter.ReverseCopy(data), 0);
+                    break;
+                default:
+                    // TODO: throw custom exception
+                    throw new Exception("Cannot convert bytes to integer.");
+            }
+
+            return integer;
+        }
+
+        public static int ToInt32(byte byte1, byte byte2, byte byte3)
+        {
+            int value = 0;
+
+            if ((byte1 & 0x80) != 0)
+            {
+                value |= 0xff << 24;
+            }
+
+            value |= byte1 << 16;
+            value |= byte2 << 8;
+            value |= byte3;
+
+            return value;
+        }
+
+        public static long ToInt64(byte[] data)
+        {
+            long value = 0;
+
+            for (var i = (data.Length - 1); i >= 0; i--)
+            {
+                value <<= 8;
+                value |= (data[i] & 0xff);
+            }
+
+            return value;
+        }
+
+        /*public static long ToInt64(byte byte1, byte byte2, byte byte3, byte byte4, byte byte5, byte byte6, byte byte7, byte byte8)
+        {
+            long value = 0;
+
+            if ((byte1 & 0x80) != 0)
+            {
+                value |= 0xff << 72;
+            }
+
+            value |= (long)byte1 << 64;
+            value |= (long)byte2 << 56;
+            value |= (long)byte3 << 48;
+            value |= (long)byte4 << 40;
+            value |= (long)byte5 << 32;
+            value |= (long)byte6 << 24;
+            value |= (long)byte7 << 16;
+            value |= (long)byte8 << 8;
+
+            return value;
+        }*/
+
+        public static long ToInt64(byte byte1, byte byte2, byte byte3, byte byte4, byte byte5, byte byte6, byte byte7, byte byte8)
+        {
+            long value = 0;
+
+            if ((byte1 & 0x80) != 0)
+            {
+                value |= 0xff << 64;
+            }
+
+            value |= (byte1 << 56) & 0xff;
+            value |= (byte2 << 48) & 0xff;
+            value |= (byte3 << 40) & 0xff;
+            value |= (byte4 << 32) & 0xff;
+            value |= (byte5 << 24) & 0xff;
+            value |= (byte6 << 16) & 0xff;
+            value |= (byte7 << 8) & 0xff;
+            value |= byte8 & 0xff;
+
+            return value;
+        }
+
+        public static ulong ToUInt64(byte[] data)
+        {
+            ulong value = 0;
+
+            switch (data.Length)
+            {
+                case 1:
+                    value = data[0];
+                    break;
+                case 2:
+                    value = BitConverter.ToUInt16(data, 0);
+                    break;
+                case 4:
+                    value = BitConverter.ToUInt32(data, 0);
+                    break;
+                case 8:
+                    value = BitConverter.ToUInt64(data, 0);
                     break;
                 default:
                     // TODO: throw custom exception
                     throw new Exception("BYTELENGTH could not be parsed into number.");
             }
 
-            return byteLength;
+            return value;
         }
     }
 }

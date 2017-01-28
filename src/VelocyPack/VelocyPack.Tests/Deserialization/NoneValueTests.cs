@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Deserialization
 {

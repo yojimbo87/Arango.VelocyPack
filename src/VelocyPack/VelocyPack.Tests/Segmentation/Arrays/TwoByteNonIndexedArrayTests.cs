@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Segmentation.Arrays
 {

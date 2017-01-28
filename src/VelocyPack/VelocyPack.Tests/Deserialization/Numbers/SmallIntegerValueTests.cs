@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Deserialization.Numbers
 {
@@ -9,7 +10,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeZeroIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.ZeroInt;
+            var data = NumberHexDumps.ZeroInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -22,7 +23,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosOneIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosOneInt;
+            var data = NumberHexDumps.PosOneInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -35,7 +36,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosTwoIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosTwoInt;
+            var data = NumberHexDumps.PosTwoInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -48,7 +49,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosThreeIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosThreeInt;
+            var data = NumberHexDumps.PosThreeInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -61,7 +62,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosFourIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosFourInt;
+            var data = NumberHexDumps.PosFourInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -74,7 +75,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosFiveIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosFiveInt;
+            var data = NumberHexDumps.PosFiveInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -87,7 +88,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosSixIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosSixInt;
+            var data = NumberHexDumps.PosSixInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -100,7 +101,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosSevenIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosSevenInt;
+            var data = NumberHexDumps.PosSevenInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -113,7 +114,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosEightIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosEightInt;
+            var data = NumberHexDumps.PosEightInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -126,7 +127,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializePosNineIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosNineInt;
+            var data = NumberHexDumps.PosNineInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -139,7 +140,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegSixIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegSixInt;
+            var data = NumberHexDumps.NegSixInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -152,7 +153,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegFiveIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegFiveInt;
+            var data = NumberHexDumps.NegFiveInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -165,7 +166,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegFourIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegFourInt;
+            var data = NumberHexDumps.NegFourInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -178,7 +179,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegThreeIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegThreeInt;
+            var data = NumberHexDumps.NegThreeInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -191,7 +192,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegTwoIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegTwoInt;
+            var data = NumberHexDumps.NegTwoInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);
@@ -204,7 +205,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeNegOneIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegOneInt;
+            var data = NumberHexDumps.NegOneInt;
 
             // when
             var value = VelocyPack.ToObject<sbyte>(data);

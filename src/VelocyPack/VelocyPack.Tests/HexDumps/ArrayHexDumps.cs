@@ -1,4 +1,4 @@
-﻿namespace VelocyPack.Tests
+﻿namespace VelocyPack.Tests.HexDumps
 {
     public static class ArrayHexDumps
     {

@@ -1,4 +1,5 @@
-﻿using VelocyPack.Segments;
+﻿using System;
+using VelocyPack.Segments;
 
 namespace VelocyPack.Console
 {
@@ -6,9 +7,25 @@ namespace VelocyPack.Console
     {
         static void Main(string[] args)
         {
-            ParseArrayToSegment();
+            HexDump();
+
+            //ParseArrayToSegment();
 
             System.Console.ReadLine();
+        }
+
+        static void HexDump()
+        {
+            sbyte sbyteInt = -10;
+            Int16 int16 = -10;
+            Int32 int32 = -10;
+            Int64 int64 = -10;
+
+            System.Console.WriteLine("Little endian: {0}", BitConverter.IsLittleEndian);
+            System.Console.WriteLine("sbyte hex: {0}", sbyteInt.ToString("X"));
+            System.Console.WriteLine("int16 hex: {0}", int16.ToString("X"));
+            System.Console.WriteLine("int32 hex: {0}", int32.ToString("X"));
+            System.Console.WriteLine("int64 hex: {0}", int64.ToString("X"));
         }
 
         static void ParseArrayToSegment()

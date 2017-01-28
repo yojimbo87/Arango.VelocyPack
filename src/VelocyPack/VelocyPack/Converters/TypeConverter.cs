@@ -3,7 +3,7 @@ using VelocyPack.Segments;
 
 namespace VelocyPack.Converters
 {
-    internal static class TypeConverter
+    public static class TypeConverter
     {
         private static Dictionary<byte, ValueType> _byteToValueTypeMap = new Dictionary<byte, ValueType>
         {
@@ -335,17 +335,17 @@ namespace VelocyPack.Converters
             { ValueType.Custom, SegmentType.Custom }
         };
 
-        internal static ValueType ToValueType(byte value)
+        public static ValueType ToValueType(byte value)
         {
             return _byteToValueTypeMap[value];
         }
 
-        internal static SegmentType ToSegmentType(ValueType valueType)
+        public static SegmentType ToSegmentType(ValueType valueType)
         {
             return _valueTypeToSegmentTypeMap[valueType];
         }
 
-        internal static SegmentType ToSegmentType(byte value)
+        public static SegmentType ToSegmentType(byte value)
         {
             return ToSegmentType(ToValueType(value));
         }

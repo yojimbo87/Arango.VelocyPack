@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Deserialization.Numbers
 {
@@ -9,7 +10,7 @@ namespace VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeDoubleValueHexDump()
         {
             // given
-            var data = ValueHexDumps.Double;
+            var data = NumberHexDumps.Double;
 
             // when
             var value = VelocyPack.ToObject<double>(data);

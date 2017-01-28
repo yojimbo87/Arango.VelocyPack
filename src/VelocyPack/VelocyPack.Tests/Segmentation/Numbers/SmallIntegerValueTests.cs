@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Segmentation.Numbers
 {
@@ -10,7 +11,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeZeroIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.ZeroInt;
+            var data = NumberHexDumps.ZeroInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -30,7 +31,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosOneIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosOneInt;
+            var data = NumberHexDumps.PosOneInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -50,7 +51,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosTwoIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosTwoInt;
+            var data = NumberHexDumps.PosTwoInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -70,7 +71,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosThreeIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosThreeInt;
+            var data = NumberHexDumps.PosThreeInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -90,7 +91,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosFourIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosFourInt;
+            var data = NumberHexDumps.PosFourInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -110,7 +111,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosFiveIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosFiveInt;
+            var data = NumberHexDumps.PosFiveInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -130,7 +131,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosSixIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosSixInt;
+            var data = NumberHexDumps.PosSixInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -150,7 +151,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosSevenIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosSevenInt;
+            var data = NumberHexDumps.PosSevenInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -170,7 +171,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosEightIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosEightInt;
+            var data = NumberHexDumps.PosEightInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -190,7 +191,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosNineIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.PosNineInt;
+            var data = NumberHexDumps.PosNineInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -210,7 +211,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegSixIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegSixInt;
+            var data = NumberHexDumps.NegSixInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -230,7 +231,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegFiveIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegFiveInt;
+            var data = NumberHexDumps.NegFiveInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -250,7 +251,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegFourIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegFourInt;
+            var data = NumberHexDumps.NegFourInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -270,7 +271,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegThreeIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegThreeInt;
+            var data = NumberHexDumps.NegThreeInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -290,7 +291,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegTwoIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegTwoInt;
+            var data = NumberHexDumps.NegTwoInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);
@@ -310,7 +311,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegOneIntValueHexDump()
         {
             // given
-            var data = ValueHexDumps.NegOneInt;
+            var data = NumberHexDumps.NegOneInt;
 
             // when
             var segment = VelocyPack.ToSegment(data);

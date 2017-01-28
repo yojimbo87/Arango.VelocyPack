@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using VelocyPack.Segments;
+using VelocyPack.Tests.HexDumps;
 
 namespace VelocyPack.Tests.Segmentation.Numbers
 {
@@ -10,7 +11,7 @@ namespace VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeDoubleValueHexDump()
         {
             // given
-            var data = ValueHexDumps.Double;
+            var data = NumberHexDumps.Double;
 
             // when
             var segment = VelocyPack.ToSegment(data);
