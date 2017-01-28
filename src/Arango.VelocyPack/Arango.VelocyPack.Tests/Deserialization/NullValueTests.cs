@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
             var data = ValueHexDumps.Null;
 
             // when
-            var value = VelocyPack.ToObject<object>(data);
+            var value = VPack.ToObject<object>(data);
 
             // then
             Assert.IsNull(value);

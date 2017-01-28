@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithZeroZeroBytes;
 
             // when
-            var value = VelocyPack.ToObject<List<object>>(data);
+            var value = VPack.ToObject<List<object>>(data);
 
             // then
             // array
@@ -31,7 +31,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithOneZeroBytes;
 
             // when
-            var value = VelocyPack.ToObject<List<object>>(data);
+            var value = VPack.ToObject<List<object>>(data);
 
             // then
             // array
@@ -48,7 +48,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithThreeZeroBytes;
 
             // when
-            var value = VelocyPack.ToObject<List<object>>(data);
+            var value = VPack.ToObject<List<object>>(data);
 
             // then
             // array
@@ -65,7 +65,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithSevenZeroBytes;
 
             // when
-            var value = VelocyPack.ToObject<List<object>>(data);
+            var value = VPack.ToObject<List<object>>(data);
 
             // then
             // array

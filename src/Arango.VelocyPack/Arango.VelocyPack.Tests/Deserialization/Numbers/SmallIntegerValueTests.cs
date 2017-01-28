@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.ZeroInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(0, value);
@@ -26,7 +26,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosOneInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(1, value);
@@ -39,7 +39,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosTwoInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(2, value);
@@ -52,7 +52,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosThreeInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(3, value);
@@ -65,7 +65,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosFourInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(4, value);
@@ -78,7 +78,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosFiveInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(5, value);
@@ -91,7 +91,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosSixInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(6, value);
@@ -104,7 +104,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosSevenInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(7, value);
@@ -117,7 +117,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosEightInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(8, value);
@@ -130,7 +130,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.PosNineInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(9, value);
@@ -143,7 +143,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegSixInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-6, value);
@@ -156,7 +156,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegFiveInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-5, value);
@@ -169,7 +169,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegFourInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-4, value);
@@ -182,7 +182,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegThreeInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-3, value);
@@ -195,7 +195,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegTwoInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-2, value);
@@ -208,7 +208,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.NegOneInt;
 
             // when
-            var value = VelocyPack.ToObject<sbyte>(data);
+            var value = VPack.ToObject<sbyte>(data);
 
             // then
             Assert.AreEqual(-1, value);

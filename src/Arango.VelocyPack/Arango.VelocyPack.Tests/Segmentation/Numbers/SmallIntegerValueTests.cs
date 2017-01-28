@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.ZeroInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -34,7 +34,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosOneInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -54,7 +54,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosTwoInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -74,7 +74,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosThreeInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -94,7 +94,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosFourInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -114,7 +114,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosFiveInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -134,7 +134,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosSixInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -154,7 +154,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosSevenInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -174,7 +174,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosEightInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -194,7 +194,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.PosNineInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -214,7 +214,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegSixInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -234,7 +234,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegFiveInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -254,7 +254,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegFourInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -274,7 +274,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegThreeInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -294,7 +294,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegTwoInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);
@@ -314,7 +314,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.NegOneInt;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<SmallIntegerSegment>(segment);

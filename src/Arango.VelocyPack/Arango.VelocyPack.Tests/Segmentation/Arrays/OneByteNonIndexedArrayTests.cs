@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithZeroZeroBytes;
 
             // when
-            var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
 
             // then
             // array
@@ -39,7 +39,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithOneZeroBytes;
 
             // when
-            var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
 
             // then
             // array
@@ -64,7 +64,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithThreeZeroBytes;
 
             // when
-            var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
 
             // then
             // array
@@ -89,7 +89,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.OneByteNonIndexedWithSevenZeroBytes;
 
             // when
-            var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
 
             // then
             // array

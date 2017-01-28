@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.Empty;
 
             // when
-            var segment = VelocyPack.ToSegment<EmptyArraySegment>(data);
+            var segment = VPack.ToSegment<EmptyArraySegment>(data);
 
             // then
             Assert.IsInstanceOf<EmptyArraySegment>(segment);

@@ -33,7 +33,7 @@ namespace Arango.VelocyPack.ConsoleTests
             // hex dump of [1, 2, 3]
             var arrayBytes = new byte[] { 0x02, 0x05, 0x31, 0x32, 0x33 };
             // parsed segment
-            var arraySegment = VelocyPack.ToSegment(arrayBytes);
+            var arraySegment = VPack.ToSegment(arrayBytes);
 
             PrintSegment(arraySegment);
         }

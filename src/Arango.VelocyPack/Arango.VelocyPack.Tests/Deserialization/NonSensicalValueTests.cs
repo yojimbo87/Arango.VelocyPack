@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
             var data = ValueHexDumps.MinKey;
 
             // when
-            var value = VelocyPack.ToObject<object>(data);
+            var value = VPack.ToObject<object>(data);
 
             // then
             Assert.IsNull(value);
@@ -26,7 +26,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
             var data = ValueHexDumps.MaxKey;
 
             // when
-            var value = VelocyPack.ToObject<object>(data);
+            var value = VPack.ToObject<object>(data);
 
             // then
             Assert.IsNull(value);

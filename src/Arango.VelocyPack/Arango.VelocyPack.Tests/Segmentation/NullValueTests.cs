@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.Null;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<NullSegment>(segment);

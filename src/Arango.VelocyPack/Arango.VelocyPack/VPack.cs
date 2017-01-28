@@ -4,7 +4,7 @@ using Arango.VelocyPack.Segments;
 
 namespace Arango.VelocyPack
 {
-    public class VelocyPack
+    public class VPack
     {
         public static Segment ToSegment(byte[] data)
         {

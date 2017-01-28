@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.EightByteNonIndexed;
 
             // when
-            var segment = VelocyPack.ToSegment<NonIndexedArraySegment>(data);
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
 
             // then
             // array

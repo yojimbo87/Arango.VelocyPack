@@ -58,7 +58,7 @@
     <Compile Include="ValueType.cs" />
     <Compile Include="Segments\Base\Segment.cs" />
     <Compile Include="Segments\Base\SegmentType.cs" />
-    <Compile Include="VelocyPack.cs" />
+    <Compile Include="VPack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

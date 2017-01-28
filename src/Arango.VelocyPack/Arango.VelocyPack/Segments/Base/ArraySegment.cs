@@ -15,7 +15,7 @@ namespace Arango.VelocyPack.Segments
             while (byteLength != (ulong)(CursorIndex - StartIndex))
             {
                 // parse array item into segment
-                var subSegment = VelocyPack.ToSegment(data, CursorIndex);
+                var subSegment = VPack.ToSegment(data, CursorIndex);
 
                 // array segment cursor index needs to be shifted to recently parse sub segment cursor index
                 CursorIndex = subSegment.CursorIndex;

@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
             var data = NumberHexDumps.Double;
 
             // when
-            var value = VelocyPack.ToObject<double>(data);
+            var value = VPack.ToObject<double>(data);
 
             // then
             Assert.AreEqual(0d, value);

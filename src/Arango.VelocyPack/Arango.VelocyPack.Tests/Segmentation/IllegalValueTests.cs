@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.Illegal;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<IllegalSegment>(segment);

@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             var data = ArrayHexDumps.Compact;
 
             // when
-            var segment = VelocyPack.ToSegment<CompactArraySegment>(data);
+            var segment = VPack.ToSegment<CompactArraySegment>(data);
 
             // then
             // array

@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.False;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<BooleanSegment>(segment);
@@ -34,7 +34,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.True;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<BooleanSegment>(segment);

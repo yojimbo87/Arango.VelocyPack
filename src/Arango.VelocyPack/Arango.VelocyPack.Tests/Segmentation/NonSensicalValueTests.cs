@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.MinKey;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<NonSensicalSegment>(segment);
@@ -34,7 +34,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
             var data = ValueHexDumps.MaxKey;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<NonSensicalSegment>(segment);

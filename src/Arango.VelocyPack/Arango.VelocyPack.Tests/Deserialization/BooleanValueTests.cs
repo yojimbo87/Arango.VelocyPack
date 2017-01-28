@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
             var data = ValueHexDumps.False;
 
             // when
-            var value = VelocyPack.ToObject<bool>(data);
+            var value = VPack.ToObject<bool>(data);
 
             // then
             Assert.IsFalse(value);
@@ -26,7 +26,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
             var data = ValueHexDumps.True;
 
             // when
-            var value = VelocyPack.ToObject<bool>(data);
+            var value = VPack.ToObject<bool>(data);
 
             // then
             Assert.IsTrue(value);

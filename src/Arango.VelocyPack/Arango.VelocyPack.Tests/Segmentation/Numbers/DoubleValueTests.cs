@@ -14,7 +14,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
             var data = NumberHexDumps.Double;
 
             // when
-            var segment = VelocyPack.ToSegment(data);
+            var segment = VPack.ToSegment(data);
 
             // then
             Assert.IsInstanceOf<DoubleSegment>(segment);
