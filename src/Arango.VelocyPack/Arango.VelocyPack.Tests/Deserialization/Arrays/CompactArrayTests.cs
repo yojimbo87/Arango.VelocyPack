@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Helpers;
 
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
@@ -13,7 +13,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
             // TODO: cast to List<sbyte>
 
             // given
-            var data = ArrayHexDumps.Compact;
+            var data = Converter.ToVPackBytes(Paths.JsonCompactArray, true, false);
 
             // when
             var value = VPack.ToObject<List<object>>(data);

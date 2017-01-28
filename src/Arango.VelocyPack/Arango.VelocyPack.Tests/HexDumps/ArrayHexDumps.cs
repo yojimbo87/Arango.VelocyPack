@@ -1,12 +1,7 @@
-﻿using Arango.VelocyPack.Tests.Helpers;
-
-namespace Arango.VelocyPack.Tests.HexDumps
+﻿namespace Arango.VelocyPack.Tests.HexDumps
 {
     public static class ArrayHexDumps
     {
-        // hex dump of [] empty array
-        public static readonly byte[] Empty;
-        
         // hex dump of [1, 2, 3] compact array
         public static readonly byte[] Compact = new byte[] { 0x13, 0x06, 0x31, 0x32, 0x33, 0x03 };
         
@@ -33,10 +28,5 @@ namespace Arango.VelocyPack.Tests.HexDumps
         public static readonly byte[] OneByteNonIndexedWithThreeZeroBytes = new byte[] { 0x02, 0x08, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
         // hex dump of [1, 2, 3] non indexed array with 1B BYTELENGTH followed by 7 zero bytes
         public static readonly byte[] OneByteNonIndexedWithSevenZeroBytes = new byte[] { 0x02, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
-
-        static ArrayHexDumps()
-        {
-            Empty = Converter.GetVPackData("Arrays", "EmptyArray.json");
-        }
     }
 }

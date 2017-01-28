@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeEmptyArrayHexDump()
         {
             // given
-            var data = Converter.GetVPackData(Paths.JsonEmptyArray);
+            var data = Converter.ToVPackBytes(Paths.JsonEmptyArray);
 
             // when
             var segment = VPack.ToSegment<EmptyArraySegment>(data);

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Helpers;
 
 namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeCompactArrayHexDump()
         {
             // given
-            var data = ArrayHexDumps.Compact;
+            var data = Converter.ToVPackBytes(Paths.JsonCompactArray, true, false);
 
             // when
             var segment = VPack.ToSegment<CompactArraySegment>(data);

@@ -13,6 +13,7 @@ namespace Arango.VelocyPack.Tests.Helpers
         // JSON data files
 
         // arrays
-        public static readonly string JsonEmptyArray = Path.Combine("Arrays", "EmptyArray.json");
+        public static readonly string JsonCompactArray = Path.Combine(JsonDataDir, "Arrays", "CompactArray.json");
+        public static readonly string JsonEmptyArray = Path.Combine(JsonDataDir, "Arrays", "EmptyArray.json");
     }
 }

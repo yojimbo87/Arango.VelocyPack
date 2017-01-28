@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Helpers;
 
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         public void DeserializeEmptyArrayHexDump()
         {
             // given
-            var data = ArrayHexDumps.Empty;
+            var data = Converter.ToVPackBytes(Paths.JsonEmptyArray);
 
             // when
             var value = VPack.ToObject<List<object>>(data);
