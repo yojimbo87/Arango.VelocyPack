@@ -1,6 +1,6 @@
-# velocypack.net
+# Arango.VelocyPack
 
-Velocypack.net is C# implementation of the [velocypack](https://github.com/arangodb/velocypack) compact serialization format.
+Arango.VelocyPack is C# implementation of the [velocypack](https://github.com/arangodb/velocypack) compact serialization format.
 
 ## Implementation status
 
