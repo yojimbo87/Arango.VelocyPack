@@ -7,8 +7,8 @@
     <ProjectGuid>{14F51036-0BCB-4FA6-A9E2-100F7C7337DC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Arango.VelocyPack.Console</RootNamespace>
-    <AssemblyName>Arango.VelocyPack.Console</AssemblyName>
+    <RootNamespace>Arango.VelocyPack.ConsoleTests</RootNamespace>
+    <AssemblyName>Arango.VelocyPack.ConsoleTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VelocyPack\Arango.VelocyPack.csproj">
+    <ProjectReference Include="..\Arango.VelocyPack\Arango.VelocyPack.csproj">
       <Project>{c929dcc7-2ed5-4eb2-aa75-e7d78c8c60ea}</Project>
       <Name>Arango.VelocyPack</Name>
     </ProjectReference>

@@ -92,7 +92,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VelocyPack\Arango.VelocyPack.csproj">
+    <ProjectReference Include="..\Arango.VelocyPack\Arango.VelocyPack.csproj">
       <Project>{c929dcc7-2ed5-4eb2-aa75-e7d78c8c60ea}</Project>
       <Name>Arango.VelocyPack</Name>
     </ProjectReference>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Arango.VelocyPack.Segments;
 
-namespace Arango.VelocyPack.Console
+namespace Arango.VelocyPack.ConsoleTests
 {
     class Program
     {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Console
 
             //ParseArrayToSegment();
 
-            System.Console.ReadLine();
+            Console.ReadLine();
         }
 
         static void HexDump()
@@ -21,11 +21,11 @@ namespace Arango.VelocyPack.Console
             Int32 int32 = -10;
             Int64 int64 = -10;
 
-            System.Console.WriteLine("Little endian: {0}", BitConverter.IsLittleEndian);
-            System.Console.WriteLine("sbyte hex: {0}", sbyteInt.ToString("X"));
-            System.Console.WriteLine("int16 hex: {0}", int16.ToString("X"));
-            System.Console.WriteLine("int32 hex: {0}", int32.ToString("X"));
-            System.Console.WriteLine("int64 hex: {0}", int64.ToString("X"));
+            Console.WriteLine("Little endian: {0}", BitConverter.IsLittleEndian);
+            Console.WriteLine("sbyte hex: {0}", sbyteInt.ToString("X"));
+            Console.WriteLine("int16 hex: {0}", int16.ToString("X"));
+            Console.WriteLine("int32 hex: {0}", int32.ToString("X"));
+            Console.WriteLine("int64 hex: {0}", int64.ToString("X"));
         }
 
         static void ParseArrayToSegment()
@@ -42,10 +42,10 @@ namespace Arango.VelocyPack.Console
         {
             for (int i = 0; i < indentLevel; i++)
             {
-                System.Console.Write("    ");
+                Console.Write("    ");
             }
 
-            System.Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.Type);
+            Console.WriteLine("{0} {1}->{2}: {3}", segment.ValueType, segment.StartIndex, segment.CursorIndex, segment.Type);
 
             if ((segment is ArraySegment) && (((ArraySegment)segment).Items != null))
             {
