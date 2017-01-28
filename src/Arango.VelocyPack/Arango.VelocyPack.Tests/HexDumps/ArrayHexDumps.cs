@@ -1,9 +1,11 @@
-﻿namespace Arango.VelocyPack.Tests.HexDumps
+﻿using Arango.VelocyPack.Tests.Helpers;
+
+namespace Arango.VelocyPack.Tests.HexDumps
 {
     public static class ArrayHexDumps
     {
         // hex dump of [] empty array
-        public static readonly byte[] Empty = new byte[] { 0x01 };
+        public static readonly byte[] Empty;
         
         // hex dump of [1, 2, 3] compact array
         public static readonly byte[] Compact = new byte[] { 0x13, 0x06, 0x31, 0x32, 0x33, 0x03 };
@@ -34,7 +36,7 @@
 
         static ArrayHexDumps()
         {
-            var foo = Utils.GetVPackHexDump("");
+            Empty = Converter.GetVPackData("Arrays", "EmptyArray.json");
         }
     }
 }

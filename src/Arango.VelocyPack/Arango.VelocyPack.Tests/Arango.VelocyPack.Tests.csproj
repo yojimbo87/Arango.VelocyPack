@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\Paths.cs" />
     <Compile Include="HexDumps\ArrayHexDumps.cs" />
     <Compile Include="Conversion\BinaryConverterTests.cs" />
     <Compile Include="Deserialization\Arrays\CompactArrayTests.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Segmentation\Numbers\DoubleValueTests.cs" />
     <Compile Include="Segmentation\Numbers\SmallIntegerValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Helpers\Converter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\JSON\Arrays\CompactArray.json" />
