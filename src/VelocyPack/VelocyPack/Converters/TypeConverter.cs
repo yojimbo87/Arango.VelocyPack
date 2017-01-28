@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using VelocyPack.Segments;
+using Arango.VelocyPack.Segments;
 
-namespace VelocyPack.Converters
+namespace Arango.VelocyPack.Converters
 {
     public static class TypeConverter
     {

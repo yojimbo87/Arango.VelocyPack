@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocyPack", "VelocyPack\VelocyPack.csproj", "{C929DCC7-2ED5-4EB2-AA75-E7D78C8C60EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arango.VelocyPack", "VelocyPack\Arango.VelocyPack.csproj", "{C929DCC7-2ED5-4EB2-AA75-E7D78C8C60EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocyPack.Console", "VelocyPack.Console\VelocyPack.Console.csproj", "{14F51036-0BCB-4FA6-A9E2-100F7C7337DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arango.VelocyPack.Console", "VelocyPack.Console\Arango.VelocyPack.Console.csproj", "{14F51036-0BCB-4FA6-A9E2-100F7C7337DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VelocyPack.Tests", "VelocyPack.Tests\VelocyPack.Tests.csproj", "{61F6B064-230E-4A97-8B24-78D248266ABA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arango.VelocyPack.Tests", "VelocyPack.Tests\Arango.VelocyPack.Tests.csproj", "{61F6B064-230E-4A97-8B24-78D248266ABA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,8 +6,8 @@
     <ProjectGuid>{61F6B064-230E-4A97-8B24-78D248266ABA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VelocyPack.Tests</RootNamespace>
-    <AssemblyName>VelocyPack.Tests</AssemblyName>
+    <RootNamespace>Arango.VelocyPack.Tests</RootNamespace>
+    <AssemblyName>Arango.VelocyPack.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VelocyPack\VelocyPack.csproj">
+    <ProjectReference Include="..\VelocyPack\Arango.VelocyPack.csproj">
       <Project>{c929dcc7-2ed5-4eb2-aa75-e7d78c8c60ea}</Project>
-      <Name>VelocyPack</Name>
+      <Name>Arango.VelocyPack</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

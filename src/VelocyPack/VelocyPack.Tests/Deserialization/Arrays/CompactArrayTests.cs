@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Deserialization.Arrays
+namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
     [TestFixture]
     public class CompactArrayTests

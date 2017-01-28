@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace VelocyPack.Converters
+namespace Arango.VelocyPack.Converters
 {
     public static class BinaryConverter
     {

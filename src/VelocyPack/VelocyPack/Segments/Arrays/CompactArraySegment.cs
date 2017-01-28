@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VelocyPack.Converters;
+using Arango.VelocyPack.Converters;
 
-namespace VelocyPack.Segments
+namespace Arango.VelocyPack.Segments
 {
     public class CompactArraySegment : ArraySegment
     {

@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14F51036-0BCB-4FA6-A9E2-100F7C7337DC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{C929DCC7-2ED5-4EB2-AA75-E7D78C8C60EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VelocyPack.Console</RootNamespace>
-    <AssemblyName>VelocyPack.Console</AssemblyName>
+    <RootNamespace>Arango.VelocyPack</RootNamespace>
+    <AssemblyName>Arango.VelocyPack</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,18 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Converters\ArrayConverter.cs" />
+    <Compile Include="Converters\BinaryConverter.cs" />
+    <Compile Include="Segments\Base\ArraySegment.cs" />
+    <Compile Include="Segments\BooleanSegment.cs" />
+    <Compile Include="Segments\Arrays\CompactArraySegment.cs" />
+    <Compile Include="Converters\TypeConverter.cs" />
+    <Compile Include="Segments\Numbers\DoubleSegment.cs" />
+    <Compile Include="Segments\Arrays\EmptyArraySegment.cs" />
+    <Compile Include="Segments\IllegalSegment.cs" />
+    <Compile Include="Segments\NoneSegment.cs" />
+    <Compile Include="Segments\Arrays\NonIndexedArraySegment.cs" />
+    <Compile Include="Segments\NonSensicalSegment.cs" />
+    <Compile Include="Segments\NullSegment.cs" />
+    <Compile Include="Segments\Numbers\SignedIntegerSegment.cs" />
+    <Compile Include="Segments\Numbers\SmallIntegerSegment.cs" />
+    <Compile Include="ValueType.cs" />
+    <Compile Include="Segments\Base\Segment.cs" />
+    <Compile Include="Segments\Base\SegmentType.cs" />
+    <Compile Include="VelocyPack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VelocyPack\VelocyPack.csproj">
-      <Project>{c929dcc7-2ed5-4eb2-aa75-e7d78c8c60ea}</Project>
-      <Name>VelocyPack</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

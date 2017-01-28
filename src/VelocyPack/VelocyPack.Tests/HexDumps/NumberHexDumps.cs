@@ -1,4 +1,4 @@
-﻿namespace VelocyPack.Tests.HexDumps
+﻿namespace Arango.VelocyPack.Tests.HexDumps
 {
     public static class NumberHexDumps
     {

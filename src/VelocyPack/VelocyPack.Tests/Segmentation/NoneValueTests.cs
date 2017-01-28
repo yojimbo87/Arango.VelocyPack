@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using VelocyPack.Segments;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Segments;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Segmentation
+namespace Arango.VelocyPack.Tests.Segmentation
 {
     [TestFixture]
     public class NoneValueTests

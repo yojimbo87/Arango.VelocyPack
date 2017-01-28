@@ -1,4 +1,4 @@
-﻿namespace VelocyPack.Segments
+﻿namespace Arango.VelocyPack.Segments
 {
     public enum SegmentType
     {

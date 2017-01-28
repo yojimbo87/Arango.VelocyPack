@@ -1,9 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
-using VelocyPack.Converters;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Converters;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Conversion
+namespace Arango.VelocyPack.Tests.Conversion
 {
     [TestFixture]
     public class BinaryConverterTests

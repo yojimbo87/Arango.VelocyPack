@@ -1,4 +1,4 @@
-﻿namespace VelocyPack
+﻿namespace Arango.VelocyPack
 {
     public enum ValueType
     {

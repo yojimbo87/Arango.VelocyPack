@@ -1,8 +1,8 @@
 ﻿using System;
-using VelocyPack.Converters;
-using VelocyPack.Segments;
+using Arango.VelocyPack.Converters;
+using Arango.VelocyPack.Segments;
 
-namespace VelocyPack
+namespace Arango.VelocyPack
 {
     public class VelocyPack
     {

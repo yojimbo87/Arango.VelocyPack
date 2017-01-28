@@ -1,7 +1,7 @@
 ﻿using System;
-using VelocyPack.Segments;
+using Arango.VelocyPack.Segments;
 
-namespace VelocyPack.Console
+namespace Arango.VelocyPack.Console
 {
     class Program
     {

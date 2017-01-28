@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VelocyPack.Converters
+namespace Arango.VelocyPack.Converters
 {
     public class ArrayConverter
     {

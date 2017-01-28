@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VelocyPack.Segments
+namespace Arango.VelocyPack.Segments
 {
     public abstract class ArraySegment : Segment
     {

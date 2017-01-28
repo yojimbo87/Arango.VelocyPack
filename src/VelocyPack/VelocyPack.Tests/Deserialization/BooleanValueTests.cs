@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Deserialization
+namespace Arango.VelocyPack.Tests.Deserialization
 {
     [TestFixture]
     public class BooleanValueTests

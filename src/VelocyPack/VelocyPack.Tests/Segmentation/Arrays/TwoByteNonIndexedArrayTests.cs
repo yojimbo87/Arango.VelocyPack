@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using VelocyPack.Segments;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Segments;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Segmentation.Arrays
+namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
     [TestFixture]
     public class TwoByteNonIndexedArrayTests

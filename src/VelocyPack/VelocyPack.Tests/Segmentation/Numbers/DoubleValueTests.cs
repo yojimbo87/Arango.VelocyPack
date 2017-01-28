@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using VelocyPack.Segments;
-using VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Segments;
+using Arango.VelocyPack.Tests.HexDumps;
 
-namespace VelocyPack.Tests.Segmentation.Numbers
+namespace Arango.VelocyPack.Tests.Segmentation.Numbers
 {
     [TestFixture]
     public class DoubleValueTests

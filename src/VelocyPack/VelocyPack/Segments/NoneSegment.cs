@@ -1,6 +1,6 @@
-﻿using VelocyPack.Converters;
+﻿using Arango.VelocyPack.Converters;
 
-namespace VelocyPack.Segments
+namespace Arango.VelocyPack.Segments
 {
     public class NoneSegment : Segment
     {
