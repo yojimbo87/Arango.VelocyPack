@@ -31,5 +31,10 @@
         public static readonly byte[] OneByteNonIndexedWithThreeZeroBytes = new byte[] { 0x02, 0x08, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
         // hex dump of [1, 2, 3] non indexed array with 1B BYTELENGTH followed by 7 zero bytes
         public static readonly byte[] OneByteNonIndexedWithSevenZeroBytes = new byte[] { 0x02, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
+
+        static ArrayHexDumps()
+        {
+            var foo = Utils.GetVPackHexDump("");
+        }
     }
 }
