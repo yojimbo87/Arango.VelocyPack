@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace Arango.VelocyPack.Converters
 {
-    public static class BinaryConverter
+    internal static class BinaryConverter
     {
-        public static bool IsBitSet(byte value, int position)
+        internal static bool IsBitSet(byte value, int position)
         {
             return (value & (1 << position)) != 0;
         }
 
-        public static List<bool> ToBits(byte value)
+        internal static List<bool> ToBits(byte value)
         {
             var bits = new List<bool>();
 
@@ -23,7 +23,7 @@ namespace Arango.VelocyPack.Converters
             return bits;
         }
 
-        public static byte[] ToBytes(List<bool> bits)
+        internal static byte[] ToBytes(List<bool> bits)
         {
             var bitArray = new BitArray(bits.ToArray());
             var byteArray = new byte[(bitArray.Length - 1) / 8 + 1];
@@ -33,7 +33,7 @@ namespace Arango.VelocyPack.Converters
             return byteArray;
         }
 
-        public static object ToSignedInteger(byte[] data)
+        internal static object ToSignedInteger(byte[] data)
         {
             object integer;
 
@@ -46,22 +46,14 @@ namespace Arango.VelocyPack.Converters
                     integer = BitConverter.ToInt16(data, 0);
                     break;
                 case 3:
-                    integer = ToInt32(data[2], data[1], data[0]);
-                    break;
                 case 4:
-                    integer = BitConverter.ToInt32(data, 0);
+                    integer = ToInt32(data);
                     break;
                 case 5:
-                    integer = ToInt64(data[4], data[3], data[2], data[1], data[0], 0xff, 0xff, 0xff);
-                    break;
                 case 6:
-                    integer = ToInt64(data[5], data[4], data[3], data[2], data[1], data[0], 0xff, 0xff);
-                    break;
                 case 7:
-                    integer = ToInt64(data[6], data[5], data[4], data[3], data[2], data[1], data[0], 0xff);
-                    break;
                 case 8:
-                    integer = BitConverter.ToInt64(data, 0);
+                    integer = ToInt64(data);
                     break;
                 default:
                     // TODO: throw custom exception
@@ -71,78 +63,69 @@ namespace Arango.VelocyPack.Converters
             return integer;
         }
 
-        public static int ToInt32(byte byte1, byte byte2, byte byte3)
+        private static int ToInt32(byte[] data)
         {
-            int value = 0;
-
-            if ((byte1 & 0x80) != 0)
+            // array needs to have 3 or 4 bytes
+            if ((data.Length < 3) || (data.Length > 4))
             {
-                value |= 0xff << 24;
+                throw new ArgumentException($"Array doesn't have 3 or 4 bytes.");
             }
 
-            value |= byte1 << 16;
-            value |= byte2 << 8;
-            value |= byte3;
+            if (data.Length == 3)
+            {
+                byte zeroPaddingByte = 0;
 
-            return value;
+                // negative integer value needs to have zero byte set to max value
+                if ((data[2] & 0x80) != 0)
+                {
+                    zeroPaddingByte = 255;
+                }
+
+                return BitConverter.ToInt32(new byte[] { data[0], data[1], data[2], zeroPaddingByte }, 0);
+            }
+            else
+            {
+                return BitConverter.ToInt32(data, 0);
+            }
         }
 
-        public static long ToInt64(byte[] data)
+        private static long ToInt64(byte[] data)
         {
-            long value = 0;
-
-            for (var i = (data.Length - 1); i >= 0; i--)
+            // array needs to have 5, 6, 7 or 8 bytes
+            if ((data.Length < 5) || (data.Length > 8))
             {
-                value <<= 8;
-                value |= (data[i] & 0xff);
+                throw new ArgumentException($"Array doesn't have 5, 6, 7 or 8 bytes.");
             }
 
-            return value;
+            var zeroPaddingCount = 8 - data.Length;
+
+            if (zeroPaddingCount > 0)
+            {
+                // create zero pad array which will fill empty bytes for the purpose of conversion
+                byte[] zeroPaddingBytes = new byte[zeroPaddingCount];
+                var isNegativeIntegerValue = (data[data.Length - 1] & 0x80) != 0;
+
+                for (var i = 0; i < zeroPaddingCount; i++)
+                {
+                    if (isNegativeIntegerValue)
+                    {
+                        zeroPaddingBytes[i] = 255;
+                    }
+                    else
+                    {
+                        zeroPaddingBytes[i] = 0;
+                    }
+                }
+
+                return BitConverter.ToInt64(ArrayConverter.Join(data, zeroPaddingBytes), 0);
+            }
+            else
+            {
+                return BitConverter.ToInt64(data, 0);
+            }
         }
 
-        /*public static long ToInt64(byte byte1, byte byte2, byte byte3, byte byte4, byte byte5, byte byte6, byte byte7, byte byte8)
-        {
-            long value = 0;
-
-            if ((byte1 & 0x80) != 0)
-            {
-                value |= 0xff << 72;
-            }
-
-            value |= (long)byte1 << 64;
-            value |= (long)byte2 << 56;
-            value |= (long)byte3 << 48;
-            value |= (long)byte4 << 40;
-            value |= (long)byte5 << 32;
-            value |= (long)byte6 << 24;
-            value |= (long)byte7 << 16;
-            value |= (long)byte8 << 8;
-
-            return value;
-        }*/
-
-        public static long ToInt64(byte byte1, byte byte2, byte byte3, byte byte4, byte byte5, byte byte6, byte byte7, byte byte8)
-        {
-            long value = 0;
-
-            if ((byte1 & 0x80) != 0)
-            {
-                value |= 0xff << 64;
-            }
-
-            value |= (byte1 << 56) & 0xff;
-            value |= (byte2 << 48) & 0xff;
-            value |= (byte3 << 40) & 0xff;
-            value |= (byte4 << 32) & 0xff;
-            value |= (byte5 << 24) & 0xff;
-            value |= (byte6 << 16) & 0xff;
-            value |= (byte7 << 8) & 0xff;
-            value |= byte8 & 0xff;
-
-            return value;
-        }
-
-        public static ulong ToUInt64(byte[] data)
+        internal static ulong ToUInt64(byte[] data)
         {
             ulong value = 0;
 

@@ -1,10 +1,21 @@
 ﻿using System;
+using System.Linq;
 
 namespace Arango.VelocyPack.Converters
 {
-    public class ArrayConverter
+    internal static class ArrayConverter
     {
-        public static byte[] Slice(byte[] data, int index, int length)
+        internal static byte[] Append(byte[] array, byte item)
+        {
+            return array.Concat(new[] { item }).ToArray();
+        }
+
+        internal static byte[] Join(byte[] array1, byte[] array2)
+        {
+            return array1.Concat(array2).ToArray();
+        }
+
+        internal static byte[] Slice(byte[] data, int index, int length)
         {
             var slicedArray = new byte[length];
 
@@ -13,7 +24,7 @@ namespace Arango.VelocyPack.Converters
             return slicedArray;
         }
 
-        public static byte[] ReverseCopy(byte[] data)
+        internal static byte[] ReverseCopy(byte[] data)
         {
             var arrayReverseCopy = new byte[data.Length];
 

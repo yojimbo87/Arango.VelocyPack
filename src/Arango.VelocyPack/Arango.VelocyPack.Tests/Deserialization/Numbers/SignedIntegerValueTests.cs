@@ -59,6 +59,19 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
+        public void DeserializeFiveByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonFiveByteSignedInt);
+
+            // when
+            var value = VPack.ToObject<long>(data);
+
+            // then
+            Assert.AreEqual(-12345678901, value);
+        }
+
+        [Test]
         public void DeserializeEightByteSignedIntValue()
         {
             // given

@@ -46,6 +46,7 @@ namespace Arango.VelocyPack.Tests.Utils
         public static readonly string JsonTwoByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "TwoByteSignedInt.json");
         public static readonly string JsonThreeByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "ThreeByteSignedInt.json");
         public static readonly string JsonFourByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "FourByteSignedInt.json");
+        public static readonly string JsonFiveByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "FiveByteSignedInt.json");
         public static readonly string JsonEightByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "EightByteSignedInt.json");
 
         // floats

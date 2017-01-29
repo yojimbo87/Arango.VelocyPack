@@ -97,6 +97,7 @@
     <None Include="Data\JSON\Null.json" />
     <None Include="Data\JSON\Numbers\Double.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\EightByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\FiveByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\FourByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\OneByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\ThreeByteSignedInt.json" />
