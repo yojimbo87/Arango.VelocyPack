@@ -51,8 +51,6 @@ namespace Arango.VelocyPack.Segments
                     break;
             }
 
-            //CursorIndex += CountByteLengthZeroBytes(data);
-
             ParseItems(data, byteLength);
         }
 

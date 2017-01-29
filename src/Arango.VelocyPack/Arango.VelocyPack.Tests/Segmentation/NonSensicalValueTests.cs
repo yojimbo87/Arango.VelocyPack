@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         public void SegmentizeMinKeyValueHexDump()
         {
             // given
-            var data = ValueHexDumps.MinKey;
+            var data = Hex.MinKeyValue;
 
             // when
             var segment = VPack.ToSegment(data);
@@ -31,7 +31,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         public void SegmentizeMaxKeyValueHexDump()
         {
             // given
-            var data = ValueHexDumps.MaxKey;
+            var data = Hex.MaxKeyValue;
 
             // when
             var segment = VPack.ToSegment(data);

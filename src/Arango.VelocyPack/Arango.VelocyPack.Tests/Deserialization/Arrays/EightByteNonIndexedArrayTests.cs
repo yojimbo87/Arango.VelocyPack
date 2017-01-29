@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         public void DeserializeNonIndexedArrayHexDump()
         {
             // given
-            var data = ArrayHexDumps.EightByteNonIndexed;
+            var data = Hex.EightByteNonIndexedArray;
 
             // when
             var value = VPack.ToObject<List<object>>(data);

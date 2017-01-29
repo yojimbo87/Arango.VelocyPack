@@ -1,13 +1,29 @@
 ﻿using System;
 using NUnit.Framework;
 using Arango.VelocyPack.Converters;
-using Arango.VelocyPack.Tests.HexDumps;
 
 namespace Arango.VelocyPack.Tests.Conversion
 {
     [TestFixture]
     public class BinaryConverterTests
     {
+        // hex dump of -10 int VPack value
+        public static readonly byte[] OneByteSignedInt = new byte[] { 0x20, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] TwoByteSignedInt = new byte[] { 0x21, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] ThreeByteSignedInt = new byte[] { 0x22, 0xff, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] FourByteSignedInt = new byte[] { 0x23, 0xff, 0xff, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] FiveByteSignedInt = new byte[] { 0x24, 0xff, 0xff, 0xff, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] SixByteSignedInt = new byte[] { 0x25, 0xff, 0xff, 0xff, 0xff, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] SevenByteSignedInt = new byte[] { 0x26, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xf6 };
+        // hex dump of -10 int VPack value
+        public static readonly byte[] EightByteSignedInt = new byte[] { 0x27, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xf6 };
+
         [Test]
         public void ConvertThreeBytesToInt32()
         {
@@ -53,7 +69,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.OneByteSignedInt, 1, 1);
+            var data = ArrayConverter.Slice(OneByteSignedInt, 1, 1);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -68,7 +84,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.TwoByteSignedInt, 1, 2);
+            var data = ArrayConverter.Slice(TwoByteSignedInt, 1, 2);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -83,7 +99,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.ThreeByteSignedInt, 1, 3);
+            var data = ArrayConverter.Slice(ThreeByteSignedInt, 1, 3);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -98,7 +114,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.FourByteSignedInt, 1, 4);
+            var data = ArrayConverter.Slice(FourByteSignedInt, 1, 4);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -113,7 +129,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.FiveByteSignedInt, 1, 5);
+            var data = ArrayConverter.Slice(FiveByteSignedInt, 1, 5);
 
             // when
             //var value = BinaryConverter.ToSignedInteger(data);
@@ -141,7 +157,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.SixByteSignedInt, 1, 6);
+            var data = ArrayConverter.Slice(SixByteSignedInt, 1, 6);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -156,7 +172,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.SevenByteSignedInt, 1, 7);
+            var data = ArrayConverter.Slice(SevenByteSignedInt, 1, 7);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);
@@ -171,7 +187,7 @@ namespace Arango.VelocyPack.Tests.Conversion
         {
             // given
             // first byte which represents VPack value type needs to be omitted
-            var data = ArrayConverter.Slice(NumberHexDumps.EightByteSignedInt, 1, 8);
+            var data = ArrayConverter.Slice(EightByteSignedInt, 1, 8);
 
             // when
             var value = BinaryConverter.ToSignedInteger(data);

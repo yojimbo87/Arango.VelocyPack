@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         public void SegmentizeIllegalValueHexDump()
         {
             // given
-            var data = ValueHexDumps.Illegal;
+            var data = Hex.IllegalValue;
 
             // when
             var segment = VPack.ToSegment(data);

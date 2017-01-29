@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization
 {
@@ -10,7 +10,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeNullValueHexDump()
         {
             // given
-            var data = ValueHexDumps.Null;
+            var data = Converter.ToVPackBytes(Paths.JsonNullValue);
 
             // when
             var value = VPack.ToObject<object>(data);

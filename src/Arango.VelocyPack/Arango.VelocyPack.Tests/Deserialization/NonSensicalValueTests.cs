@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization
 {
@@ -10,7 +10,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeMinKeyValueHexDump()
         {
             // given
-            var data = ValueHexDumps.MinKey;
+            var data = Hex.MinKeyValue;
 
             // when
             var value = VPack.ToObject<object>(data);
@@ -23,7 +23,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeMaxKeyValueHexDump()
         {
             // given
-            var data = ValueHexDumps.MaxKey;
+            var data = Hex.MaxKeyValue;
 
             // when
             var value = VPack.ToObject<object>(data);

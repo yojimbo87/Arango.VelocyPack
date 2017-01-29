@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation.Numbers
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeZeroIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.ZeroInt;
+            var data = Converter.ToVPackBytes(Paths.JsonZeroInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -31,7 +31,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosOneIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosOneInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosOneInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -51,7 +51,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosTwoIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosTwoInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosTwoInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -71,7 +71,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosThreeIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosThreeInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosThreeInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -91,7 +91,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosFourIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosFourInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosFourInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -111,7 +111,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosFiveIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosFiveInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosFiveInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -131,7 +131,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosSixIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosSixInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosSixInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -151,7 +151,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosSevenIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosSevenInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosSevenInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -171,7 +171,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosEightIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosEightInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosEightInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -191,7 +191,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizePosNineIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.PosNineInt;
+            var data = Converter.ToVPackBytes(Paths.JsonPosNineInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -211,7 +211,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegSixIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegSixInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegSixInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -231,7 +231,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegFiveIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegFiveInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegFiveInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -251,7 +251,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegFourIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegFourInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegFourInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -271,7 +271,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegThreeIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegThreeInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegThreeInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -291,7 +291,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegTwoIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegTwoInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegTwoInt);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -311,7 +311,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeNegOneIntValueHexDump()
         {
             // given
-            var data = NumberHexDumps.NegOneInt;
+            var data = Converter.ToVPackBytes(Paths.JsonNegOneInt);
 
             // when
             var segment = VPack.ToSegment(data);

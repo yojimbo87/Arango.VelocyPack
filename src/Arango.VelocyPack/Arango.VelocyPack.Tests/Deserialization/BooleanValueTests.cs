@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization
 {
@@ -10,7 +10,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeFalseBooleanValueHexDump()
         {
             // given
-            var data = ValueHexDumps.False;
+            var data = Converter.ToVPackBytes(Paths.JsonFalseValue);
 
             // when
             var value = VPack.ToObject<bool>(data);
@@ -23,7 +23,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeTrueBooleanValueHexDump()
         {
             // given
-            var data = ValueHexDumps.True;
+            var data = Converter.ToVPackBytes(Paths.JsonTrueValue);
 
             // when
             var value = VPack.ToObject<bool>(data);

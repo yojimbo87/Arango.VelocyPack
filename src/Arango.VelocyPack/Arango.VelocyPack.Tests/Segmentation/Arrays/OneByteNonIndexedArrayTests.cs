@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeNonIndexedArrayHexDump_With_ZeroZeroByteByteLengthSize()
         {
             // given
-            var data = ArrayHexDumps.OneByteNonIndexedWithZeroZeroBytes;
+            var data = Hex.OneByteNonIndexedArrayWithZeroZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -36,7 +36,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeNonIndexedArrayHexDump_With_OneZeroByteByteLengthSize()
         {
             // given
-            var data = ArrayHexDumps.OneByteNonIndexedWithOneZeroBytes;
+            var data = Hex.OneByteNonIndexedArrayWithOneZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -61,7 +61,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeNonIndexedArrayHexDump_With_ThreeZeroByteByteLengthSize()
         {
             // given
-            var data = ArrayHexDumps.OneByteNonIndexedWithThreeZeroBytes;
+            var data = Hex.OneByteNonIndexedArrayWithThreeZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -86,7 +86,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         public void SegmentizeNonIndexedArrayHexDump_With_SevenZeroByteByteLengthSize()
         {
             // given
-            var data = ArrayHexDumps.OneByteNonIndexedWithSevenZeroBytes;
+            var data = Hex.OneByteNonIndexedArrayWithSevenZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);

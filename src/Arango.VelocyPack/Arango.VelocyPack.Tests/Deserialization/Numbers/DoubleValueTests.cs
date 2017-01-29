@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization.Numbers
 {
@@ -10,13 +10,13 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         public void DeserializeDoubleValueHexDump()
         {
             // given
-            var data = NumberHexDumps.Double;
+            var data = Converter.ToVPackBytes(Paths.JsonDouble);
 
             // when
             var value = VPack.ToObject<double>(data);
 
             // then
-            Assert.AreEqual(0d, value);
+            Assert.AreEqual(0.33333333333333331, value);
         }
     }
 }

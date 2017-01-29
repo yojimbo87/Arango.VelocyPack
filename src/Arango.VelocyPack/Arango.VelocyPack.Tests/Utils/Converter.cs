@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 
-namespace Arango.VelocyPack.Tests.Helpers
+namespace Arango.VelocyPack.Tests.Utils
 {
     public static class Converter
     {

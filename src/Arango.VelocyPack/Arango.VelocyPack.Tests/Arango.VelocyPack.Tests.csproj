@@ -56,7 +56,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers\Paths.cs" />
+    <None Include="Data\JSON\Arrays\EightByteLengthNonIndexed.json" />
+    <Compile Include="Utils\Hex.cs" />
+    <Compile Include="Utils\Paths.cs" />
     <Compile Include="HexDumps\ArrayHexDumps.cs" />
     <Compile Include="Conversion\BinaryConverterTests.cs" />
     <Compile Include="Deserialization\Arrays\CompactArrayTests.cs" />
@@ -72,8 +74,6 @@
     <Compile Include="Deserialization\NullValueTests.cs" />
     <Compile Include="Deserialization\Numbers\DoubleValueTests.cs" />
     <Compile Include="Deserialization\Numbers\SmallIntegerValueTests.cs" />
-    <Compile Include="HexDumps\NumberHexDumps.cs" />
-    <Compile Include="HexDumps\ValueHexDumps.cs" />
     <Compile Include="Segmentation\Arrays\CompactArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\OneByteNonIndexedArrayTests.cs" />
     <Compile Include="Segmentation\Arrays\EmptyArrayTests.cs" />
@@ -88,11 +88,31 @@
     <Compile Include="Segmentation\Numbers\DoubleValueTests.cs" />
     <Compile Include="Segmentation\Numbers\SmallIntegerValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helpers\Converter.cs" />
+    <Compile Include="Utils\Converter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\JSON\Arrays\CompactArray.json" />
-    <None Include="Data\JSON\Arrays\EmptyArray.json" />
+    <None Include="Data\JSON\Arrays\Compact.json" />
+    <None Include="Data\JSON\Arrays\Empty.json" />
+    <None Include="Data\JSON\False.json" />
+    <None Include="Data\JSON\Null.json" />
+    <None Include="Data\JSON\Numbers\Double.json" />
+    <None Include="Data\JSON\Numbers\NegFiveInt.json" />
+    <None Include="Data\JSON\Numbers\NegFourInt.json" />
+    <None Include="Data\JSON\Numbers\NegOneInt.json" />
+    <None Include="Data\JSON\Numbers\NegSixInt.json" />
+    <None Include="Data\JSON\Numbers\NegThreeInt.json" />
+    <None Include="Data\JSON\Numbers\NegTwoInt.json" />
+    <None Include="Data\JSON\Numbers\PosEightInt.json" />
+    <None Include="Data\JSON\Numbers\PosFiveInt.json" />
+    <None Include="Data\JSON\Numbers\PosFourInt.json" />
+    <None Include="Data\JSON\Numbers\PosNineInt.json" />
+    <None Include="Data\JSON\Numbers\PosOneInt.json" />
+    <None Include="Data\JSON\Numbers\PosSevenInt.json" />
+    <None Include="Data\JSON\Numbers\PosSixInt.json" />
+    <None Include="Data\JSON\Numbers\PosThreeInt.json" />
+    <None Include="Data\JSON\Numbers\PosTwoInt.json" />
+    <None Include="Data\JSON\Numbers\ZeroInt.json" />
+    <None Include="Data\JSON\True.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,8 +121,9 @@
       <Name>Arango.VelocyPack</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Data\Converters\" />
+    <Content Include="Data\Converters\json-to-vpack.exe" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

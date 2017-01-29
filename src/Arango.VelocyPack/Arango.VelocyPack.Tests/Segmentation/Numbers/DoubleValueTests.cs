@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation.Numbers
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         public void SegmentizeDoubleValueHexDump()
         {
             // given
-            var data = NumberHexDumps.Double;
+            var data = Converter.ToVPackBytes(Paths.JsonDouble);
 
             // when
             var segment = VPack.ToSegment(data);

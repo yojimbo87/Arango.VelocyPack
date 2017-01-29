@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using Arango.VelocyPack.Tests.HexDumps;
 
 namespace Arango.VelocyPack.Tests.Deserialization
 {
@@ -10,7 +9,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         public void DeserializeNoneValueHexDump()
         {
             // given
-            var data = ValueHexDumps.None;
+            var data = new byte[] { 0x00 };
 
             // when
             var value = VPack.ToObject<object>(data);

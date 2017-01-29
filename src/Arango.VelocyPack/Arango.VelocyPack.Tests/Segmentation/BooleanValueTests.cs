@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using Arango.VelocyPack.Segments;
-using Arango.VelocyPack.Tests.HexDumps;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Segmentation
 {
@@ -11,7 +11,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         public void SegmentizeFalseBooleanValueHexDump()
         {
             // given
-            var data = ValueHexDumps.False;
+            var data = Converter.ToVPackBytes(Paths.JsonFalseValue);
 
             // when
             var segment = VPack.ToSegment(data);
@@ -31,7 +31,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         public void SegmentizeTrueBooleanValueHexDump()
         {
             // given
-            var data = ValueHexDumps.True;
+            var data = Converter.ToVPackBytes(Paths.JsonTrueValue);
 
             // when
             var segment = VPack.ToSegment(data);
