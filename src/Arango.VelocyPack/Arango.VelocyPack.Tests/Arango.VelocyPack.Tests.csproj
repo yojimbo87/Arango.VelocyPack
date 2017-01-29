@@ -59,7 +59,6 @@
     <None Include="Data\JSON\Arrays\EightByteLengthNonIndexed.json" />
     <Compile Include="Utils\Hex.cs" />
     <Compile Include="Utils\Paths.cs" />
-    <Compile Include="HexDumps\ArrayHexDumps.cs" />
     <Compile Include="Conversion\BinaryConverterTests.cs" />
     <Compile Include="Deserialization\Arrays\CompactArrayTests.cs" />
     <Compile Include="Deserialization\Arrays\EightByteNonIndexedArrayTests.cs" />
