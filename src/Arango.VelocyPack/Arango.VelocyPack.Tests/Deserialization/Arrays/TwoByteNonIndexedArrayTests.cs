@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class TwoByteNonIndexedArrayTests
     {
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With__ZeroZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With__ZeroZeroByteByteLengthSize()
         {
             // given
             var data = Hex.TwoByteNonIndexedArrayWithZeroZeroBytes;
@@ -25,7 +25,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_TwoZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_TwoZeroByteByteLengthSize()
         {
             // given
             var data = Hex.TwoByteNonIndexedArrayWithTwoZeroBytes;
@@ -42,7 +42,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_SixZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_SixZeroByteByteLengthSize()
         {
             // given
             var data = Hex.TwoByteNonIndexedArrayWithSixZeroBytes;

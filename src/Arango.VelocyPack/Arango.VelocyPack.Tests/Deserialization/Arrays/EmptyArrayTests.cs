@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class EmptyArrayTests
     {
         [Test]
-        public void DeserializeEmptyArrayHexDump()
+        public void DeserializeEmptyArray()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonEmptyArray);

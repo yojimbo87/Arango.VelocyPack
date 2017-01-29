@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
     public class BooleanValueTests
     {
         [Test]
-        public void SegmentizeFalseBooleanValueHexDump()
+        public void SegmentizeFalseBooleanValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonFalseValue);
@@ -28,7 +28,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         }
 
         [Test]
-        public void SegmentizeTrueBooleanValueHexDump()
+        public void SegmentizeTrueBooleanValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonTrueValue);

@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
     public class EmptyArrayTests
     {
         [Test]
-        public void SegmentizeEmptyArrayHexDump()
+        public void SegmentizeEmptyArray()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonEmptyArray);

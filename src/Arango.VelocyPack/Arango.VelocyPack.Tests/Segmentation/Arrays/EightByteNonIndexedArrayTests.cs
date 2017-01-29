@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
     public class EightByteNonIndexedArrayTests
     {
         [Test]
-        public void SegmentizeNonIndexedArrayHexDump()
+        public void SegmentizeNonIndexedArray()
         {
             // given
             var data = Hex.EightByteNonIndexedArray;

@@ -6,7 +6,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
     public class NoneValueTests
     {
         [Test]
-        public void DeserializeNoneValueHexDump()
+        public void DeserializeNoneValue()
         {
             // given
             var data = new byte[] { 0x00 };

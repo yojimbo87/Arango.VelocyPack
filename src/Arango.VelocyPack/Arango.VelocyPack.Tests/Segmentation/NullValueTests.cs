@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
     public class NullValueTests
     {
         [Test]
-        public void SegmentizeNullValueHexDump()
+        public void SegmentizeNullValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNullValue);

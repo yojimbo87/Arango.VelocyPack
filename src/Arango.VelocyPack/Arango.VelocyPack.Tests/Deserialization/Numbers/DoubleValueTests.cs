@@ -7,7 +7,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
     public class DoubleValueTests
     {
         [Test]
-        public void DeserializeDoubleValueHexDump()
+        public void DeserializeDoubleValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonDouble);

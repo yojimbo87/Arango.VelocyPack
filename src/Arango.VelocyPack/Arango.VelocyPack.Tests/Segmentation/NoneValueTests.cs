@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
     public class NoneValueTests
     {
         [Test]
-        public void SegmentizeNoneValueHexDump()
+        public void SegmentizeNoneValue()
         {
             // given
             var data = Hex.NoneValue;

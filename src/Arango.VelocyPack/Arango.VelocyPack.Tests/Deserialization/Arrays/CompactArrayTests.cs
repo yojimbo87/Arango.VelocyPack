@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class CompactArrayTests
     {
         [Test]
-        public void DeserializeCompactArrayHexDump()
+        public void DeserializeCompactArray()
         {
             // TODO: cast to List<sbyte>
 

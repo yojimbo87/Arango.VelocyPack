@@ -7,7 +7,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
     public class BooleanValueTests
     {
         [Test]
-        public void DeserializeFalseBooleanValueHexDump()
+        public void DeserializeFalseBooleanValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonFalseValue);
@@ -20,7 +20,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         }
 
         [Test]
-        public void DeserializeTrueBooleanValueHexDump()
+        public void DeserializeTrueBooleanValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonTrueValue);

@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class EightByteNonIndexedArrayTests
     {
         [Test]
-        public void DeserializeNonIndexedArrayHexDump()
+        public void DeserializeNonIndexedArray()
         {
             // given
             var data = Hex.EightByteNonIndexedArray;

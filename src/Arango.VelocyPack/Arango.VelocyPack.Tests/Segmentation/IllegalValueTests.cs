@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
     public class IllegalValueTests
     {
         [Test]
-        public void SegmentizeIllegalValueHexDump()
+        public void SegmentizeIllegalValue()
         {
             // given
             var data = Hex.IllegalValue;

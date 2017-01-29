@@ -7,7 +7,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
     public class NonSensicalValueTests
     {
         [Test]
-        public void DeserializeMinKeyValueHexDump()
+        public void DeserializeMinKeyValue()
         {
             // given
             var data = Hex.MinKeyValue;
@@ -20,7 +20,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
         }
 
         [Test]
-        public void DeserializeMaxKeyValueHexDump()
+        public void DeserializeMaxKeyValue()
         {
             // given
             var data = Hex.MaxKeyValue;

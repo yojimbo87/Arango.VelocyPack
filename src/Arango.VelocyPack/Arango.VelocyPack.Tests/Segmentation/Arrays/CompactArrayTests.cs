@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
     public class CompactArrayTests
     {
         [Test]
-        public void SegmentizeCompactArrayHexDump()
+        public void SegmentizeCompactArray()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonCompactArray, true, false);

@@ -7,7 +7,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
     public class NullValueTests
     {
         [Test]
-        public void DeserializeNullValueHexDump()
+        public void DeserializeNullValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNullValue);

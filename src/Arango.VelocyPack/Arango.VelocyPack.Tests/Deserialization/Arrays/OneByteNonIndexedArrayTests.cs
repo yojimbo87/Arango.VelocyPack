@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class OneByteNonIndexedArrayTests
     {
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_ZeroZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_ZeroZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithZeroZeroBytes;
@@ -25,7 +25,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_OneZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_OneZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithOneZeroBytes;
@@ -42,7 +42,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_ThreeZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_ThreeZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithThreeZeroBytes;
@@ -59,7 +59,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_SevenZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_SevenZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithSevenZeroBytes;

@@ -7,7 +7,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
     public class SmallIntegerValueTests
     {
         [Test]
-        public void DeserializeZeroIntValueHexDump()
+        public void DeserializeZeroIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonZeroInt);
@@ -20,7 +20,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosOneIntValueHexDump()
+        public void DeserializePosOneIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosOneInt);
@@ -33,7 +33,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosTwoIntValueHexDump()
+        public void DeserializePosTwoIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosTwoInt);
@@ -46,7 +46,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosThreeIntValueHexDump()
+        public void DeserializePosThreeIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosThreeInt);
@@ -59,7 +59,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosFourIntValueHexDump()
+        public void DeserializePosFourIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosFourInt);
@@ -72,7 +72,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosFiveIntValueHexDump()
+        public void DeserializePosFiveIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosFiveInt);
@@ -85,7 +85,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosSixIntValueHexDump()
+        public void DeserializePosSixIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosSixInt);
@@ -98,7 +98,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosSevenIntValueHexDump()
+        public void DeserializePosSevenIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosSevenInt);
@@ -111,7 +111,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosEightIntValueHexDump()
+        public void DeserializePosEightIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosEightInt);
@@ -124,7 +124,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializePosNineIntValueHexDump()
+        public void DeserializePosNineIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonPosNineInt);
@@ -137,7 +137,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegSixIntValueHexDump()
+        public void DeserializeNegSixIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegSixInt);
@@ -150,7 +150,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegFiveIntValueHexDump()
+        public void DeserializeNegFiveIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegFiveInt);
@@ -163,7 +163,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegFourIntValueHexDump()
+        public void DeserializeNegFourIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegFourInt);
@@ -176,7 +176,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegThreeIntValueHexDump()
+        public void DeserializeNegThreeIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegThreeInt);
@@ -189,7 +189,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegTwoIntValueHexDump()
+        public void DeserializeNegTwoIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegTwoInt);
@@ -202,7 +202,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
-        public void DeserializeNegOneIntValueHexDump()
+        public void DeserializeNegOneIntValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonNegOneInt);

@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
     public class FourByteNonIndexedArrayTests
     {
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_ZeroZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_ZeroZeroByteByteLengthSize()
         {
             // given
             var data = Hex.FourByteNonIndexedArrayWithZeroZeroBytes;
@@ -25,7 +25,7 @@ namespace Arango.VelocyPack.Tests.Deserialization.Arrays
         }
 
         [Test]
-        public void DeserializeNonIndexedArrayHexDump_With_FourZeroByteByteLengthSize()
+        public void DeserializeNonIndexedArray_With_FourZeroByteByteLengthSize()
         {
             // given
             var data = Hex.FourByteNonIndexedArrayWithFourZeroBytes;

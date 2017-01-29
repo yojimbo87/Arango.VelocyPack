@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
     public class OneByteNonIndexedArrayTests
     {
         [Test]
-        public void SegmentizeNonIndexedArrayHexDump_With_ZeroZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_ZeroZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithZeroZeroBytes;
@@ -33,7 +33,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         }
 
         [Test]
-        public void SegmentizeNonIndexedArrayHexDump_With_OneZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_OneZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithOneZeroBytes;
@@ -58,7 +58,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         }
 
         [Test]
-        public void SegmentizeNonIndexedArrayHexDump_With_ThreeZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_ThreeZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithThreeZeroBytes;
@@ -83,7 +83,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         }
 
         [Test]
-        public void SegmentizeNonIndexedArrayHexDump_With_SevenZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_SevenZeroByteByteLengthSize()
         {
             // given
             var data = Hex.OneByteNonIndexedArrayWithSevenZeroBytes;

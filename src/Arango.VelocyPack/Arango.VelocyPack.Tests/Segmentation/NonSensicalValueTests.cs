@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
     public class NonSensicalValueTests
     {
         [Test]
-        public void SegmentizeMinKeyValueHexDump()
+        public void SegmentizeMinKeyValue()
         {
             // given
             var data = Hex.MinKeyValue;
@@ -28,7 +28,7 @@ namespace Arango.VelocyPack.Tests.Segmentation
         }
 
         [Test]
-        public void SegmentizeMaxKeyValueHexDump()
+        public void SegmentizeMaxKeyValue()
         {
             // given
             var data = Hex.MaxKeyValue;

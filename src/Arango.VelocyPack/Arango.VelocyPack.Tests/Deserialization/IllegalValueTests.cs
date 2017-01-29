@@ -6,7 +6,7 @@ namespace Arango.VelocyPack.Tests.Deserialization
     public class IllegalValueTests
     {
         [Test]
-        public void DeserializeIllegalValueHexDump()
+        public void DeserializeIllegalValue()
         {
             // given
             var data = new byte[] { 0x17 };

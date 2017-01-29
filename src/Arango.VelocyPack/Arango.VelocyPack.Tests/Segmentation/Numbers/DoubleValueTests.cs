@@ -8,7 +8,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
     public class DoubleValueTests
     {
         [Test]
-        public void SegmentizeDoubleValueHexDump()
+        public void SegmentizeDoubleValue()
         {
             // given
             var data = Converter.ToVPackBytes(Paths.JsonDouble);
