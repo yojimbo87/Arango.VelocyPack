@@ -43,13 +43,13 @@ namespace Arango.VelocyPack.Converters
                     integer = (sbyte)data[0];
                     break;
                 case 2:
-                    integer = BitConverter.ToInt16(ArrayConverter.ReverseCopy(data), 0);
+                    integer = BitConverter.ToInt16(data, 0);
                     break;
                 case 3:
                     integer = ToInt32(data[2], data[1], data[0]);
                     break;
                 case 4:
-                    integer = BitConverter.ToInt32(ArrayConverter.ReverseCopy(data), 0);
+                    integer = BitConverter.ToInt32(data, 0);
                     break;
                 case 5:
                     integer = ToInt64(data[4], data[3], data[2], data[1], data[0], 0xff, 0xff, 0xff);
@@ -61,7 +61,7 @@ namespace Arango.VelocyPack.Converters
                     integer = ToInt64(data[6], data[5], data[4], data[3], data[2], data[1], data[0], 0xff);
                     break;
                 case 8:
-                    integer = BitConverter.ToInt64(ArrayConverter.ReverseCopy(data), 0);
+                    integer = BitConverter.ToInt64(data, 0);
                     break;
                 default:
                     // TODO: throw custom exception

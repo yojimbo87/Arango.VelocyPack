@@ -48,6 +48,9 @@ namespace Arango.VelocyPack
                 case SegmentType.SmallInteger:
                     segment = new SmallIntegerSegment();
                     break;
+                case SegmentType.SignedInteger:
+                    segment = new SignedIntegerSegment();
+                    break;
                 default:
                     // TODO: throw custom exception
                     throw new Exception("Data contains unknown segment type.");

@@ -21,30 +21,34 @@ namespace Arango.VelocyPack.Tests.Utils
         public static readonly string JsonCompactArray = Path.Combine(JsonDataDir, "Arrays", "Compact.json");
         public static readonly string JsonEmptyArray = Path.Combine(JsonDataDir, "Arrays", "Empty.json");
 
-        // non indexed arrays
-        public static readonly string JsonEightByteLengthNonIndexedArray = Path.Combine(JsonDataDir, "Arrays", "EightByteNonIndexedArray.json");
-
         // numbers
 
         // small integers
-        public static readonly string JsonZeroInt = Path.Combine(JsonDataDir, "Numbers", "ZeroInt.json");
-        public static readonly string JsonPosOneInt = Path.Combine(JsonDataDir, "Numbers", "PosOneInt.json");
-        public static readonly string JsonPosTwoInt = Path.Combine(JsonDataDir, "Numbers", "PosTwoInt.json");
-        public static readonly string JsonPosThreeInt = Path.Combine(JsonDataDir, "Numbers", "PosThreeInt.json");
-        public static readonly string JsonPosFourInt = Path.Combine(JsonDataDir, "Numbers", "PosFourInt.json");
-        public static readonly string JsonPosFiveInt = Path.Combine(JsonDataDir, "Numbers", "PosFiveInt.json");
-        public static readonly string JsonPosSixInt = Path.Combine(JsonDataDir, "Numbers", "PosSixInt.json");
-        public static readonly string JsonPosSevenInt = Path.Combine(JsonDataDir, "Numbers", "PosSevenInt.json");
-        public static readonly string JsonPosEightInt = Path.Combine(JsonDataDir, "Numbers", "PosEightInt.json");
-        public static readonly string JsonPosNineInt = Path.Combine(JsonDataDir, "Numbers", "PosNineInt.json");
-        public static readonly string JsonNegSixInt = Path.Combine(JsonDataDir, "Numbers", "NegSixInt.json");
-        public static readonly string JsonNegFiveInt = Path.Combine(JsonDataDir, "Numbers", "NegFiveInt.json");
-        public static readonly string JsonNegFourInt = Path.Combine(JsonDataDir, "Numbers", "NegFourInt.json");
-        public static readonly string JsonNegThreeInt = Path.Combine(JsonDataDir, "Numbers", "NegThreeInt.json");
-        public static readonly string JsonNegTwoInt = Path.Combine(JsonDataDir, "Numbers", "NegTwoInt.json");
-        public static readonly string JsonNegOneInt = Path.Combine(JsonDataDir, "Numbers", "NegOneInt.json");
+        public static readonly string JsonZeroInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "ZeroInt.json");
+        public static readonly string JsonPosOneInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosOneInt.json");
+        public static readonly string JsonPosTwoInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosTwoInt.json");
+        public static readonly string JsonPosThreeInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosThreeInt.json");
+        public static readonly string JsonPosFourInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosFourInt.json");
+        public static readonly string JsonPosFiveInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosFiveInt.json");
+        public static readonly string JsonPosSixInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosSixInt.json");
+        public static readonly string JsonPosSevenInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosSevenInt.json");
+        public static readonly string JsonPosEightInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosEightInt.json");
+        public static readonly string JsonPosNineInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "PosNineInt.json");
+        public static readonly string JsonNegSixInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegSixInt.json");
+        public static readonly string JsonNegFiveInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegFiveInt.json");
+        public static readonly string JsonNegFourInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegFourInt.json");
+        public static readonly string JsonNegThreeInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegThreeInt.json");
+        public static readonly string JsonNegTwoInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegTwoInt.json");
+        public static readonly string JsonNegOneInt = Path.Combine(JsonDataDir, "Numbers", "SmallIntegers", "NegOneInt.json");
 
-        // floating point
+        // signed integers
+        public static readonly string JsonOneByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "OneByteSignedInt.json");
+        public static readonly string JsonTwoByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "TwoByteSignedInt.json");
+        public static readonly string JsonThreeByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "ThreeByteSignedInt.json");
+        public static readonly string JsonFourByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "FourByteSignedInt.json");
+        public static readonly string JsonEightByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "EightByteSignedInt.json");
+
+        // floats
         public static readonly string JsonDouble = Path.Combine(JsonDataDir, "Numbers", "Double.json");
     }
 }

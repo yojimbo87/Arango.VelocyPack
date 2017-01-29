@@ -56,7 +56,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <None Include="Data\JSON\Arrays\EightByteLengthNonIndexed.json" />
+    <Compile Include="Deserialization\Numbers\SignedIntegerValueTests.cs" />
+    <Compile Include="Segmentation\Numbers\SignedIntegerValueTests.cs" />
     <Compile Include="Utils\Hex.cs" />
     <Compile Include="Utils\Paths.cs" />
     <Compile Include="Conversion\BinaryConverterTests.cs" />
@@ -95,22 +96,27 @@
     <None Include="Data\JSON\False.json" />
     <None Include="Data\JSON\Null.json" />
     <None Include="Data\JSON\Numbers\Double.json" />
-    <None Include="Data\JSON\Numbers\NegFiveInt.json" />
-    <None Include="Data\JSON\Numbers\NegFourInt.json" />
-    <None Include="Data\JSON\Numbers\NegOneInt.json" />
-    <None Include="Data\JSON\Numbers\NegSixInt.json" />
-    <None Include="Data\JSON\Numbers\NegThreeInt.json" />
-    <None Include="Data\JSON\Numbers\NegTwoInt.json" />
-    <None Include="Data\JSON\Numbers\PosEightInt.json" />
-    <None Include="Data\JSON\Numbers\PosFiveInt.json" />
-    <None Include="Data\JSON\Numbers\PosFourInt.json" />
-    <None Include="Data\JSON\Numbers\PosNineInt.json" />
-    <None Include="Data\JSON\Numbers\PosOneInt.json" />
-    <None Include="Data\JSON\Numbers\PosSevenInt.json" />
-    <None Include="Data\JSON\Numbers\PosSixInt.json" />
-    <None Include="Data\JSON\Numbers\PosThreeInt.json" />
-    <None Include="Data\JSON\Numbers\PosTwoInt.json" />
-    <None Include="Data\JSON\Numbers\ZeroInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\EightByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\FourByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\OneByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\ThreeByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\TwoByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegFiveInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegFourInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegOneInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegSixInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegThreeInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\NegTwoInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosEightInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosFiveInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosFourInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosNineInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosOneInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosSevenInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosSixInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosThreeInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\PosTwoInt.json" />
+    <None Include="Data\JSON\Numbers\SmallIntegers\ZeroInt.json" />
     <None Include="Data\JSON\True.json" />
     <None Include="packages.config" />
   </ItemGroup>
