@@ -72,6 +72,32 @@ namespace Arango.VelocyPack.Tests.Deserialization.Numbers
         }
 
         [Test]
+        public void DeserializeSixByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonSixByteSignedInt);
+
+            // when
+            var value = VPack.ToObject<long>(data);
+
+            // then
+            Assert.AreEqual(-1234567890123, value);
+        }
+
+        [Test]
+        public void DeserializeSevenByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonSevenByteSignedInt);
+
+            // when
+            var value = VPack.ToObject<long>(data);
+
+            // then
+            Assert.AreEqual(-1234567890123456, value);
+        }
+
+        [Test]
         public void DeserializeEightByteSignedIntValue()
         {
             // given

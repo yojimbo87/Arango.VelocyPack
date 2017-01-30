@@ -100,6 +100,8 @@
     <None Include="Data\JSON\Numbers\SignedIntegers\FiveByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\FourByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\OneByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\SevenByteSignedInt.json" />
+    <None Include="Data\JSON\Numbers\SignedIntegers\SixByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\ThreeByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SignedIntegers\TwoByteSignedInt.json" />
     <None Include="Data\JSON\Numbers\SmallIntegers\NegFiveInt.json" />

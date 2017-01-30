@@ -88,6 +88,66 @@ namespace Arango.VelocyPack.Tests.Segmentation.Numbers
         }
 
         [Test]
+        public void SegmentizeFiveByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonFiveByteSignedInt);
+
+            // when
+            var segment = VPack.ToSegment(data);
+
+            // then
+            Assert.IsInstanceOf<SignedIntegerSegment>(segment);
+            Assert.AreEqual(0, segment.StartIndex);
+            Assert.AreEqual(6, segment.CursorIndex);
+            Assert.AreEqual(data.Length, segment.ByteLength);
+            Assert.AreEqual(SegmentType.SignedInteger, segment.Type);
+            Assert.AreEqual(ValueType.FiveByteInt, segment.ValueType);
+            Assert.AreEqual(1, segment.ValueStartIndex);
+            Assert.AreEqual(5, segment.ValueByteLength);
+        }
+
+        [Test]
+        public void SegmentizeSixByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonSixByteSignedInt);
+
+            // when
+            var segment = VPack.ToSegment(data);
+
+            // then
+            Assert.IsInstanceOf<SignedIntegerSegment>(segment);
+            Assert.AreEqual(0, segment.StartIndex);
+            Assert.AreEqual(7, segment.CursorIndex);
+            Assert.AreEqual(data.Length, segment.ByteLength);
+            Assert.AreEqual(SegmentType.SignedInteger, segment.Type);
+            Assert.AreEqual(ValueType.SixByteInt, segment.ValueType);
+            Assert.AreEqual(1, segment.ValueStartIndex);
+            Assert.AreEqual(6, segment.ValueByteLength);
+        }
+
+        [Test]
+        public void SegmentizeSevenByteSignedIntValue()
+        {
+            // given
+            var data = Converter.ToVPackBytes(Paths.JsonSevenByteSignedInt);
+
+            // when
+            var segment = VPack.ToSegment(data);
+
+            // then
+            Assert.IsInstanceOf<SignedIntegerSegment>(segment);
+            Assert.AreEqual(0, segment.StartIndex);
+            Assert.AreEqual(8, segment.CursorIndex);
+            Assert.AreEqual(data.Length, segment.ByteLength);
+            Assert.AreEqual(SegmentType.SignedInteger, segment.Type);
+            Assert.AreEqual(ValueType.SevenByteInt, segment.ValueType);
+            Assert.AreEqual(1, segment.ValueStartIndex);
+            Assert.AreEqual(7, segment.ValueByteLength);
+        }
+
+        [Test]
         public void SegmentizeEightByteSignedIntValue()
         {
             // given

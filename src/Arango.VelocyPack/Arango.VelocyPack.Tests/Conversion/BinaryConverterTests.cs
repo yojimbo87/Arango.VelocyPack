@@ -41,7 +41,6 @@ namespace Arango.VelocyPack.Tests.Conversion
             Assert.AreEqual(expectedValue, value);
         }
 
-        //-12345678901
         [Test]
         public void ConvertPositiveFiveByteSignedIntDataToInteger()
         {
@@ -72,6 +71,74 @@ namespace Arango.VelocyPack.Tests.Conversion
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 255, 255, 255 }));
+            Assert.IsInstanceOf<long>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertPositiveSixByteSignedIntDataToInteger()
+        {
+            // given
+            const long expectedValue = 1234567890123;
+            // binary representation of expected value
+            var data = new byte[] { 203, 4, 251, 113, 31, 1 };
+
+            // when
+            var value = BinaryConverter.ToSignedInteger(data);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 0, 0 }));
+            Assert.IsInstanceOf<long>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertNegativeSixByteSignedIntDataToInteger()
+        {
+            // given
+            const long expectedValue = -1234567890123;
+            // binary representation of expected value
+            var data = new byte[] { 53, 251, 4, 142, 224, 254 };
+
+            // when
+            var value = BinaryConverter.ToSignedInteger(data);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 255, 255 }));
+            Assert.IsInstanceOf<long>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertPositiveSevenByteSignedIntDataToInteger()
+        {
+            // given
+            const long expectedValue = 1234567890123456;
+            // binary representation of expected value
+            var data = new byte[] { 192, 186, 138, 60, 213, 98, 4 };
+
+            // when
+            var value = BinaryConverter.ToSignedInteger(data);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 0));
+            Assert.IsInstanceOf<long>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertNegativeSevenByteSignedIntDataToInteger()
+        {
+            // given
+            const long expectedValue = -1234567890123456;
+            // binary representation of expected value
+            var data = new byte[] { 64, 69, 117, 195, 42, 157, 251 };
+
+            // when
+            var value = BinaryConverter.ToSignedInteger(data);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 255));
             Assert.IsInstanceOf<long>(value);
             Assert.AreEqual(expectedValue, value);
         }

@@ -53,7 +53,7 @@ namespace Arango.VelocyPack
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("Data contains unknown segment type.");
+                    throw new Exception("Segment type is not implemented.");
             }
 
             segment.ParseValue(data, startIndex);
