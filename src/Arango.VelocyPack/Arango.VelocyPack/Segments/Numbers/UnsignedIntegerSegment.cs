@@ -3,13 +3,13 @@ using Arango.VelocyPack.Converters;
 
 namespace Arango.VelocyPack.Segments
 {
-    public class SignedIntegerSegment : Segment
+    public class UnsignedIntegerSegment : Segment
     {
         public override void ParseValue(byte[] data, int startIndex)
         {
             StartIndex = startIndex;
             CursorIndex = startIndex;
-            Type = SegmentType.SignedInteger;
+            Type = SegmentType.UnsignedInteger;
             ValueType = TypeConverter.ToValueType(data[startIndex]);
 
             ParseContent(data);
@@ -21,36 +21,36 @@ namespace Arango.VelocyPack.Segments
             CursorIndex++;
             ValueStartIndex = CursorIndex;
 
-            // shift cursor index past integer value byte size
+            // shift cursor index past unsigned integer value byte size
             switch (ValueType)
             {
-                case ValueType.OneByteInt:
+                case ValueType.OneByteUInt:
                     CursorIndex += 1;
                     break;
-                case ValueType.TwoByteInt:
+                case ValueType.TwoByteUInt:
                     CursorIndex += 2;
                     break;
-                case ValueType.ThreeByteInt:
+                case ValueType.ThreeByteUInt:
                     CursorIndex += 3;
                     break;
-                case ValueType.FourByteInt:
+                case ValueType.FourByteUInt:
                     CursorIndex += 4;
                     break;
-                case ValueType.FiveByteInt:
+                case ValueType.FiveByteUInt:
                     CursorIndex += 5;
                     break;
-                case ValueType.SixByteInt:
+                case ValueType.SixByteUInt:
                     CursorIndex += 6;
                     break;
-                case ValueType.SevenByteInt:
+                case ValueType.SevenByteUInt:
                     CursorIndex += 7;
                     break;
-                case ValueType.EightByteInt:
+                case ValueType.EightByteUInt:
                     CursorIndex += 8;
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("Cannot parse value type into signed integer segment.");
+                    throw new Exception("Cannot parse value type into unsigned integer segment.");
             }
 
             ValueByteLength = CursorIndex - ValueStartIndex;

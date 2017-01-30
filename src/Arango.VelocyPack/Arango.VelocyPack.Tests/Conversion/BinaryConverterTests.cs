@@ -16,7 +16,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 64, 226, 1 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 0));
@@ -33,7 +33,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 192, 29, 254 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 255));
@@ -50,7 +50,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 53, 28, 220, 223, 2 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 0, 0, 0 }));
@@ -67,7 +67,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 203, 227, 35, 32, 253 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 255, 255, 255 }));
@@ -84,7 +84,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 203, 4, 251, 113, 31, 1 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 0, 0 }));
@@ -101,7 +101,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 53, 251, 4, 142, 224, 254 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 255, 255 }));
@@ -118,7 +118,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 192, 186, 138, 60, 213, 98, 4 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 0));
@@ -135,7 +135,7 @@ namespace Arango.VelocyPack.Tests.Conversion
             var data = new byte[] { 64, 69, 117, 195, 42, 157, 251 };
 
             // when
-            var value = BinaryConverter.ToSignedInteger(data);
+            var value = BinaryConverter.ToInteger(data);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 255));

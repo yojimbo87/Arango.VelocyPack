@@ -33,96 +33,34 @@ namespace Arango.VelocyPack.Converters
             return byteArray;
         }
 
-        internal static object ToSignedInteger(byte[] data)
+        internal static object ToInteger(byte[] data, bool isUnsigned = false)
         {
             object integer;
 
             switch (data.Length)
             {
                 case 1:
-                    integer = (sbyte)data[0];
+                    integer = To8ByteInteger(data, isUnsigned); //(sbyte)data[0];
                     break;
                 case 2:
-                    integer = BitConverter.ToInt16(data, 0);
+                    integer = To16ByteInteger(data, isUnsigned); //BitConverter.ToInt16(data, 0);
                     break;
                 case 3:
                 case 4:
-                    integer = ToInt32(data);
+                    integer = To32ByteInteger(data, isUnsigned);
                     break;
                 case 5:
                 case 6:
                 case 7:
                 case 8:
-                    integer = ToInt64(data);
+                    integer = To64ByteInteger(data, isUnsigned);
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("Cannot convert bytes to integer.");
+                    throw new Exception("Cannot convert bytes to signed integer.");
             }
 
             return integer;
-        }
-
-        private static int ToInt32(byte[] data)
-        {
-            // array needs to have 3 or 4 bytes
-            if ((data.Length < 3) || (data.Length > 4))
-            {
-                throw new ArgumentException($"Array doesn't have 3 or 4 bytes.");
-            }
-
-            if (data.Length == 3)
-            {
-                byte zeroPaddingByte = 0;
-
-                // negative integer value needs to have zero byte set to max value
-                if ((data[2] & 0x80) != 0)
-                {
-                    zeroPaddingByte = 255;
-                }
-
-                return BitConverter.ToInt32(new byte[] { data[0], data[1], data[2], zeroPaddingByte }, 0);
-            }
-            else
-            {
-                return BitConverter.ToInt32(data, 0);
-            }
-        }
-
-        private static long ToInt64(byte[] data)
-        {
-            // array needs to have 5, 6, 7 or 8 bytes
-            if ((data.Length < 5) || (data.Length > 8))
-            {
-                throw new ArgumentException($"Array doesn't have 5, 6, 7 or 8 bytes.");
-            }
-
-            var zeroPaddingCount = 8 - data.Length;
-
-            if (zeroPaddingCount > 0)
-            {
-                // create zero pad array which will fill empty bytes for the purpose of conversion
-                byte[] zeroPaddingBytes = new byte[zeroPaddingCount];
-                var isNegativeIntegerValue = (data[data.Length - 1] & 0x80) != 0;
-
-                for (var i = 0; i < zeroPaddingCount; i++)
-                {
-                    if (isNegativeIntegerValue)
-                    {
-                        zeroPaddingBytes[i] = 255;
-                    }
-                    else
-                    {
-                        zeroPaddingBytes[i] = 0;
-                    }
-                }
-
-                return BitConverter.ToInt64(ArrayConverter.Join(data, zeroPaddingBytes), 0);
-            }
-            else
-            {
-                return BitConverter.ToInt64(data, 0);
-            }
         }
 
         internal static ulong ToUInt64(byte[] data)
@@ -145,10 +83,109 @@ namespace Arango.VelocyPack.Converters
                     break;
                 default:
                     // TODO: throw custom exception
-                    throw new Exception("BYTELENGTH could not be parsed into number.");
+                    throw new Exception("Could not parse data into 8B unsigned integer.");
             }
 
             return value;
+        }
+
+        private static object To8ByteInteger(byte[] data, bool isUnsigned)
+        {
+            if (isUnsigned)
+            {
+                return data[0];
+            }
+            else
+            {
+                return (sbyte)data[0];
+            }
+        }
+
+        private static object To16ByteInteger(byte[] data, bool isUnsigned)
+        {
+            if (isUnsigned)
+            {
+                return BitConverter.ToUInt16(data, 0);
+            }
+            else
+            {
+                return BitConverter.ToInt16(data, 0);
+            }
+        }
+
+        private static object To32ByteInteger(byte[] data, bool isUnsigned)
+        {
+            // array needs to have 3 or 4 bytes
+            if ((data.Length < 3) || (data.Length > 4))
+            {
+                throw new ArgumentException("Array doesn't have 3 or 4 bytes.");
+            }
+
+            var conversionData = data;
+
+            if (conversionData.Length == 3)
+            {
+                var zeroPaddingByte = (byte)0;
+
+                // negative integer value needs to have zero byte set to max value
+                if ((data[2] & 0x80) != 0)
+                {
+                    zeroPaddingByte = 255;
+                }
+
+                conversionData = new byte[] { data[0], data[1], data[2], zeroPaddingByte };
+            }
+
+            if (isUnsigned)
+            {
+                return BitConverter.ToUInt32(conversionData, 0);
+            }
+            else
+            {
+                return BitConverter.ToInt32(conversionData, 0);
+            }
+        }
+
+        private static object To64ByteInteger(byte[] data, bool isUnsigned)
+        {
+            // array needs to have 5, 6, 7 or 8 bytes
+            if ((data.Length < 5) || (data.Length > 8))
+            {
+                throw new ArgumentException("Array doesn't have 5, 6, 7 or 8 bytes.");
+            }
+
+            var conversionData = data;
+            var zeroPaddingCount = 8 - data.Length;
+
+            if (zeroPaddingCount > 0)
+            {
+                // create zero pad array which will fill empty bytes for the purpose of conversion
+                var zeroPaddingBytes = new byte[zeroPaddingCount];
+                var isNegativeIntegerValue = (data[data.Length - 1] & 0x80) != 0;
+
+                for (var i = 0; i < zeroPaddingCount; i++)
+                {
+                    if (isNegativeIntegerValue)
+                    {
+                        zeroPaddingBytes[i] = 255;
+                    }
+                    else
+                    {
+                        zeroPaddingBytes[i] = 0;
+                    }
+                }
+
+                conversionData = ArrayConverter.Join(data, zeroPaddingBytes);
+            }
+
+            if (isUnsigned)
+            {
+                return BitConverter.ToUInt64(conversionData, 0);
+            }
+            else
+            {
+                return BitConverter.ToInt64(conversionData, 0);
+            }
         }
     }
 }

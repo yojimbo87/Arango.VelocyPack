@@ -129,7 +129,9 @@
       <Name>Arango.VelocyPack</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\JSON\Numbers\UnsignedIntegers\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Converters\json-to-vpack.exe" />
   </ItemGroup>
