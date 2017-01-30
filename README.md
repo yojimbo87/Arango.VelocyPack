@@ -26,10 +26,10 @@ Below is a table which consists of implementation progress for three main parts 
 | TwoByteIndexedSortedObject     |              |                 |               |
 | FourByteIndexedSortedObject    |              |                 |               |
 | EightByteIndexedSortedObject   |              |                 |               |
-| Unused                         | N/A          |                 |               |
+| Unused                         | N/A          | N/A             | N/A           |
 | CompactNonIndexedArray         | DONE         | DONE            |               |
 | CompactNonIndexedObject        |              |                 |               |
-| Reserved                       | N/A          |                 |               |
+| Reserved                       | N/A          | N/A             | N/A           |
 | Illegal                        | DONE         | DONE            |               |
 | Null                           | DONE         | DONE            |               |
 | False                          | DONE         | DONE            |               |
@@ -39,14 +39,14 @@ Below is a table which consists of implementation progress for three main parts 
 | External                       |              |                 |               |
 | MinKey                         | DONE         | DONE            |               |
 | MaxKey                         | DONE         | DONE            |               |
-| OneByteInt                     |              |                 |               |
-| TwoByteInt                     |              |                 |               |
-| ThreeByteInt                   |              |                 |               |
-| FourByteInt                    |              |                 |               |
-| FiveByteInt                    |              |                 |               |
-| SixByteInt                     |              |                 |               |
-| SevenByteInt                   |              |                 |               |
-| EightByteInt                   |              |                 |               |
+| OneByteInt                     | DONE         | DONE            |               |
+| TwoByteInt                     | DONE         | DONE            |               |
+| ThreeByteInt                   | DONE         | DONE            |               |
+| FourByteInt                    | DONE         | DONE            |               |
+| FiveByteInt                    | DONE         | DONE            |               |
+| SixByteInt                     | DONE         | DONE            |               |
+| SevenByteInt                   | DONE         | DONE            |               |
+| EightByteInt                   | DONE         | DONE            |               |
 | OneByteUInt                    |              |                 |               |
 | TwoByteUInt                    |              |                 |               |
 | ThreeByteUInt                  |              |                 |               |
