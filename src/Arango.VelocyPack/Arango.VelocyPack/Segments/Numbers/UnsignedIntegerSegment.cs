@@ -60,7 +60,7 @@ namespace Arango.VelocyPack.Segments
         {
             var valueData = ArrayConverter.Slice(data, ValueStartIndex, ValueByteLength);
 
-            return BinaryConverter.ToInteger(valueData);
+            return BinaryConverter.ToInteger(valueData, true);
         }
     }
 }

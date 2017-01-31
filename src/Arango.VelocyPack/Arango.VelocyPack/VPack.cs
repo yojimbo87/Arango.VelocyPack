@@ -51,6 +51,9 @@ namespace Arango.VelocyPack
                 case SegmentType.SignedInteger:
                     segment = new SignedIntegerSegment();
                     break;
+                case SegmentType.UnsignedInteger:
+                    segment = new UnsignedIntegerSegment();
+                    break;
                 default:
                     // TODO: throw custom exception
                     throw new Exception("Segment type is not implemented.");

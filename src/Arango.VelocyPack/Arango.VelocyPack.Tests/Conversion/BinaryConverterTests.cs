@@ -7,6 +7,8 @@ namespace Arango.VelocyPack.Tests.Conversion
     [TestFixture]
     public class BinaryConverterTests
     {
+        #region Signed integers
+
         [Test]
         public void ConvertPositiveThreeByteSignedIntDataToInteger()
         {
@@ -142,5 +144,28 @@ namespace Arango.VelocyPack.Tests.Conversion
             Assert.IsInstanceOf<long>(value);
             Assert.AreEqual(expectedValue, value);
         }
+
+        #endregion
+
+        #region Unsigned integers
+
+        [Test]
+        public void ConvertEightByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ulong expectedValue = 18446744073709551615;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255, 255, 255, 255, 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), data);
+            Assert.IsInstanceOf<ulong>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        #endregion
     }
 }

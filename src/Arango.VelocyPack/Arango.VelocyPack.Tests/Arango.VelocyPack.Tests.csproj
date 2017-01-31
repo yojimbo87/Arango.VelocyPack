@@ -57,7 +57,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Deserialization\Numbers\SignedIntegerValueTests.cs" />
+    <Compile Include="Deserialization\Numbers\UnsignedIntegerValueTests.cs" />
     <Compile Include="Segmentation\Numbers\SignedIntegerValueTests.cs" />
+    <Compile Include="Segmentation\Numbers\UnsignedIntegerValueTests.cs" />
     <Compile Include="Utils\Hex.cs" />
     <Compile Include="Utils\Paths.cs" />
     <Compile Include="Conversion\BinaryConverterTests.cs" />
@@ -120,6 +122,7 @@
     <None Include="Data\JSON\Numbers\SmallIntegers\PosThreeInt.json" />
     <None Include="Data\JSON\Numbers\SmallIntegers\PosTwoInt.json" />
     <None Include="Data\JSON\Numbers\SmallIntegers\ZeroInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\EightByteUnsignedInt.json" />
     <None Include="Data\JSON\True.json" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -129,9 +132,7 @@
       <Name>Arango.VelocyPack</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\JSON\Numbers\UnsignedIntegers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\Converters\json-to-vpack.exe" />
   </ItemGroup>
