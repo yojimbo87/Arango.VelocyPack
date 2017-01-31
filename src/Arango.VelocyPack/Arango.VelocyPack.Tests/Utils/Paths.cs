@@ -52,6 +52,13 @@ namespace Arango.VelocyPack.Tests.Utils
         public static readonly string JsonEightByteSignedInt = Path.Combine(JsonDataDir, "Numbers", "SignedIntegers", "EightByteSignedInt.json");
 
         // unsigned integers
+        public static readonly string JsonOneByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "OneByteUnsignedInt.json");
+        public static readonly string JsonTwoByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "TwoByteUnsignedInt.json");
+        public static readonly string JsonThreeByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "ThreeByteUnsignedInt.json");
+        public static readonly string JsonFourByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "FourByteUnsignedInt.json");
+        public static readonly string JsonFiveByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "FiveByteUnsignedInt.json");
+        public static readonly string JsonSixByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "SixByteUnsignedInt.json");
+        public static readonly string JsonSevenByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "SevenByteUnsignedInt.json");
         public static readonly string JsonEightByteUnsignedInt = Path.Combine(JsonDataDir, "Numbers", "UnsignedIntegers", "EightByteUnsignedInt.json");
 
         // floats

@@ -123,6 +123,13 @@
     <None Include="Data\JSON\Numbers\SmallIntegers\PosTwoInt.json" />
     <None Include="Data\JSON\Numbers\SmallIntegers\ZeroInt.json" />
     <None Include="Data\JSON\Numbers\UnsignedIntegers\EightByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\FiveByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\FourByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\OneByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\SevenByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\SixByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\ThreeByteUnsignedInt.json" />
+    <None Include="Data\JSON\Numbers\UnsignedIntegers\TwoByteUnsignedInt.json" />
     <None Include="Data\JSON\True.json" />
     <None Include="packages.config" />
   </ItemGroup>
