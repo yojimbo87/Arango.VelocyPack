@@ -47,14 +47,14 @@ Below is a table which consists of implementation progress for three main parts 
 | SixByteInt                     | DONE         | DONE            |               |
 | SevenByteInt                   | DONE         | DONE            |               |
 | EightByteInt                   | DONE         | DONE            |               |
-| OneByteUInt                    |              |                 |               |
-| TwoByteUInt                    |              |                 |               |
-| ThreeByteUInt                  |              |                 |               |
-| FourByteUInt                   |              |                 |               |
-| FiveByteUInt                   |              |                 |               |
-| SixByteUInt                    |              |                 |               |
-| SevenByteUInt                  |              |                 |               |
-| EightByteUInt                  |              |                 |               |
+| OneByteUInt                    | DONE         | DONE            |               |
+| TwoByteUInt                    | DONE         | DONE            |               |
+| ThreeByteUInt                  | DONE         | DONE            |               |
+| FourByteUInt                   | DONE         | DONE            |               |
+| FiveByteUInt                   | DONE         | DONE            |               |
+| SixByteUInt                    | DONE         | DONE            |               |
+| SevenByteUInt                  | DONE         | DONE            |               |
+| EightByteUInt                  | DONE         | DONE            |               |
 | ZeroInt                        | DONE         | DONE            |               |
 | PosOneInt                      | DONE         | DONE            |               |
 | PosTwoInt                      | DONE         | DONE            |               |
