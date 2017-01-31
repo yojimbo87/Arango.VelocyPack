@@ -128,7 +128,7 @@ namespace Arango.VelocyPack.Converters
                 var zeroPaddingByte = (byte)0;
 
                 // negative integer value needs to have zero byte set to max value
-                if ((data[2] & 0x80) != 0)
+                if (!isUnsigned && ((data[2] & 0x80) != 0))
                 {
                     zeroPaddingByte = 255;
                 }
@@ -161,7 +161,7 @@ namespace Arango.VelocyPack.Converters
             {
                 // create zero pad array which will fill empty bytes for the purpose of conversion
                 var zeroPaddingBytes = new byte[zeroPaddingCount];
-                var isNegativeIntegerValue = (data[data.Length - 1] & 0x80) != 0;
+                var isNegativeIntegerValue = !isUnsigned && ((data[data.Length - 1] & 0x80) != 0);
 
                 for (var i = 0; i < zeroPaddingCount; i++)
                 {

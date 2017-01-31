@@ -150,18 +150,135 @@ namespace Arango.VelocyPack.Tests.Conversion
         #region Unsigned integers
 
         [Test]
-        public void ConvertEightByteUnsignedIntDataToInteger()
+        public void ConvertOneByteUnsignedIntDataToInteger()
         {
             // given
-            const ulong expectedValue = 18446744073709551615;
+            const byte expectedValue = 255;
             // binary representation of expected value
-            var data = new byte[] { 255, 255, 255, 255, 255, 255, 255, 255 };
+            var data = new byte[] { 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            Assert.IsInstanceOf<byte>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertTwoByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ushort expectedValue = 65535;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            Assert.IsInstanceOf<ushort>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertThreeByteUnsignedIntDataToInteger()
+        {
+            // given
+            const uint expectedValue = 16777215;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 0));
+            Assert.IsInstanceOf<uint>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertFourByteUnsignedIntDataToInteger()
+        {
+            // given
+            const uint expectedValue = 4294967295;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255, 255 };
 
             // when
             var value = BinaryConverter.ToInteger(data, true);
 
             // then
             CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), data);
+            Assert.IsInstanceOf<uint>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertFiveByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ulong expectedValue = 1099511627775;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255, 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 0, 0, 0 }));
+            Assert.IsInstanceOf<ulong>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertSixByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ulong expectedValue = 281474976710655;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255, 255, 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Join(data, new byte[] { 0, 0 }));
+            Assert.IsInstanceOf<ulong>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertSevenByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ulong expectedValue = 72057594037927935;
+            // binary representation of expected value
+            var data = new byte[] { 255, 255, 255, 255, 255, 255, 255 };
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            CollectionAssert.AreEqual(BitConverter.GetBytes(expectedValue), ArrayConverter.Append(data, 0));
+            Assert.IsInstanceOf<ulong>(value);
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertEightByteUnsignedIntDataToInteger()
+        {
+            // given
+            const ulong expectedValue = 18446744073709551615;
+            // binary representation of expected value
+            var data = BitConverter.GetBytes(expectedValue);
+
+            // when
+            var value = BinaryConverter.ToInteger(data, true);
+
+            // then
+            Assert.AreEqual(8, data.Length);
             Assert.IsInstanceOf<ulong>(value);
             Assert.AreEqual(expectedValue, value);
         }
