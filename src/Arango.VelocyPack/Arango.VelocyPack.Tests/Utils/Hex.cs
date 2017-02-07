@@ -42,6 +42,8 @@
         // numbers
 
         // hex dump of 12345 float number with 1B BYTELENGTH mantissa
-        public static readonly byte[] PosOneByteLengthMantissaFloatValue = new byte[] { 0xc8, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01, 0x23, 0x45 };
+        public static readonly byte[] PosOneByteLengthFloatValue = new byte[] { 0xc8, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01, 0x23, 0x45 };
+        // hex dump of -12345 float number with 1B BYTELENGTH mantissa
+        public static readonly byte[] NegOneByteLengthFloatValue = new byte[] { 0xd0, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01, 0x23, 0x45 };
     }
 }
