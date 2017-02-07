@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Converters\ArrayConverter.cs" />
     <Compile Include="Converters\BinaryConverter.cs" />
+    <Compile Include="Converters\NumberConverter.cs" />
     <Compile Include="Segments\Base\ArraySegment.cs" />
     <Compile Include="Segments\BooleanSegment.cs" />
     <Compile Include="Segments\Arrays\CompactArraySegment.cs" />

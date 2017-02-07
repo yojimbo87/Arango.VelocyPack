@@ -29,13 +29,13 @@ namespace Arango.VelocyPack.Segments
             // parse BYTELENGTH bytes
             var byteLengthBytes = ParseByteLengthBytes(data);
             // parse BYTELENGTH value
-            var byteLength = BinaryConverter.ToUInt64(byteLengthBytes);
+            var byteLength = NumberConverter.ToUInt64(byteLengthBytes);
             // parse NRITEMS bytes 
             // - these bytes are at the end of segment, but need to be parsed before array sub values in order
             // to find out length of the array payload
             var subValuesCountBytes = ParseItemCountBytes(data, byteLength);
             // parse NRITEMS value
-            ItemCount = BinaryConverter.ToUInt64(subValuesCountBytes);
+            ItemCount = NumberConverter.ToUInt64(subValuesCountBytes);
             // parse array payload
             ParseItems(data, byteLength - (ulong)subValuesCountBytes.Length);
 

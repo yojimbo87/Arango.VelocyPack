@@ -62,7 +62,7 @@
     <Compile Include="Segmentation\Numbers\UnsignedIntegerValueSegmentationTests.cs" />
     <Compile Include="Utils\Hex.cs" />
     <Compile Include="Utils\Paths.cs" />
-    <Compile Include="Conversion\BinaryConverterTests.cs" />
+    <Compile Include="Conversion\NumberConverterTests.cs" />
     <Compile Include="Deserialization\Arrays\CompactArrayDeserializationTests.cs" />
     <Compile Include="Deserialization\Arrays\EightByteNonIndexedArrayDeserializationTests.cs" />
     <Compile Include="Deserialization\Arrays\EmptyArrayDeserializationTests.cs" />
