@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
     [TestFixture]
-    public class TwoByteNonIndexedArrayTests
+    public class TwoByteNonIndexedArrayDeserializationTests
     {
         [Test]
         public void DeserializeNonIndexedArray_With__ZeroZeroByteByteLengthSize()

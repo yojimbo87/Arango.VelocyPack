@@ -4,7 +4,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization
 {
     [TestFixture]
-    public class NonSensicalValueTests
+    public class NonSensicalValueDeserializationTests
     {
         [Test]
         public void DeserializeMinKeyValue()

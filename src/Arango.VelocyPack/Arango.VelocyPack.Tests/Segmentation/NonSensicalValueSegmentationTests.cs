@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation
 {
     [TestFixture]
-    public class NonSensicalValueTests
+    public class NonSensicalValueSegmentationTests
     {
         [Test]
         public void SegmentizeMinKeyValue()

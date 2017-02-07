@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
     [TestFixture]
-    public class EmptyArrayTests
+    public class EmptyArrayDeserializationTests
     {
         [Test]
         public void DeserializeEmptyArray()

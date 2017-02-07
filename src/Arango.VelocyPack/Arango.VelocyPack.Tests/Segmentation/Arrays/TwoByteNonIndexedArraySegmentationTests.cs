@@ -5,13 +5,13 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
     [TestFixture]
-    public class OneByteNonIndexedArrayTests
+    public class TwoByteNonIndexedArraySegmentationTests
     {
         [Test]
         public void SegmentizeNonIndexedArray_With_ZeroZeroByteByteLengthSize()
         {
             // given
-            var data = Hex.OneByteNonIndexedArrayWithZeroZeroBytes;
+            var data = Hex.TwoByteNonIndexedArrayWithZeroZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -24,32 +24,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(data.Length, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
-            Assert.AreEqual(ValueType.OneByteNonIndexedArray, segment.ValueType);
-            Assert.AreEqual(2, segment.ValueStartIndex);
-            Assert.AreEqual(3, segment.ValueByteLength);
-            Assert.AreEqual(3, segment.Items.Count);
-
-            TestSmallIntegerItems(segment);
-        }
-
-        [Test]
-        public void SegmentizeNonIndexedArray_With_OneZeroByteByteLengthSize()
-        {
-            // given
-            var data = Hex.OneByteNonIndexedArrayWithOneZeroBytes;
-
-            // when
-            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
-
-            // then
-            // array
-            Assert.IsInstanceOf<NonIndexedArraySegment>(segment);
-            Assert.IsInstanceOf<ArraySegment>(segment);
-            Assert.AreEqual(0, segment.StartIndex);
-            Assert.AreEqual(data.Length, segment.CursorIndex);
-            Assert.AreEqual(data.Length, segment.ByteLength);
-            Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
-            Assert.AreEqual(ValueType.OneByteNonIndexedArray, segment.ValueType);
+            Assert.AreEqual(ValueType.TwoByteNonIndexedArray, segment.ValueType);
             Assert.AreEqual(3, segment.ValueStartIndex);
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
@@ -58,10 +33,10 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         }
 
         [Test]
-        public void SegmentizeNonIndexedArray_With_ThreeZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_TwoZeroByteByteLengthSize()
         {
             // given
-            var data = Hex.OneByteNonIndexedArrayWithThreeZeroBytes;
+            var data = Hex.TwoByteNonIndexedArrayWithTwoZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -74,7 +49,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(data.Length, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
-            Assert.AreEqual(ValueType.OneByteNonIndexedArray, segment.ValueType);
+            Assert.AreEqual(ValueType.TwoByteNonIndexedArray, segment.ValueType);
             Assert.AreEqual(5, segment.ValueStartIndex);
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
@@ -83,10 +58,10 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
         }
 
         [Test]
-        public void SegmentizeNonIndexedArray_With_SevenZeroByteByteLengthSize()
+        public void SegmentizeNonIndexedArray_With_SixZeroByteByteLengthSize()
         {
             // given
-            var data = Hex.OneByteNonIndexedArrayWithSevenZeroBytes;
+            var data = Hex.TwoByteNonIndexedArrayWithSixZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -99,7 +74,7 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             Assert.AreEqual(data.Length, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
-            Assert.AreEqual(ValueType.OneByteNonIndexedArray, segment.ValueType);
+            Assert.AreEqual(ValueType.TwoByteNonIndexedArray, segment.ValueType);
             Assert.AreEqual(9, segment.ValueStartIndex);
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);

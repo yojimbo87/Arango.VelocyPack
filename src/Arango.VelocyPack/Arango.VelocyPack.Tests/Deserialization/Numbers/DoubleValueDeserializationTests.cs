@@ -4,7 +4,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization.Numbers
 {
     [TestFixture]
-    public class DoubleValueTests
+    public class DoubleValueDeserializationTests
     {
         [Test]
         public void DeserializeDoubleValue()

@@ -4,7 +4,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization
 {
     [TestFixture]
-    public class BooleanValueTests
+    public class BooleanValueDeserializationTests
     {
         [Test]
         public void DeserializeFalseBooleanValue()

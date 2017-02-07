@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation
 {
     [TestFixture]
-    public class BooleanValueTests
+    public class BooleanValueSegmentationTests
     {
         [Test]
         public void SegmentizeFalseBooleanValue()

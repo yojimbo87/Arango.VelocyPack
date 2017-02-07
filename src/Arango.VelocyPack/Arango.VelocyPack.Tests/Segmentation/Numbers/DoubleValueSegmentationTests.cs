@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation.Numbers
 {
     [TestFixture]
-    public class DoubleValueTests
+    public class DoubleValueSegmentationTests
     {
         [Test]
         public void SegmentizeDoubleValue()

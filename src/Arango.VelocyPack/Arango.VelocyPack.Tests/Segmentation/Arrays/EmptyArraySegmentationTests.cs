@@ -5,7 +5,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
     [TestFixture]
-    public class EmptyArrayTests
+    public class EmptyArraySegmentationTests
     {
         [Test]
         public void SegmentizeEmptyArray()

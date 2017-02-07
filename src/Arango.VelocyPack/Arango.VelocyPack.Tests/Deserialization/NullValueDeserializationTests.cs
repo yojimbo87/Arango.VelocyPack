@@ -1,15 +1,16 @@
 ﻿using NUnit.Framework;
+using Arango.VelocyPack.Tests.Utils;
 
 namespace Arango.VelocyPack.Tests.Deserialization
 {
     [TestFixture]
-    public class NoneValueTests
+    public class NullValueDeserializationTests
     {
         [Test]
-        public void DeserializeNoneValue()
+        public void DeserializeNullValue()
         {
             // given
-            var data = new byte[] { 0x00 };
+            var data = Converter.ToVPackBytes(Paths.JsonNullValue);
 
             // when
             var value = VPack.ToObject<object>(data);

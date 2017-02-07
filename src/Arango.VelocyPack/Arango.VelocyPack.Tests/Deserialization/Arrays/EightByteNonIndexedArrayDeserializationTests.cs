@@ -5,15 +5,13 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization.Arrays
 {
     [TestFixture]
-    public class CompactArrayTests
+    public class EightByteNonIndexedArrayDeserializationTests
     {
         [Test]
-        public void DeserializeCompactArray()
+        public void DeserializeNonIndexedArray()
         {
-            // TODO: cast to List<sbyte>
-
             // given
-            var data = Converter.ToVPackBytes(Paths.JsonCompactArray, true, false);
+            var data = Hex.EightByteNonIndexedArray;
 
             // when
             var value = VPack.ToObject<List<object>>(data);

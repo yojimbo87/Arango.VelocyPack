@@ -4,7 +4,7 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Deserialization.Numbers
 {
     [TestFixture]
-    public class UnsignedIntegerValueTests
+    public class UnsignedIntegerValueDeserializationTests
     {
         [Test]
         public void DeserializeOneByteUnsignedIntValue()

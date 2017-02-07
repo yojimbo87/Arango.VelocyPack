@@ -5,13 +5,13 @@ using Arango.VelocyPack.Tests.Utils;
 namespace Arango.VelocyPack.Tests.Segmentation.Arrays
 {
     [TestFixture]
-    public class EightByteNonIndexedArrayTests
+    public class FourByteNonIndexedArraySegmentationTests
     {
         [Test]
-        public void SegmentizeNonIndexedArray()
+        public void SegmentizeNonIndexedArray_With_ZeroZeroByteByteLengthSize()
         {
             // given
-            var data = Hex.EightByteNonIndexedArray;
+            var data = Hex.FourByteNonIndexedArrayWithZeroZeroBytes;
 
             // when
             var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
@@ -21,46 +21,64 @@ namespace Arango.VelocyPack.Tests.Segmentation.Arrays
             Assert.IsInstanceOf<NonIndexedArraySegment>(segment);
             Assert.IsInstanceOf<ArraySegment>(segment);
             Assert.AreEqual(0, segment.StartIndex);
-            Assert.AreEqual(12, segment.CursorIndex);
+            Assert.AreEqual(data.Length, segment.CursorIndex);
             Assert.AreEqual(data.Length, segment.ByteLength);
             Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
-            Assert.AreEqual(ValueType.EightByteNonIndexedArray, segment.ValueType);
+            Assert.AreEqual(ValueType.FourByteNonIndexedArray, segment.ValueType);
+            Assert.AreEqual(5, segment.ValueStartIndex);
+            Assert.AreEqual(3, segment.ValueByteLength);
+            Assert.AreEqual(3, segment.Items.Count);
+
+            TestSmallIntegerItems(segment);
+        }
+
+        [Test]
+        public void SegmentizeNonIndexedArray_With_FourZeroByteByteLengthSize()
+        {
+            // given
+            var data = Hex.FourByteNonIndexedArrayWithFourZeroBytes;
+
+            // when
+            var segment = VPack.ToSegment<NonIndexedArraySegment>(data);
+
+            // then
+            // array
+            Assert.IsInstanceOf<NonIndexedArraySegment>(segment);
+            Assert.IsInstanceOf<ArraySegment>(segment);
+            Assert.AreEqual(0, segment.StartIndex);
+            Assert.AreEqual(data.Length, segment.CursorIndex);
+            Assert.AreEqual(data.Length, segment.ByteLength);
+            Assert.AreEqual(SegmentType.NonIndexedArray, segment.Type);
+            Assert.AreEqual(ValueType.FourByteNonIndexedArray, segment.ValueType);
             Assert.AreEqual(9, segment.ValueStartIndex);
             Assert.AreEqual(3, segment.ValueByteLength);
             Assert.AreEqual(3, segment.Items.Count);
 
+            TestSmallIntegerItems(segment);
+        }
+
+        private void TestSmallIntegerItems(NonIndexedArraySegment segment)
+        {
             // first item
             var item1 = segment.Items[0];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item1);
-            Assert.AreEqual(9, item1.StartIndex);
-            Assert.AreEqual(10, item1.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, item1.Type);
             Assert.AreEqual(ValueType.PosOneInt, item1.ValueType);
-            Assert.AreEqual(9, item1.ValueStartIndex);
-            Assert.AreEqual(1, item1.ValueByteLength);
 
             // second item
             var item2 = segment.Items[1];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item2);
-            Assert.AreEqual(10, item2.StartIndex);
-            Assert.AreEqual(11, item2.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, item2.Type);
             Assert.AreEqual(ValueType.PosTwoInt, item2.ValueType);
-            Assert.AreEqual(10, item2.ValueStartIndex);
-            Assert.AreEqual(1, item2.ValueByteLength);
 
             // third item
             var item3 = segment.Items[2];
 
             Assert.IsInstanceOf<SmallIntegerSegment>(item3);
-            Assert.AreEqual(11, item3.StartIndex);
-            Assert.AreEqual(12, item3.CursorIndex);
             Assert.AreEqual(SegmentType.SmallInteger, item3.Type);
             Assert.AreEqual(ValueType.PosThreeInt, item3.ValueType);
-            Assert.AreEqual(11, item3.ValueStartIndex);
-            Assert.AreEqual(1, item3.ValueByteLength);
         }
     }
 }

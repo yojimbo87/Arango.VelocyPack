@@ -3,13 +3,13 @@
 namespace Arango.VelocyPack.Tests.Deserialization
 {
     [TestFixture]
-    public class IllegalValueTests
+    public class NoneValueDeserializationTests
     {
         [Test]
-        public void DeserializeIllegalValue()
+        public void DeserializeNoneValue()
         {
             // given
-            var data = new byte[] { 0x17 };
+            var data = new byte[] { 0x00 };
 
             // when
             var value = VPack.ToObject<object>(data);
