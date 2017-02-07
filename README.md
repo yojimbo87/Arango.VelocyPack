@@ -75,7 +75,21 @@ Below is a table which consists of implementation progress for three main parts 
 | ShortString                    |              |                 |               |
 | LongString                     |              |                 |               |
 | Blob                           |              |                 |               |
-| PosFloat                       |              |                 |               |
-| NegFloat                       |              |                 |               |
+| PosOneByteFloat                | DONE         | DONE            |               |
+| PosTwoByteFloat                |              |                 |               |
+| PosThreeByteFloat              |              |                 |               |
+| PosFourByteFloat               |              |                 |               |
+| PosFiveByteFloat               |              |                 |               |
+| PosSixByteFloat                |              |                 |               |
+| PosSevenByteFloat              |              |                 |               |
+| PosEightByteFloat              |              |                 |               |
+| NegOneByteFloat                | DONE         | DONE            |               |
+| NegTwoByteFloat                |              |                 |               |
+| NegThreeByteFloat              |              |                 |               |
+| NegFourByteFloat               |              |                 |               |
+| NegFiveByteFloat               |              |                 |               |
+| NegSixByteFloat                |              |                 |               |
+| NegSevenByteFloat              |              |                 |               |
+| NegEightByteFloat              |              |                 |               |
 | Custom                         |              |                 |               |
 
