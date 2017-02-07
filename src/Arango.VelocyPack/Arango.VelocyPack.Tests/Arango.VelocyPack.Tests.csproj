@@ -56,8 +56,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Deserialization\Numbers\FloatValueDeserializationTests.cs" />
     <Compile Include="Deserialization\Numbers\SignedIntegerValueDeserializationTests.cs" />
     <Compile Include="Deserialization\Numbers\UnsignedIntegerValueDeserializationTests.cs" />
+    <Compile Include="Segmentation\Numbers\FloatValueSegmentationTests.cs" />
     <Compile Include="Segmentation\Numbers\SignedIntegerValueSegmentationTests.cs" />
     <Compile Include="Segmentation\Numbers\UnsignedIntegerValueSegmentationTests.cs" />
     <Compile Include="Utils\Hex.cs" />

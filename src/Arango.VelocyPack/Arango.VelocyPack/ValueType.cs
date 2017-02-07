@@ -209,12 +209,26 @@
         /// <summary>
         /// 0xc8-0xcf : positive long packed BCD-encoded float, V - 0xc7 bytes follow that encode in a little endian way the length of the mantissa in bytes. Directly after that follow 4 bytes encoding the (power of 10) exponent, by which the mantissa is to be multiplied, stored as little endian two's complement signed 32-bit integer. After that, as many bytes follow as the length information at the beginning has specified, each byte encodes two digits in big-endian packed BCD Example: 12345 decimal can be encoded as 0xc8 0x03 0x00 0x00 0x00 0x00 0x01 0x23 0x45 or 0xc8 0x03 0xff 0xff 0xff 0xff 0x12 0x34 0x50
         /// </summary>
-        PosFloat,
+        PosOneByteFloat,
+        PosTwoByteFloat,
+        PosThreeByteFloat,
+        PosFourByteFloat,
+        PosFiveByteFloat,
+        PosSixByteFloat,
+        PosSevenByteFloat,
+        PosEightByteFloat,
 
         /// <summary>
         /// 0xd0-0xd7 : negative long packed BCD-encoded float, V - 0xcf bytes follow that encode in a little endian way the length of the mantissa in bytes. After that, same as positive long packed BCD-encoded float above.
         /// </summary>
-        NegFloat,
+        NegOneByteFloat,
+        NegTwoByteFloat,
+        NegThreeByteFloat,
+        NegFourByteFloat,
+        NegFiveByteFloat,
+        NegSixByteFloat,
+        NegSevenByteFloat,
+        NegEightByteFloat,
 
         /// <summary>
         /// 0xf0-0xff : custom types

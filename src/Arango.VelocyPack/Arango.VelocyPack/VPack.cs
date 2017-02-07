@@ -39,6 +39,9 @@ namespace Arango.VelocyPack
                 case SegmentType.Boolean:
                     segment = new BooleanSegment();
                     break;
+                case SegmentType.Float:
+                    segment = new FloatSegment();
+                    break;
                 case SegmentType.Double:
                     segment = new DoubleSegment();
                     break;

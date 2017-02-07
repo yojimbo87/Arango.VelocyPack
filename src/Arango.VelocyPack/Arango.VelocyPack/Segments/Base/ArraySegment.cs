@@ -4,7 +4,7 @@ namespace Arango.VelocyPack.Segments
 {
     public abstract class ArraySegment : Segment
     {
-        public List<Segment> Items { get; set; }
+        public List<Segment> Items { get; internal set; }
 
         internal void ParseItems(byte[] data, ulong byteLength)
         {

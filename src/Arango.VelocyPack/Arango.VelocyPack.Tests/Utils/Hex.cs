@@ -38,5 +38,10 @@
         public static readonly byte[] OneByteNonIndexedArrayWithThreeZeroBytes = new byte[] { 0x02, 0x08, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
         // hex dump of [1, 2, 3] non indexed array with 1B BYTELENGTH followed by 7 zero bytes
         public static readonly byte[] OneByteNonIndexedArrayWithSevenZeroBytes = new byte[] { 0x02, 0x0c, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x31, 0x32, 0x33 };
+
+        // numbers
+
+        // hex dump of 12345 float number with 1B BYTELENGTH mantissa
+        public static readonly byte[] PosOneByteLengthMantissaFloatValue = new byte[] { 0xc8, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01, 0x23, 0x45 };
     }
 }
